@@ -1,8 +1,9 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+</div>
+</div>
+<div id="footer">
+    <div id="footer-inside">
+        <p id="copyright">&copy; 2014 - <a href="/">Creatalia</a></p>
+        
+    </div><div style="clear: both;"></div></div>
+</body>
+</html>
