@@ -1,3 +1,8 @@
+@font-face{
+ font-family: "bonzai";
+ src: url(http://localhost/douzo/assets/fonts/katanf.ttf);
+}
+
 body { color: #fff; min-width: 1110px; background: url('http://localhost/douzo/assets/images/top-ornament.png') 50% 15% no-repeat #080808; font: 13px/22px 'UbuntuRegular', Arial, sans-serif; }
 @font-face { font-weight: normal; font-style: normal; font-family: 'UbuntuRegular'; src: url('fonts/Ubuntu-R-webfont.eot'); src: url('fonts/Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Ubuntu-R-webfont.woff') format('woff'), url('fonts/Ubuntu-R-webfont.ttf') format('truetype'), url('fonts/Ubuntu-R-webfont.svg#UbuntuRegular') format('svg'); }
 @font-face { font-weight: normal; font-style: normal; font-family: 'UbuntuMedium'; src: url('fonts/Ubuntu-M-webfont.eot'); src: url('fonts/Ubuntu-M-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Ubuntu-M-webfont.woff') format('woff'), url('fonts/Ubuntu-M-webfont.ttf') format('truetype'), url('fonts/Ubuntu-M-webfont.svg#UbuntuMedium') format('svg'); }
@@ -105,7 +110,12 @@ object { max-width: 100% }
 #front-featured .text,
 #front-featured .text p { color: #2d3030 }
 
-#front-pages { height: 452px; margin: 0; padding: 33px 0px 0px 0px }
+#front-pages { height: 452px;
+margin: 0;
+padding: 33px 251px 0px 251px;
+background-color: #f1e9e0;
+width: 100%;
+margin-left: -25%; }
 #front-pages .text,
 #front-pages .text p { color: #2d3030 }
 #front-pages .featured .text,
@@ -204,7 +214,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202121', end
  #sidebar .menu li.current a { background-color: black; color: #fff; border-bottom: 1px solid #252525 }
 
 /* ===[ Tagline box ]=== */
-.tagline { width: 996px; height: 195px; color: #ffffff; text-align: center; clear: both; font: normal  24px/34px 'UbuntuLight', Arial, sans-serif; background: transparent; }
+.tagline { width: 996px; height: 195px; color: #ffffff; text-align: center; clear: both; font: normal  28px/38px 'bonzai', Arial, sans-serif; background: transparent; }
 
 /* ===[ Front page boxes ]=== */
 
