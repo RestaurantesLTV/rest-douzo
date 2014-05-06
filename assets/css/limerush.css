@@ -8,7 +8,7 @@
 
 
 
-._layer { z-index: 1000000; position: absolute; top: 0px; left: 0px; display: none; background: url('../nui/layer.png') 0% 0% repeat; }  
+._layer { z-index: 1000000; position: absolute; top: 0px; left: 0px; display: none; background: url('images/layer.png') 0% 0% repeat; }  
 
 /* Dialog */
 
@@ -18,7 +18,7 @@
   ._dialog h3 { background-color: #353538; border-bottom: 2px solid #9AE085; color: #FFFFFF; font: 16px/24px Geogrotesque Rg,arial; margin: 15px 0; padding: 7px 10px; }
   ._dialog ._label { padding-top: 6px; }
   ._dialog ._chebkbox_label span { }
-  ._dialog div._close { position: absolute; width: 14px; height: 15px; background: url('../nui/nui-control.png') -28px 0px no-repeat; cursor: pointer; right: 12px; top: 12px; }  
+  ._dialog div._close { position: absolute; width: 14px; height: 15px; background: url('images/nui-control.png') -28px 0px no-repeat; cursor: pointer; right: 12px; top: 12px; }  
   ._dialog div._close:hover { opacity: 0.7; }  
   ._dialog ._content { padding: 15px; max-height: 490px; overflow: auto; overflow-x: hidden; }  
   ._dialog ._footer { 
@@ -37,7 +37,7 @@
   /* Sorting elements */
   .dialog-_sort { }  
     .dialog-_sort ._sortable { max-height: 600px; overflow: auto; list-style: none; }
-    .dialog-_sort ._sortable li div { overflow: hidden; padding-left: 30px; background: url('../nui/resize.png') 5px 50% no-repeat; cursor: s-resize; width: 260px; }
+    .dialog-_sort ._sortable li div { overflow: hidden; padding-left: 30px; background: url('images/resize.png') 5px 50% no-repeat; cursor: s-resize; width: 260px; }
     .dialog-_sort ._sortable li img { width: 50px; height: 50px; float: left; margin-right: 10px; }
     .dialog-_sort ._sortable li label { float: left; font-weight: bold; font-size: 120%; width: 200px; }
     
@@ -116,7 +116,7 @@ input[type="checkbox"]._lr { width: auto !important; height: auto !important; ma
 ._upload .dropzone-multiple { padding-top: 50px; min-height: 50px; height: auto !important; }
 ._upload .uploader { width: 130px; height: 40px; position: absolute; top: 35px; left: 100px; overflow: hidden; text-align: left; }
 ._upload .uploader span.desc { width: 130px; height: 40px; position: absolute; top: 0px; left: 0px; margin: 0px; font-size: 11px; }
-._upload .uploader span.icon { padding-left: 20px; background: url('../nui/upload-select.png') 0px 0px no-repeat; padding-top: 1px; }
+._upload .uploader span.icon { padding-left: 20px; background: url('images/upload-select.png') 0px 0px no-repeat; padding-top: 1px; }
 ._upload .uploader input { 
       -moz-transform: translate(-300px, 0pt) scale(5);
       border-color: transparent;
@@ -148,14 +148,14 @@ input[type="checkbox"]._lr { width: auto !important; height: auto !important; ma
   
   
 /* Additional elements */
-._loading { min-width: 40px; min-height: 20px; background: url('../nui/loading.gif') 50% 50% no-repeat; }
+._loading { min-width: 40px; min-height: 20px; background: url('images/loading.gif') 50% 50% no-repeat; }
 ._autocomplete-status._lr { position: absolute; width: auto; padding-left: 10px; padding-right: 10px; }
 
 
 /* Icons */
 .icon { padding-left: 23px; }
-  .icon-delete { background: url('../nui/delete.png') 0% 50% no-repeat !important; }
-  .icon-delete2 { background: url('../nui/delete2.png') 50% 50% no-repeat !important; }
-  .icon-add { background: url('../nui/add.png') 0% 50% no-repeat !important; }
-  .icon-marker { background: url('../nui/marker.png') 0% 50% no-repeat !important; }
-  .icon-marker2 { background: url('../nui/marker2.png') 0% 50% no-repeat !important; }
+  .icon-delete { background: url('images/delete.png') 0% 50% no-repeat !important; }
+  .icon-delete2 { background: url('images/delete2.png') 50% 50% no-repeat !important; }
+  .icon-add { background: url('images/add.png') 0% 50% no-repeat !important; }
+  .icon-marker { background: url('images/marker.png') 0% 50% no-repeat !important; }
+  .icon-marker2 { background: url('images/marker2.png') 0% 50% no-repeat !important; }

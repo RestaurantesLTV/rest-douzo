@@ -1,4 +1,4 @@
-body { color: #fff; min-width: 1110px; background: url('images/top-ornament.png') 50% 15% no-repeat #080808; font: 13px/22px 'UbuntuRegular', Arial, sans-serif; }
+body { color: #fff; min-width: 1110px; background: url('http://localhost/douzo/assets/images/top-ornament.png') 50% 15% no-repeat #080808; font: 13px/22px 'UbuntuRegular', Arial, sans-serif; }
 @font-face { font-weight: normal; font-style: normal; font-family: 'UbuntuRegular'; src: url('fonts/Ubuntu-R-webfont.eot'); src: url('fonts/Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Ubuntu-R-webfont.woff') format('woff'), url('fonts/Ubuntu-R-webfont.ttf') format('truetype'), url('fonts/Ubuntu-R-webfont.svg#UbuntuRegular') format('svg'); }
 @font-face { font-weight: normal; font-style: normal; font-family: 'UbuntuMedium'; src: url('fonts/Ubuntu-M-webfont.eot'); src: url('fonts/Ubuntu-M-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Ubuntu-M-webfont.woff') format('woff'), url('fonts/Ubuntu-M-webfont.ttf') format('truetype'), url('fonts/Ubuntu-M-webfont.svg#UbuntuMedium') format('svg'); }
 @font-face { font-weight: normal; font-style: normal; font-family: 'UbuntuLight'; src: url('fonts/Ubuntu-L-webfont.eot'); src: url('fonts/Ubuntu-L-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Ubuntu-L-webfont.woff') format('woff'), url('fonts/Ubuntu-L-webfont.ttf') format('truetype'), url('fonts/Ubuntu-L-webfont.svg#UbuntuLight') format('svg'); }
@@ -35,9 +35,9 @@ object { max-width: 100% }
 .wrap { position: relative; width: 996px; margin: 0px auto; padding: 0px }
 /* header section  */
 .header {  }
- .header .logo { position: absolute; display: block; top: 0px; left: 0px; width: 242px; height: 271px; text-indent: -1000px; background: url('images/logo.png') 50% 0% no-repeat; z-index: 99; }
+ .header .logo { position: absolute; display: block; top: 0px; left: 0px; width: 242px; height: 271px; text-indent: -1000px; background: url('http://localhost/douzo/assets/images/logo.png') 50% 0% no-repeat; z-index: 99; }
 /* footer section  */
-.footer { height: 364px; background: url('images/footer.png') repeat-x; clear: both; }
+.footer { height: 364px; background: url('../assets/images/footer.png') repeat-x; clear: both; }
  .footer .wrap { background: url(images/footer-shadow) 50% 0% no-repeat }
 #footer-content .article { float: left; width: 317px; margin-left: 22px }
 #footer-content .article:first-child { margin-left: 0px }
@@ -65,8 +65,11 @@ object { max-width: 100% }
   #menu ul li:hover > a,
   #menu ul li.current > a {  }
   #menu ul li:hover > ul {display:block;}
-#content { background: url(images/bottom-ornament.png) 50% 100% no-repeat }
-
+ /*#content { background-color: #F1E9E0‏;
+    /*background: url(http://localhost/douzo/assets/images/bottom-ornament.png) 50% 100% no-repeat 
+}*/
+#content { background-color: #f1e9e0‏; width: 100%;}
+ 
 
 
 /* ===[ Pages backgrounds ]=== */
