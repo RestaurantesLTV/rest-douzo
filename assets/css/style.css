@@ -2,7 +2,9 @@
  font-family: "bonzai";
  src: url(http://localhost/douzo/assets/fonts/katanf.ttf);
 }
-
+html{
+    overflow-x: hidden;
+}
 body { color: #fff; min-width: 1110px; background: url('http://localhost/douzo/assets/images/top-ornament.png') 50% 15% no-repeat #080808; font: 13px/22px 'UbuntuRegular', Arial, sans-serif; }
 @font-face { font-weight: normal; font-style: normal; font-family: 'UbuntuRegular'; src: url('fonts/Ubuntu-R-webfont.eot'); src: url('fonts/Ubuntu-R-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Ubuntu-R-webfont.woff') format('woff'), url('fonts/Ubuntu-R-webfont.ttf') format('truetype'), url('fonts/Ubuntu-R-webfont.svg#UbuntuRegular') format('svg'); }
 @font-face { font-weight: normal; font-style: normal; font-family: 'UbuntuMedium'; src: url('fonts/Ubuntu-M-webfont.eot'); src: url('fonts/Ubuntu-M-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Ubuntu-M-webfont.woff') format('woff'), url('fonts/Ubuntu-M-webfont.ttf') format('truetype'), url('fonts/Ubuntu-M-webfont.svg#UbuntuMedium') format('svg'); }
@@ -42,8 +44,8 @@ object { max-width: 100% }
 .header {  }
  .header .logo { position: absolute; display: block; top: 0px; left: 0px; width: 242px; height: 271px; text-indent: -1000px; background: url('http://localhost/douzo/assets/images/logo.png') 50% 0% no-repeat; z-index: 99; }
 /* footer section  */
-.footer { height: 364px; background: url('../assets/images/footer.png') repeat-x; clear: both; }
- .footer .wrap { background: url(images/footer-shadow) 50% 0% no-repeat }
+.footer { height: 364px; background: url('http://localhost/douzo/assets/images/footer.png') repeat-x; clear: both; }
+ .footer .wrap { background: url(http://localhost/douzo/assets/images/footer-shadow) 50% 0% no-repeat }
 #footer-content .article { float: left; width: 317px; margin-left: 22px }
 #footer-content .article:first-child { margin-left: 0px }
 #footer-content .article .text { padding: 12px 0 0 0; color: #0f0f0f; font: normal  13px/25px 'UbuntuRegular', Arial, sans-serif }
@@ -51,7 +53,7 @@ object { max-width: 100% }
  #footer-content .article .text p { color: #0f0f0f }
 #footer-content .article h3 { margin: 0; padding: 15px 0 15px; color: #fff; text-transform: uppercase; font: 15px/22px 'UbuntuRegular',Arial,sans-serif }
 .copyright { height: 110px; color: #d1b47e; text-align: center; clear: both; font: normal  12px/18px 'UbuntuRegular', Arial, sans-serif; }
-.chopsticks { position: absolute; top: 20px; right: -57px; width: 189px; height: 135px; background: url('images/chopsticks.png') center center no-repeat transparent }
+.chopsticks { position: absolute; top: 20px; right: -57px; width: 189px; height: 135px; background: url('http://localhost/douzo/assets/images/chopsticks.png') center center no-repeat transparent }
 /* navigation  */
 #menu { position: relative; margin: 0 0 0 242px; text-transform: uppercase; line-height: 20px; font: normal  13px/21px 'UbuntuRegular', Arial, sans-serif; }
  
@@ -116,6 +118,13 @@ padding: 33px 251px 0px 251px;
 background-color: #f1e9e0;
 width: 100%;
 margin-left: -25%; }
+
+.packs {
+width: 100% !important;
+background-color: #f1e9e0;
+padding: 0% 25.1%;
+margin-left: -25%;
+}
 #front-pages .text,
 #front-pages .text p { color: #2d3030 }
 #front-pages .featured .text,
@@ -228,7 +237,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#202121', end
   #staff-pages .article h2 .sub { display: block; margin: 0; padding: 2px 0 20px 15px; color: #9C0203; text-transform: lowercase; font: 15px/21px 'UbuntuRegular',Arial,sans-serif }
 
 /* ===[ Gallery ]=== */
-#slide-preview-contentarea { position: relative; height: 468px }
+.slide{ max-width: 100%; width:100%;}
+#slide-preview-contentarea { position: relative; height: 468px; }
  #slide-preview-contentarea img{ width: 996px; height: 468px; position: absolute; top: 0; left: 0; opacity: 0; }
  #slide-preview-contentarea img.active{ opacity: 100; }
  #slide-preview-contentarea .rest { position: absolute; top: 275px; left: 10px; height: 126px; padding: 10px 22px 30px 22px; overflow: hidden; background:rgba(255,255,255,0.5);}
