@@ -1,37 +1,64 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="content-language" content="cs" />
-    <meta name="description" content="..." />
-    <meta name="keywords" content="..." />
-    <meta name="robots" content="all,follow" />
-    <link href="<?php echo base_url(); ?>/assets/css/MainEstilos.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
-    <title><?php echo $titulo ?></title>
-  </head>
-  <body>
-        <nav class="navbar navbar-inverse">
-          <div class="container menu">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Cambiar navegación</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <p class="navbar-brand"><a  href="index.html">Creatalia</a></p>
-            </div>
-            <div class="navbar-collapse collapse">
-              <!-- Elementos del menu aquí -->
-              <ul class="nav navbar-nav navbar-right">
-                <li class="menuitem"><a href="#">INICIO</a></li>
-                <li class="menuitem"><a href="#">MENU</a></li>
-                <li class="menuitem"><a href="#">PLATOS</a></li>
-                <li class="menuitem"><a href="#">EL EQUIPO</a></li>
-                <li class="menuitem"><a href="#">BLOG</a></li>
-                <li class="menuitem"><a href="#">CONTACTO</a></li>
-              </ul>
-            </div><!--/.navbar-collapse -->
-          </div>
-        </nav>
+<!DOCTYPE HTML> 
+<HTML >
+    <HEAD>
+        <TITLE>Douzo - Taste of Japan</TITLE>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <script type="text/javascript" src="assets/js/jquery-1.7.min.js"></script>
+        <script type="text/javascript">jQuery.noConflict();</script>
+        <script type="text/javascript" src="assets/js/login.js"></script>
+        <script type="text/javascript" src="assets/js/system.js"></script>
+        <script type="text/javascript" src="assets/js/plugins/script.js"></script>
+        <script type="text/javascript" src="assets/js/script.js"></script>
+
+        <link href="assets/css/base.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="assets/css/ui-lightness/jquery-ui-1.8.16.custom.css" media="(min-width: 600px)" rel="stylesheet" type="text/css" />
+        <link href="assets/css/limerush.css" media="screen" rel="stylesheet" type="text/css" />
+        <link href="assets/style.css" media="screen" rel="stylesheet" type="text/css" />
+
+        <script src="assets/js/jquery.mousewheel.min.js"></script>
+        <script src="assets/js/jquery.mCustomScrollbar.min.js"></script>
+        <script src="assets/js/jquery.malihu.PageScroll2id.js"></script>
+        <script src="assets/js/jquery.stickyfloat.js"></script>
+
+        <link href="assets/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
+
+    <header class="header">
+        <div class="wrap">
+            <a class="logo" title="My site" href="index.html">My site</a>
+            <nav id="menu">            <ul class="level-0">
+                    <li class="current" >
+                        <a href="index.html" title="Home">Inicio</a>
+                    </li>
+                    <li  >
+                        <a href="menu.html" title="Menu">La carta</a>
+                    </li>
+                    <li class="has-submenu" >
+                        <a class="no-href" title="RECEPIES">Recetas</a>
+                        <ul class="level-1">
+                            <li  >
+                                <a href="menu/donburi-and-noodles/sakamushi.html" title="sakamushi">sakamushi</a>
+                            </li>
+                            <li  >
+                                <a href="menu/chicken-specialityes/chicken-teriyaki.html" title="Chicken Teriyaki">Chicken Teriyaki</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li  >
+                        <a href="staff.html" title="The staff">El equipo</a>
+                    </li>
+                    <li  >
+                        <a href="blog.html" title="Blog">Blog</a>
+                    </li>
+                    <li  >
+                        <a href="contact.html" title="Contact">Contacto</a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+

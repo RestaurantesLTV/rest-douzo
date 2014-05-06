@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  background:transparent;
+}
+._reset body,._reset div,._reset dl,._reset dt,._reset dd,._reset ul,._reset ol,._reset li,._reset h1,._reset h2,._reset h3,._reset h4,._reset h5,._reset h6,._reset pre,._reset code,._reset form,._reset fieldset,._reset legend,._reset input,._reset textarea,._reset p,._reset blockquote,._reset th,._reset td{margin:0;padding:0;height:auto;width:auto;background-image:none}._reset table{border-collapse:collapse;border-spacing:0}._reset fieldset,._reset img{border:0}._reset address,._reset caption,._reset cite,._reset code,._reset dfn,._reset em,._reset strong,._reset th,._reset var{font-style:normal;font-weight:normal}._reset ol,._reset ul{list-style:none}._reset caption,._reset th{text-align:left}._reset h1,._reset h2,._reset h3,._reset h4,._reset h5,._reset h6{font-size:100%;font-weight:normal}._reset q:before,._reset q:after{content:''}._reset abbr,._reset acronym{border:0;font-variant:normal}._reset sup{vertical-align:text-top}._reset sub{vertical-align:text-bottom}._reset input,._reset textarea,._reset select{font-family:inherit;font-size:inherit;font-weight:inherit}._reset input,._reset textarea,._reset select{*font-size:100%}._reset legend{color:#000}
+
+table { width: 100%; }
+
+body { font: 12px/15px Arial; }
+.clear { clear: both; }
+
+#login-box {}
+  #login-box table { margin: 22px auto; }
+  
+  .content { position: relative; }
+
+.overflow { overflow: hidden; }
+div.l { float: left; }
+div.r { float: right; }
+.b { font-weight: bold; }
+  
+.transition-05 { 
+  -webkit-transition:all 0.5s ease-in-out;
+  -moz-transition:all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  -ms-transition:all 0.5s ease-in-out;  
+  transition:all 0.5s ease-in-out;
+}
+.transition-1 { 
+  -webkit-transition:all 1.0s ease-in-out;
+  -moz-transition:all 1.0s ease-in-out;
+  -o-transition:all 1.0s ease-in-out;
+  -ms-transition:all 1.0s ease-in-out;  
+  transition:all 1.0s ease-in-out;
+}
+
+.ui-widget { font-size: 11px !important; }  
+
+.nui-def, .nui-collection-def { display: none !important; }
+
+/* contenteditable resizable */
+.lms-object-parent { display: inline-block; }
+  .lms-object-parent > * { width: 100%; height: 100%; padding: 0px; margin: 0px; }
+  

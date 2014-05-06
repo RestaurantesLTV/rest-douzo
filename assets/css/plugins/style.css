@@ -1,0 +1,17 @@
+.comment-form { padding-top: 20px }
+  .comment-form label { display: block; padding: 3px 0px; }
+  .comment-form input, .comment-form textarea { width: 300px; border: 1px solid #610001; border-radius: 4px; background-color: #0A0A0B; padding: 4px 10px; color: #878787; resize: none; }
+  .comment-form input.button { width: auto; margin: 10px 0px; cursor: pointer; } 
+  .comment-form input.button:hover { background-color: #610001; color: #fff; border-color: #0A0A0B; }
+  .comment-form .error { border-color: #D50505; } 
+
+.comment-spot { padding: 10px 40px; }
+  .comment-spot ul { list-style: none; }
+  .comment-spot li { position: relative; border-bottom: 1px solid #5F0101; padding: 10px; }
+  .comment-spot h4 { font: 12px/20px georgia; font-weight: bold; color: #FCEF88; }
+  .comment-spot ul li div.text { padding: 10px 0px !important; }
+  .comment-spot ul li div.date { position: absolute; top: 10px; right: 10px; }
+    
+  
+  
+   
