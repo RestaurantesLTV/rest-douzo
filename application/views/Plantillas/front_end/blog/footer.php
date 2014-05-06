@@ -3,7 +3,7 @@
 
 </div>
 </div>
-<<footer class="footer">
+<footer class="footer">
     <div class="wrap">
 
         <div class="chopsticks"></div>
