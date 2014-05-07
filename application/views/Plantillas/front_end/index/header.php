@@ -21,7 +21,7 @@
         <script src="http://localhost/douzo/assets/js/jquery.mCustomScrollbar.min.js"></script>
         <script src="http://localhost/douzo/assets/js/jquery.malihu.PageScroll2id.js"></script>
         <script src="http://localhost/douzo/assets/js/jquery.stickyfloat.js"></script>
-
+<!-- puto mandril -->
         <link href="http://localhost/douzo/assets/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
     <body class="page-__front ">
         <header class="header">
