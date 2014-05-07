@@ -11,5 +11,8 @@ class Home_be extends CI_Controller {
        // echo "asdasdasd";
         $this->load->view('Plantillas/back_end/index_be');
     }
-
+    
+    function entradas(){
+        $this->load->view('Plantillas/back_end/entradas_be');
+    }
 }
