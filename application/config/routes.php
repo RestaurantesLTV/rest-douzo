@@ -41,6 +41,15 @@
 $route['default_controller'] = "home";
 $route['404_override'] = '';
 $route['back_end'] = 'home_be';
+$route['back_end/entradas'] = 'home_be/entradas';
+$route['back_end/categorias'] = 'home_be/categorias';
+$route['back_end/reservas'] = 'home_be/reservas';
+$route['back_end/menu'] = 'home_be/menu';
+$route['back_end/web'] = 'home_be/web';
+$route['back_end/salir'] = 'home/salir';
+
+
+
 
 
 
