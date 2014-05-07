@@ -1,8 +1,5 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+$this->load->view('Plantillas/back_end/blog_be/header_be');
+$this->load->view('Plantillas/back_end/blog_be/prueba_be');
+//$this->load->view('Plantillas/back_end/blog_be/sidebar_be');
+//$this->load->view('Plantillas/back_end/blog_be/footer_be');
