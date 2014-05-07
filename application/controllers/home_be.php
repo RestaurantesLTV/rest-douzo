@@ -17,7 +17,10 @@ class Home_be extends CI_Controller {
         $datos['contenido'] = "lista_entradas";
         $this->load->view('Plantillas/back_end/entradas_be',$datos);
     }
-    
+    function añadirEntrada(){
+        $this->load->view('Plantillas/back_end/categorias_be/añadir_art');
+    }
+            
     function categorias(){
         $this->load->view('Plantillas/back_end/categorias_be');
     }
