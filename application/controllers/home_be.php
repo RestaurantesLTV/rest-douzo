@@ -4,41 +4,50 @@ class Home_be extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-       $this->load->model('Articulos_model');
+        $this->load->model('Articulos_model');
     }
 
     function index() {
         $this->load->view('Plantillas/back_end/index_be');
     }
-    
-    function entradas(){
+
+    function entradas() {
         $datos['articulo'] = $this->Articulos_model->lista_articulos();
         $datos['titulo'] = "Douzo|Entradas";
         $datos['contenido'] = "lista_entradas";
-        $this->load->view('Plantillas/back_end/entradas_be',$datos);
+        $this->load->view('Plantillas/back_end/entradas_be', $datos);
     }
-    function añadirEntrada(){
-        $this->load->view('Plantillas/back_end/añadir_art_be');
+
+    function anadirEntrada() {
+        $this->load->view('Plantillas/back_end/anadir_art_be');
     }
-            
-    function categorias(){
+
+    function modificarEntrada() {
+        $this->load->view('Plantillas/back_end/modificar_art_be');
+    }
+
+    function categorias() {
         $this->load->view('Plantillas/back_end/categorias_be');
     }
-    function reservas(){
+
+    function reservas() {
         $this->load->view('Plantillas/back_end/reservas_be');
     }
-    function menu(){
+
+    function menu() {
         $this->load->view('Plantillas/back_end/menu_be');
     }
-    function web(){
+
+    function web() {
         $this->load->view('Plantillas/back_end/web_be');
     }
-    
+
     /**
      * - Enlace a la pagina de login
      * @todo implementar el sistema de usuarios para hacer logout
      */
-    function salir(){
+    function salir() {
         $this->load->view('Plantillas/index');
     }
+
 }

@@ -4,10 +4,10 @@
             <h1>Lista de noticias</h1>
         </div>
         <div class="botones_noticas">
-            <a href="#"><div class="btn_agregar_art">
-                <button type="button" class="btn btn-info" href="http://localhost/douzo/">Añadir articulo</button>
+            <a href="http://localhost/douzo/index.php/back_end/entradas/anadir"><div class="btn_agregar_art">
+                <button type="button" class="btn btn-info">Añadir articulo</button>
             </div></a>
-            <a href="#"><div class="btn_modificar_art">
+            <a href="http://localhost/douzo/index.php/back_end/entradas/modificar"><div class="btn_modificar_art">
                 <button type="button" class="btn btn-info">Modificar articulo</button>
             </div></a>
             <a href="#"><div class="btn_borrar_art">
