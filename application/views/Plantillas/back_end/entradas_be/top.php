@@ -1,18 +1,13 @@
 <section>
-    <div id="top_noticas" class="top_noticas">
-        <div class="titulo_noticia">
+    <div id="top_noticas" class="cols-xs-12 col-sm-12 col-md-12 col-lg-12 top_noticas">
+        <div class="cols-xs-12 col-sm-12 col-md-3 col-lg-3">
             <h1>Lista de noticias</h1>
         </div>
-        <div class="botones_noticas">
-            <a href="http://localhost/douzo/index.php/back_end/entradas/anadir"><div class="btn_agregar_art">
+        <div class="cols-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
+            <a href="http://localhost/douzo/index.php/back_end/entradas/anadir"><div class="col-xs-3 col-sm-4 col-md-4 col-lg-4">
                 <button type="button" class="btn btn-info">Añadir articulo</button>
             </div></a>
-            <a href="http://localhost/douzo/index.php/back_end/entradas/modificar"><div class="btn_modificar_art">
-                <button type="button" class="btn btn-info">Modificar articulo</button>
-            </div></a>
-            <a href="#"><div class="btn_borrar_art">
-                <button type="button" class="btn btn-danger">Borrar articulo</button>
-            </div></a>
+
         </div>
     </div>
 </section>

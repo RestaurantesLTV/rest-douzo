@@ -38,7 +38,7 @@
                 <div class="navbar-collapse collapse">
                     <!-- Elementos del menu aquí -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="menuitem"><a href="#">INICIO</a></li>
+                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/">INICIO</a></li>
                         <li class="menuitem"><a href="#">CONSULTA</a></li>
                         <li class="menuitem"><a href="#">ENTRADAS</a></li>
                         <li class="menuitem"><a href="#">CATEGORIAS</a></li>

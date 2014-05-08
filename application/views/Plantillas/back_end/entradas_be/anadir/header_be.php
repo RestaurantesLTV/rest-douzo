@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="http://localhost/douzo/assets/css/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="http://localhost/douzo/assets/css/bootstrap/main.css">
 
+
         <!-- ************ /Estilos CSS ***************** -->
     </head>
     <body>
@@ -21,6 +22,8 @@
         <script src="http://localhost/douzo/assets/js/bootstrap/jquery.js"></script>
         <script src="http://localhost/douzo/assets/js/bootstrap/bootstrap.min.js"></script>
         <script src="http://localhost/douzo/assets/js/bootstrap/main.js"></script>
+
+
 
         <!-- **************** /Scripts ********************* -->
 
@@ -38,7 +41,7 @@
                 <div class="navbar-collapse collapse">
                     <!-- Elementos del menu aquí -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="menuitem"><a href="#">INICIO</a></li>
+                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/">INICIO</a></li>
                         <li class="menuitem"><a href="#">CONSULTA</a></li>
                         <li class="menuitem"><a href="#">ENTRADAS</a></li>
                         <li class="menuitem"><a href="#">CATEGORIAS</a></li>
