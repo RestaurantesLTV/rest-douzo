@@ -9,7 +9,9 @@ class Home extends CI_Controller {
         parent::__construct();
         $this->load->model('Articulos_model');
     }
-
+    /**
+     * Funcion por defecto
+     */
     function index() {
         $this->output->enable_profiler(TRUE);
         //$query = $this->Articulos_model->ultimo_articulo();
@@ -19,9 +21,5 @@ class Home extends CI_Controller {
         $this->load->view('Plantillas/index', $datos);
       
     }
-
-    function ultimo_articulo() {
-        
-    }
-
+ 
 }
