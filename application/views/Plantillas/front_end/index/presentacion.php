@@ -6,7 +6,7 @@
         </div>
         <div class="rest">      
             <hgroup class="hgroup">
-                <h1 >Douzo Japón</h1>
+                <h1 ><?php echo $articulo->titulo_art; ?></h1>
                 <h2 class="subtitle">algo que recordarás...<br /></h2>
             </hgroup>
             <div class="text" >

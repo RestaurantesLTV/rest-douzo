@@ -9,22 +9,22 @@
     </head>
     <body>
         <div id="ac_background" class="ac_background">
-            <img class="ac_bgimage" src="http://localhost/douzo/assets/carta/images/Default.jpg" alt="Background"/>
+            <img class="ac_bgimage" src="http://localhost/douzo/assets/carta/images/Default2.jpg" alt="Background"/>
             <div class="ac_overlay"></div>
             <div class="ac_loading"></div>
         </div>
         <div id="ac_content" class="ac_content">
-            <h1><span>Douzo</span>Japón</h1>
+            <a href="http://localhost/douzo"><h1 class="logo"><span>Douzo</span>Japón</h1></a>
             <div class="ac_menu">
                 <ul>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/Appetizers.jpg">Aperitivos</a>
+                        <a href="http://localhost/douzo/assets/carta/images/aperitivos.jpg">Aperitivos</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Aperitivos</h2>
                             <ul>
-                                <li>Aperitivos con gambas.</li>
-                                <li>De atún.</li>
+                                <li>Bolitas variadas</li>
+                                <li>Tempura</li>
                                 <li>Hindues de cebolla</li>
                                 <li>Espaguetis con salsa japonesa</li>
                                 <li>Aperitivo de tomate</li>
@@ -53,29 +53,30 @@
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/Specials.jpg">Hosomaki</a>
+                        <a href="http://localhost/douzo/assets/carta/images/hosomaki.jpg">Hosomaki</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Hosomaki</h2>
                             <ul>
-                                <li>Maki de atún (4 uds.)</li>
+                                <li>Maki de pepino y queso</li>
                                 <li>Maki de atún spicy (picante)</li>
                                 <li>Maki de salmón spicy (picante)</li>
                                 <li>Maki de takwan</li>
                                 <li>Maki de surimi y mango</li>
-                                <li>Maki de pepino y queso</li>
+                                <li>Maki de atún (4 uds.)</li>
                                 <li>Maki de queso y cebollino</li>
                                 <li>Maki de surimi y aguacate</li>
+                                <li>Maki de aguacate</li>
                             </ul>
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/Desserts.jpg">Futomaki</a>
+                        <a href="http://localhost/douzo/assets/carta/images/futomaki.jpg">Futomaki</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Futomaki</h2>
                             <ul>
-                                <li>Futomaki vegetal (8 uds.)</li>
+                                <li>Futomaki vegetal</li>
                                 <li>Futomaki de surimi, aguacate y mango (8 uds.)</li>
                                 <li>Futomaki de salmón y aguacate (2 uds.)</li>
                                 <li>Futomaki de surimi, langostino y aguacate (8 uds.)</li>
@@ -87,12 +88,12 @@
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/Wines.jpg">Nigiri</a>
+                        <a href="http://localhost/douzo/assets/carta/images/nigiri.jpg">Nigiri</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Nigiri</h2>
                             <ul>
-                                <li>Nigiri de aguacate</li>
+                                <li>Nigiri variado</li>
                                 <li>Nigiri de tamago</li>
                                 <li>Nigiri de salmón</li>
                                 <li>Nigiri de jurel</li>
@@ -104,7 +105,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/Wines.jpg">Gunkan</a>
+                        <a href="http://localhost/douzo/assets/carta/images/gunkan.jpg">Gunkan</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Gunkan</h2>
@@ -130,6 +131,14 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
         <script type="text/javascript" src="http://localhost/douzo/assets/carta/js/jquery.easing.1.3.js"></script>
         <script type="text/javascript">
+            $(document).ready(function(){
+                //var logo = $('.logo');     
+                $('.logo').mouseenter(function (){
+                   $('.logo').animate({
+                        "top":"100px"
+                    },1000);
+                });
+            });
             $(function() {
                 var $ac_background = $('#ac_background'),
                         $ac_bgimage = $ac_background.find('.ac_bgimage'),
