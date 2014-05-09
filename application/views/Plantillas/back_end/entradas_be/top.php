@@ -7,7 +7,6 @@
             <a href="http://localhost/douzo/index.php/back_end/entradas/anadir"><div class="col-xs-3 col-sm-4 col-md-4 col-lg-4">
                 <button type="button" class="btn btn-info">Añadir articulo</button>
             </div></a>
-
         </div>
     </div>
 </section>

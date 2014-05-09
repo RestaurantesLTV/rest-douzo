@@ -32,7 +32,7 @@
                             <a href="#" title="Home">Inicio</a>
                         </li>
                         <li  >
-                            <a href="menu.html" title="Menu">Carta</a>
+                            <a href='http://localhost/douzo/index.php/carta' title="Menu">Carta</a>
                         </li>
                         <li class="has-submenu" >
                             <a class="no-href" title="RECEPIES">Recetas</a>

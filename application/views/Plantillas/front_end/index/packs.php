@@ -7,7 +7,7 @@
         </div>
         <div class="text">
             <p>
-                Un restaurante con un gran servicio, un ambiente tranquilo y fresco, <a href="#">excelente calidad en la comida</a>Desde un bocadito de shusi hasta una cena romántica con tu pareja. 
+                Un restaurante con un gran servicio, un ambiente tranquilo y fresco, <a href="#">excelente calidad en la comida. </a>Desde un bocadito de shusi hasta una cena romántica con tu pareja. 
             </p>
         </div>
         <div class="metadata">
@@ -26,7 +26,7 @@
                 Más de 100 platos de nuesrta carta a elegir para que los disfrutes en tu casa. 
             </p>
             <p>
-                Y te lo llevamos a casa GRATIS!!!
+               Y si te llevas dos menus te llevas un obsequio!
             </p>
 
         </div>
