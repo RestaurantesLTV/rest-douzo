@@ -22,6 +22,7 @@
         <script src="http://localhost/douzo/assets/js/bootstrap/jquery.js"></script>
         <script src="http://localhost/douzo/assets/js/bootstrap/bootstrap.min.js"></script>
         <script src="http://localhost/douzo/assets/js/bootstrap/main.js"></script>
+        <script src="http://localhost/douzo/assets/editor_texto/tinymce/tinymce.min.js"></script>
 
 
 

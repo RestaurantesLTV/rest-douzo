@@ -1,3 +1,16 @@
+<?php /* EDITOR DE TEXTO */ ?>
+<script type="text/javascript">
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+    ],
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+});
+</script>
+
 <section>
     <?php //echo validation_errors(); // --> Metodo que muestra los errores del formulario ?> 
     <form role="form" class="formulario_entradas" method="post" action="http://localhost/douzo/index.php/form/validar">
@@ -10,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label>Cabecera</label>
-                <textarea name="cabecera"class="form-control textArea_noResize" rows="2" placeholder="Introduce un resumen de la noticia..."></textarea>
+                <input type="text" name="cabecera"class="form-control textArea_noResize" rows="2" placeholder="Introduce un resumen de la noticia...">
                 <?php echo form_error('cabecera');?>
             </div>
         </div>
