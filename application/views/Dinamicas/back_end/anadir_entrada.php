@@ -1,43 +1,47 @@
 <section>
-    <form role="form" class="formulario_entradas">
+    <?php //echo validation_errors(); // --> Metodo que muestra los errores del formulario ?> 
+    <form role="form" class="formulario_entradas" method="post" action="http://localhost/douzo/index.php/form/validar">
         <div class="col_form_uno">
 
             <div class="form-group">
                 <label for="ejemplo_email_1">Titulo</label>
-                <input type="text" class="form-control" id="ejemplo_email_1"
-                       placeholder="Introduce el titulo">
+                <input type="text" class="form-control" id="ejemplo_email_1" name="titulo" placeholder="Introduce el titulo">
+                <?php echo form_error('titulo');?>
             </div>
             <div class="form-group">
                 <label>Cabecera</label>
-                <textarea class="form-control textArea_noResize" rows="2" placeholder="Introduce un resumen de la noticia..."></textarea>
+                <textarea name="cabecera"class="form-control textArea_noResize" rows="2" placeholder="Introduce un resumen de la noticia..."></textarea>
+                <?php echo form_error('cabecera');?>
             </div>
         </div>
         <div class="col_form_dos">
 
             <div class="form-group">
                 <label for="ejemplo_email_1">Autor</label>
-                <input type="text" class="form-control" id="ejemplo_email_1"
-                       placeholder="Introduce el titulo">
+                <input name="autor" type="text" class="form-control" id="ejemplo_email_1" placeholder="Introduce el titulo">
+                <?php echo form_error('autor');?>
             </div>
             <div class="form-group">
                 <label>Categoria</label>
-                <select class="form-control" >
-                    <option value="">Selecciona Categoria</option>
-                    <option value="recetas">Recetas</option>
-                    <option value="noticias">Noticias</option>
-                    <option value="recetas">Reservas</option>
-                    <option value="noticias">Offtopic</option>
+                <select name="opciones" class="form-control" >
+                    <option value="" selected="selected">Selecciona Categoria</option>
+                    <option value="recetas" <?php echo set_select('opciones','recetas'); ?>>Recetas</option>
+                    <option value="noticias"<?php echo set_select('opciones','noticias'); ?>>Noticias</option>
+                    <option value="reservas"<?php echo set_select('opciones','reservas'); ?>>Reservas</option>
+                    <option value="offtopic"<?php echo set_select('opciones','offtopic'); ?>>Offtopic</option>
                 </select>
+                <?php echo form_error('opciones');?>
             </div> 
         </div>
         <div class="col_form_tres">
             <div class="form-group">
                 <label>Contenido</label>
-                <textarea class="form-control textArea_noResize" rows="5" placeholder="Introduce el contenido..."></textarea>
+                <textarea name="contenido" class="form-control textArea_noResize" rows="5" placeholder="Introduce el contenido..."></textarea>
+            <?php echo form_error('contenido');?>
             </div>
         </div>
         <div class="btn_publicar">
-             <button type="button" class="btn btn-primary">Publicar</button>
+            <button type="submit" class="btn btn-primary" name="enviar">Publicar</button>
              <button type="button" class="btn btn-info">Limpiar</button>
         </div>
         
