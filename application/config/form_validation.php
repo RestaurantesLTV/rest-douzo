@@ -1,17 +1,27 @@
 <?php
-//trim ---> limpia de espacios en blanco al principio y al final 
-//alpha --> nombres alfabeticos solo
-//|strip_tags|xss_clean --> Seguridad al codigo, evita ejecutar scripts
-//prep_url --> añade http://
-//callback_metodo --> comprueba si existe algo en la base de datos
 
+/**
+ * trim ---> limpia de espacios en blanco al principio y al final 
+ * alpha --> nombres alfabeticos solo
+ * strip_tags|xss_clean --> Seguridad al codigo, evita ejecutar scripts
+ * prep_url --> añade http://
+ * callback_metodo --> comprueba si existe algo en la base de datos
+ * 
+ * Archivo de configuracion para la validacion de datos.
+ * Contiene:
+ *          -->controlador/funcion
+ *          -->form/validar (entradas blog)
+ *          -->login        (sistema de login)
+ * 
+ * @todo Falta hacer controlador para el login de usuarios
+ */
 $config = array(
     'form/validar' => array(
         array(
             'field' => 'titulo',
             'label' => 'Titulo',
             'rules' => 'trim|required|callback_check_email'
-          //  'rules' => 'trim|required|max_length[35]|strip_tags|xss_clean' 
+        //  'rules' => 'trim|required|max_length[35]|strip_tags|xss_clean' 
         ),
         array(
             'field' => 'cabecera',
