@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML> 
 <HTML >
     <HEAD>
@@ -21,18 +20,18 @@
         <script src="http://localhost/douzo/assets/js/jquery.mCustomScrollbar.min.js"></script>
         <script src="http://localhost/douzo/assets/js/jquery.malihu.PageScroll2id.js"></script>
         <script src="http://localhost/douzo/assets/js/jquery.stickyfloat.js"></script>
-
+        <!-- puto mandril -->
         <link href="http://localhost/douzo/assets/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
-    <body class="page-__front ">
+    <body class="page-__front">
         <header class="header">
             <div class="wrap">
-                <a class="logo" title="My site" href="index.html">Creatalia</a>
+                <a class="logo" title="My site" href="http://localhost/douzo/index.php">Creatalia</a>
                 <nav id="menu">            <ul class="level-0">
                         <li class="current" >
-                            <a href="#" title="Home">Inicio</a>
+                            <a href="http://localhost/douzo/index.php" title="Home">Inicio</a>
                         </li>
                         <li  >
-                            <a href="menu.html" title="Menu">Carta</a>
+                            <a href='http://localhost/douzo/index.php/carta' title="Menu">Carta</a>
                         </li>
                         <li class="has-submenu" >
                             <a class="no-href" title="RECEPIES">Recetas</a>
@@ -50,7 +49,7 @@
                             <a href="equipo.html" title="The staff">Equipo</a>
                         </li>
                         <li  >
-                            <a href="blog.html" title="Blog">Blog</a>
+                            <a href="http://localhost/douzo/index.php/blog" title="Blog">Blog</a>
                         </li>
                         <li  >
                             <a href="contacto.html" title="Contact">Contacto</a>
@@ -60,5 +59,3 @@
                 </nav>
             </div>
         </header>
-
-

@@ -26,10 +26,10 @@
     <body class="page-__front ">
         <header class="header">
             <div class="wrap">
-                <a class="logo" title="My site" href="index.html">Creatalia</a>
+                <a class="logo" title="My site" href="http://localhost/douzo/index.php">Creatalia</a>
                 <nav id="menu">            <ul class="level-0">
                         <li class="current" >
-                            <a href="#" title="Home">Inicio</a>
+                            <a href="http://localhost/douzo/index.php" title="Home">Inicio</a>
                         </li>
                         <li  >
                             <a href='http://localhost/douzo/index.php/carta' title="Menu">Carta</a>
@@ -50,7 +50,7 @@
                             <a href="equipo.html" title="The staff">Equipo</a>
                         </li>
                         <li  >
-                            <a href="blog.html" title="Blog">Blog</a>
+                            <a href="http://localhost/douzo/index.php/blog" title="Blog">Blog</a>
                         </li>
                         <li  >
                             <a href="contacto.html" title="Contact">Contacto</a>

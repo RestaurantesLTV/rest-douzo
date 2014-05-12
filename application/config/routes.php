@@ -50,6 +50,7 @@ $route['back_end/menu'] = 'home_be/menu';
 $route['back_end/web'] = 'home_be/web';
 $route['back_end/salir'] = 'home/salir';
 $route['carta'] = 'carta';
+$route['blog'] = 'blog';
 
 
 

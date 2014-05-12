@@ -16,11 +16,12 @@
  * @todo Falta hacer controlador para el login de usuarios
  */
 $config = array(
+    /* VALIDACION INTRODUCIR ENTRADAS */
     'form/validar' => array(
         array(
-            'field' => 'titulo',
-            'label' => 'Titulo',
-            'rules' => 'trim|required|callback_check_email'
+            'field' => 'titulo', // ---> Campo name del input
+            'label' => 'Titulo', // ---> Nombre identificativo del campo
+            'rules' => 'trim|required|callback_check_email' //--> Normas para validar
         //  'rules' => 'trim|required|max_length[35]|strip_tags|xss_clean' 
         ),
         array(
@@ -44,6 +45,7 @@ $config = array(
             'rules' => 'trim|required|max_length[300]|min_length[150]|strip_tags|xss_clean'
         )
     ),
+    /* VALIDACION PARA EL LOGIN */
     'login' => array(
         array(
             'field' => 'usuario',
@@ -61,4 +63,5 @@ $config = array(
             'rules' => 'trim|required|valid_email|callback_check_email|strip_tags|xss_clean'
         ),
     )
+    
 );
