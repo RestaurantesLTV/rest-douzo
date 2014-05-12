@@ -21,18 +21,18 @@ $config = array(
         array(
             'field' => 'titulo', // ---> Campo name del input
             'label' => 'Titulo', // ---> Nombre identificativo del campo
-            'rules' => 'trim|required|callback_check_email' //--> Normas para validar
-        //  'rules' => 'trim|required|max_length[35]|strip_tags|xss_clean' 
+            //'rules' => 'trim|required|callback_check_email' //--> Normas para validar
+            'rules' => 'trim|required'//|max_length[35]|strip_tags|xss_clean' 
         ),
         array(
             'field' => 'cabecera',
             'label' => 'Cabecera',
-            'rules' => 'trim|required|max_length[40]|min_length[15]|strip_tags|xss_clean'
+            'rules' => 'trim|required'//|max_length[40]|min_length[15]|strip_tags|xss_clean'
         ),
         array(
             'field' => 'autor',
             'label' => 'Autor',
-            'rules' => 'trim|required|max_length[25]|min_length[8]|strip_tags|xss_clean'
+            'rules' => 'trim|required'//|max_length[25]|min_length[8]|strip_tags|xss_clean'
         ),
         array(
             'field' => 'opciones',
@@ -42,7 +42,7 @@ $config = array(
         array(
             'field' => 'contenido',
             'label' => 'Contenido',
-            'rules' => 'trim|required|max_length[300]|min_length[150]|strip_tags|xss_clean'
+            'rules' => 'trim|required'//|max_length[300]|min_length[150]|strip_tags|xss_clean'
         )
     ),
     /* VALIDACION PARA EL LOGIN */

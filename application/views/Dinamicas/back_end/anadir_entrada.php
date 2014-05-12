@@ -1,14 +1,43 @@
 <?php /* EDITOR DE TEXTO */ ?>
 <script type="text/javascript">
-tinymce.init({
-    selector: "textarea",
-    plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "insertdatetime media table contextmenu paste"
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-});
+    tinymce.init({
+        selector: "textarea",
+        plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+    });
+</script>
+<script>
+    $(document).ready(function() {
+
+        $("#publicar").click(function() {
+
+            titulo = $("#titulo").val();
+            cabecera = $("#cabecera").val();
+            autor= $("#autor").val();
+            categoria = $("#categoria").val();
+            contenido = $("#contenido").val();
+            
+
+            if (titulo !== "" && cabecera !== "" && autor !== "" && categoria !== "" && contenido !== "") {
+
+                $.ajax({url: "<?php echo base_url() . 'index.php/back_end/entradas/anadir'; ?>", type: 'POST', data: {titulo: title, texto: txt}, success: function(result) {
+                        $("#rest").html(result);
+
+                    }});
+
+            } else {
+
+                $("#rest").html("No deje campos vacíos");
+
+            }
+
+        });
+
+    });
 </script>
 
 <section>
@@ -17,95 +46,47 @@ tinymce.init({
         <div class="col_form_uno">
 
             <div class="form-group">
-                <label for="ejemplo_email_1">Titulo</label>
-                <input type="text" class="form-control" id="ejemplo_email_1" name="titulo" placeholder="Introduce el titulo">
-                <?php echo form_error('titulo');?>
+                <label for="titulo">Titulo</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Introduce el titulo">
+                <?php echo form_error('titulo'); ?>
             </div>
             <div class="form-group">
                 <label>Cabecera</label>
-                <input type="text" name="cabecera"class="form-control textArea_noResize" rows="2" placeholder="Introduce un resumen de la noticia...">
-                <?php echo form_error('cabecera');?>
+                <input type="text" name="cabecera" id="cabecera" class="form-control textArea_noResize" rows="2" placeholder="Introduce un resumen de la noticia...">
+                <?php echo form_error('cabecera'); ?>
             </div>
         </div>
         <div class="col_form_dos">
 
             <div class="form-group">
-                <label for="ejemplo_email_1">Autor</label>
-                <input name="autor" type="text" class="form-control" id="ejemplo_email_1" placeholder="Introduce el titulo">
-                <?php echo form_error('autor');?>
+                <label for="autor">Autor</label>
+                <input name="autor" type="text" class="form-control" id="autor" placeholder="Introduce el titulo">
+                <?php echo form_error('autor'); ?>
             </div>
             <div class="form-group">
                 <label>Categoria</label>
-                <select name="opciones" class="form-control" >
+                <select name="opciones" id="categoria" class="form-control" >
                     <option value="" selected="selected">Selecciona Categoria</option>
-                    <option value="recetas" <?php echo set_select('opciones','recetas'); ?>>Recetas</option>
-                    <option value="noticias"<?php echo set_select('opciones','noticias'); ?>>Noticias</option>
-                    <option value="reservas"<?php echo set_select('opciones','reservas'); ?>>Reservas</option>
-                    <option value="offtopic"<?php echo set_select('opciones','offtopic'); ?>>Offtopic</option>
+                    <option value="recetas" <?php echo set_select('opciones', 'recetas'); ?>>Recetas</option>
+                    <option value="noticias"<?php echo set_select('opciones', 'noticias'); ?>>Noticias</option>
+                    <option value="reservas"<?php echo set_select('opciones', 'reservas'); ?>>Reservas</option>
+                    <option value="offtopic"<?php echo set_select('opciones', 'offtopic'); ?>>Offtopic</option>
                 </select>
-                <?php echo form_error('opciones');?>
+                <?php echo form_error('opciones'); ?>
             </div> 
         </div>
         <div class="col_form_tres">
             <div class="form-group">
                 <label>Contenido</label>
-                <textarea name="contenido" class="form-control textArea_noResize" rows="5" placeholder="Introduce el contenido..."></textarea>
-            <?php echo form_error('contenido');?>
+                <textarea name="contenido" id="contenido" class="form-control textArea_noResize" rows="5" placeholder="Introduce el contenido..."></textarea>
+                <?php echo form_error('contenido'); ?>
             </div>
         </div>
         <div class="btn_publicar">
-            <button type="submit" class="btn btn-primary" name="enviar">Publicar</button>
-             <button type="button" class="btn btn-info">Limpiar</button>
+            <button type="submit" id="publicar" class="btn btn-primary" name="enviar">Publicar</button>
+            <button type="button" class="btn btn-info">Limpiar</button>
         </div>
-        
-        <!--<div class="form-group">
-            <label for="ejemplo_archivo_1">Adjuntar un archivo</label>
-            <input type="file" id="ejemplo_archivo_1">
-            <p class="help-block">Ejemplo de texto de ayuda.</p>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> Activa esta casilla
-            </label>
-        </div>-->
-
-
+        <div id="rest"></div>
     </form>
-    <!--
-        //<?php // echo validation_errors();          ?>
-        <div class="formulario_entradas">
-            //php echo form_open('form'); ?>
-           
-                <h5>Titulo</h5>
-                <input type="text" name="titulo" value="" size="50" />
-    
-                <h5>Autor</h5>
-                <input type="text" name="autor" value="" size="50" />
-    
-                <h5>Categoria</h5>
-                <select>
-                    <option value="">Selecciona Categoria</option>
-                    <option value="recetas">Recetas</option>
-                    <option value="noticias">Noticias</option>
-                    <option value="recetas">Reservas</option>
-                    <option value="noticias">Offtopic</option>
-                </select>
-                <div id="btn_submit_form"><button type="button" class="btn btn-success">Publicar</button></div>
-            </div>
-            <div class="col_form_dos">
-                <h5>Cabecera</h5>
-                <textarea rows="4" cols="60">
-        Escriba aquí...
-                </textarea>
-    
-                <h5>Contenido</h5>
-                <textarea rows="8" cols="60">
-        Escriba aquí...
-                </textarea>
-    
-                
-            </div>
-            </form>
-        </div>-->
 </section>
 

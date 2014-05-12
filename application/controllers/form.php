@@ -1,15 +1,19 @@
 <?php
+
 class Form extends CI_Controller {
+
     public function __construct() {
         parent::__construct();
         $this->load->library('form_validation');
         //$this->load->model('Articulos_model');
     }
+
     function index() {
         $datos['titulo'] = 'Validacion de formularios';
         $datos['contenido'] = 'anadir_entrada';
         $this->load->view('Plantillas/back_end/anadir_art_be', $datos);
     }
+
     function validar() {
         /*         * ************** CODIGO NO NECESARIO ---> VER config/form_validation.php ***************************** */
         //$this->form_validation->set_rules('titulo','Titulo','required|max_length[15]|alpha|min_length[8]');
@@ -25,12 +29,17 @@ class Form extends CI_Controller {
             $datos['titulo'] = 'Validacion de formularios';
             $datos['contenido'] = 'anadir_entrada';
             $this->load->view('Plantillas/back_end/anadir_art_be', $datos);
+            return false;
         } else {
+            $this->load->model('Articulos_model');
+            $this->Articulos_model->guardar_entradas_bd();
             $datos['titulo'] = 'Validacion OK';
             $datos['contenido'] = 'entrada_ok';
             $this->load->view('Plantillas/back_end/anadir_art_be', $datos);
+            
         }
     }
+
     /**
      * - Metodo que una vez introducido el email dira si es valido o no
      * @param type $email
@@ -47,4 +56,33 @@ class Form extends CI_Controller {
             return true; // Campo validado!
         }
     }
+
+    function anadir_entrada() {
+        $this->load->model('Articulos_model');
+       // if ($this->validar()) {
+            $datos['titulo'] = 'Hola';
+            $datos['contenido'] = $this->Articulos_model->guardar_entradas_bd();
+            $this->load->view('Plantillas/back_end/anadir_art_be', $datos);
+       // }
+    }
+
+    /**
+     * --> print_r ---> imprime un array
+     * server() ---> peticiones al servidor
+     * ip_adress()---> nos devuelve la ip del usuario
+     * user_agent()-----> recibe los datos el usuario(navegador,SO...)
+     * get_request_header('Referer'); para saber desde donde viene (url)
+     */
+    function recibir_datos() {
+        echo $this->input->post('titulo', TRUE);
+        //print_r($this->input->post(null,TRUE)); //@param nombre del campo, @param TRUE APLICA FILTRO XSS 
+        //print_r($this->input->server()); 
+        //echo $this->input->get_request_header('Referer');
+        /* if($this->input->is_ajax_request()){
+          echo 'Es ajax';
+          }else{
+          echo 'No es ajax';
+          } */
+    }
+
 }

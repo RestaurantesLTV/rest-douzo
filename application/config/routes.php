@@ -43,6 +43,7 @@ $route['404_override'] = '';
 $route['back_end'] = 'home_be';
 $route['back_end/entradas'] = 'home_be/entradas';
 $route['back_end/entradas/anadir'] = 'form';
+$route['back_end/entradas/añadir_entrada'] = 'form/añadir_entrada';
 $route['back_end/entradas/modificar'] = 'home_be/modificarEntrada';
 $route['back_end/categorias'] = 'home_be/categorias';
 $route['back_end/reservas'] = 'home_be/reservas';
