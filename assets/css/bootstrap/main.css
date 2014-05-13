@@ -118,7 +118,7 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-color: transparent;
-    
+
 }.btn_borrar_art{
     position: relative;
     margin-left: 75%;
@@ -128,17 +128,17 @@ body{
     background-color: transparent;
 }
 .formulario_entradas{
-    margin-left: 20%;
-     width: 60%;
+    margin-left: 12%;
+    width: 60%;
 }
 .col_form_uno{
-   width: 35%;
+    width: 35%;
     margin-top: 2%;
 }
 .col_form_dos{
     width: 35%;
     margin-left: 45%;
-    margin-top: -20.5%;
+    margin-top: -18%;
 }
 .col_form_tres{
     width: 80%;
@@ -150,7 +150,7 @@ body{
     margin: 2% 0% 0% 35%
 }
 .textArea_noResize{
-   resize: none;
+    resize: none;
 }
 .table{
     border: 0;
@@ -164,4 +164,15 @@ body{
 .mensaje_error_form{
     color: red;
     font-weight: bold;
+}
+.upload_foto{
+    margin-left: 70%;
+    margin-top:  2%;
+}
+.foto_prueba{
+    background-color: black;
+    width: 471px;
+    height:374px;
+    margin-left: 62%;
+    margin-top: -29.25%;
 }

@@ -17,10 +17,10 @@
 
             titulo = $("#titulo").val();
             cabecera = $("#cabecera").val();
-            autor= $("#autor").val();
+            autor = $("#autor").val();
             categoria = $("#categoria").val();
             contenido = $("#contenido").val();
-            
+
 
             if (titulo !== "" && cabecera !== "" && autor !== "" && categoria !== "" && contenido !== "") {
 
@@ -89,4 +89,6 @@
         <div id="rest"></div>
     </form>
 </section>
+
+
 
