@@ -10,36 +10,6 @@
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
     });
 </script>
-<script>
-    $(document).ready(function() {
-
-        $("#publicar").click(function() {
-
-            titulo = $("#titulo").val();
-            cabecera = $("#cabecera").val();
-            autor = $("#autor").val();
-            categoria = $("#categoria").val();
-            contenido = $("#contenido").val();
-
-
-            if (titulo !== "" && cabecera !== "" && autor !== "" && categoria !== "" && contenido !== "") {
-
-                $.ajax({url: "<?php echo base_url() . 'index.php/back_end/entradas/anadir'; ?>", type: 'POST', data: {titulo: title, texto: txt}, success: function(result) {
-                        $("#rest").html(result);
-
-                    }});
-
-            } else {
-
-                $("#rest").html("No deje campos vacíos");
-
-            }
-
-        });
-
-    });
-</script>
-
 <section>
     <?php //echo validation_errors(); // --> Metodo que muestra los errores del formulario ?> 
     <form role="form" class="formulario_entradas" method="post" action="http://localhost/douzo/index.php/form/validar">
