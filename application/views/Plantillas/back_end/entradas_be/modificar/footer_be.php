@@ -1,6 +1,6 @@
-</div>
+
 <footer>
-    <div id="footer_be">
+    <div id="footer_be_1">
         <div class="info">
             <p>Diseñado por Creatalia. 2014 -- Todos los derechos reservados. </p> 
         </div>
@@ -15,3 +15,5 @@
         </div> 
     </div>
 </footer>
+</body>
+<html>

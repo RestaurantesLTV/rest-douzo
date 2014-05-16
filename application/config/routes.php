@@ -37,22 +37,21 @@
 | in the URL cannot be matched to a valid route.
 |
 */
-
-$route['default_controller'] = "home";
 $route['404_override'] = '';
+$route['default_controller'] = "home";
+$route['blog'] = 'home/entradas';
+$route['blog/(:any)'] = 'home/detalle_articulo/$1';
 $route['back_end'] = 'home_be';
 $route['back_end/entradas'] = 'home_be/entradas';
 $route['back_end/entradas/anadir'] = 'form';
-//$route['back_end/entradas/añadir_entrada'] = 'imagenes/procesar_imagen';
-//$route['back_end/entradas/añadir_entrada'] = 'form/añadir_entrada';
-$route['back_end/entradas/modificar'] = 'home_be/modificarEntrada';
+$route['back_end/entradas/(:any)'] = 'home_be/modificarEntrada/$1';
 $route['back_end/categorias'] = 'home_be/categorias';
 $route['back_end/reservas'] = 'home_be/reservas';
 $route['back_end/menu'] = 'home_be/menu';
 $route['back_end/web'] = 'home_be/web';
 $route['back_end/salir'] = 'home/salir';
 $route['carta'] = 'carta';
-$route['blog'] = 'blog';
+
 
 
 

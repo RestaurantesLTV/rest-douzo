@@ -26,8 +26,22 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/anadir_art_be');
     }
 
-    function modificarEntrada() {
-        $this->load->view('Plantillas/back_end/modificar_art_be');
+    function modificarEntrada($url_art) {
+        $url_limpia = $this->security->xss_clean($url_art);
+        $datos['detalle'] = $this->Articulos_model->detalle_articulo($url_limpia);
+        $datos['titulo'] = $datos['detalle']->titulo_art;
+        $datos['contenido'] = "modificar_entrada";
+
+        //echo"hola";
+        //$this->load->view('Plantillas/detalle_art', $datos);
+        $this->load->view('Plantillas/back_end/modificar_art_be', $datos);
+    }
+
+    function entradaModificada() {
+        $this->Articulos_model->actualizar_entrada();
+        $datos['titulo'] = "Douzo|Entradas";
+        $datos['contenido'] = "lista_entradas";
+        $this->load->view('Plantillas/back_end/entradas_be', $datos);
     }
 
     function categorias() {

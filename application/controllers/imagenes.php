@@ -52,7 +52,7 @@ class Imagenes extends CI_Controller {
     function _create_thumbnail($filename) {
         $config['image_library'] = 'gd2';
         //CARPETA EN LA QUE ESTÁ LA IMAGEN A REDIMENSIONAR
-        $config['source_image'] = './assets/images/471x374/' . $filename;
+        $config['source_image'] = 'http://localhost/douzo/assets/images/471x374/' . $filename;
         $config['create_thumb'] = TRUE;
         $config['maintain_ratio'] = TRUE;
         //CARPETA EN LA QUE GUARDAMOS LA MINIATURA

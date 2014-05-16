@@ -36,7 +36,8 @@ foreach ($articulo as $item) {
                 </table>
                 
                 <div class = "cols-xs-12 col-sm-12 col-md-12  col-lg-12">
-                    <a href = "http://localhost/douzo/index.php/back_end/entradas/modificar">
+                   <!-- <a href = "http://localhost/douzo/index.php/back_end/entradas/modificar"> -->
+                   <a href="entradas/<?php echo $item->url_art; ?> ">
                         <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6">
                             <button type = "button" class = "btn btn-info">Modificar articulo</button>
                         </div></a>
@@ -50,8 +51,7 @@ foreach ($articulo as $item) {
        
                  
         </div>
-
-        
-        <?php
+     
+          <?php
     }
     

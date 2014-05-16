@@ -176,3 +176,23 @@ body{
     margin-left: 62%;
     margin-top: -29.25%;
 }
+#footer_be{
+    margin-top: 5%;
+    height: 7%;
+    background-color: grey;
+}
+#footer_be_1{
+    margin-top: 7%;
+    height: 7%;
+    background-color: grey;
+}
+.info{
+    
+}
+.info > p{
+    
+    color: black;
+}
+.social_icons{
+    margin-left: 70%;
+}
