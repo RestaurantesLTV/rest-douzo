@@ -38,12 +38,11 @@
                 <div class="navbar-collapse collapse">
                     <!-- Elementos del menu aquí -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end">INICIO</a></li>
-                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/menu">MENU</a></li>
+                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/">INICIO</a></li>
                         <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/entradas">ENTRADAS</a></li>
                         <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/categorias">CATEGORIAS</a></li>
                         <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/reservas">RESERVAS</a></li>
-                        <li class="menuitem"><a href="http://localhost/douzo/index.php">WEB</a></li>
+                        <li class="menuitem"><a href="http://localhost/douzo/index.php/">WEB</a></li>
                     </ul>
                 </div><!--/.navbar-collapse -->
             </div>

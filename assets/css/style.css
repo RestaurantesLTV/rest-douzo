@@ -221,9 +221,32 @@ object { max-width: 100% }
 #sidebar .menu li a:active { color: #7c7c7c }
 #sidebar .menu li a:hover,
 #sidebar .menu li.current a { background-color: black; color: #fff; border-bottom: 1px solid #252525 }
+.bambuG{
+    //width:;
+    position:absolute;
+    max-height: 485px;
+    z-index: 99;
+    left: 80%;
+    top: 55.75%;
 
+}
+.bambuP{
+    position:absolute;
+    max-height: 485px;
+    z-index: 99;
+    left: -20%;
+    top: 55.75%;
+}
+
+#bambu_pequeño{
+
+}
+#bambu_grande{
+
+}
 /* ===[ Tagline box ]=== */
 .tagline { width: 996px; height: 195px; color: #ffffff; text-align: center; clear: both; font: normal  28px/38px 'bonzai', Arial, sans-serif; background: transparent; }
+.tagline2 { width: 996px; height: 195px; margin-left: 10%; color: #ffffff; text-align: center; clear: both; font: normal  28px/38px 'bonzai', Arial, sans-serif; background: transparent; }
 
 /* ===[ Front page boxes ]=== */
 
@@ -263,14 +286,14 @@ object { max-width: 100% }
 #recipe-block .article h2 .sub { display: block; margin: 0; padding: 2px 0px 20px 155px; color: #9c0203; text-transform: uppercase; font: normal  16px/24px 'UbuntuRegular', Arial, sans-serif }
 
 /* ===[ Contact ]=== */
-#contact-form {  }
+#contact-form {  width: 80%; margin-left: 10%}
 #contact-form .article { height: 377px; margin: 0; padding: 17px 26px 17px 18px; border-bottom: 5px solid #980204; background: url('http://localhost/douzo/assets/images/featured_bck.png') top right no-repeat #fdfef0 }
 #contact-form .article .rest { float: right; width: 462px; height: 376px; overflow: hidden }
 #contact-form .article .rest hgroup { margin: 0 0 0 25px; padding: 0 0 51px 0; background: url('http://localhost/douzo/assets/images/shadow-line.png') bottom center no-repeat transparent }
 #contact-form .article .rest hgroup h2 { margin: 6px 0 0 0; padding: 0 0 0 70px; color: #c20202; font: normal  21px/20px 'UbuntuLight', Arial, sans-serif }
 #contact-form .article .rest hgroup h1 { margin: 26px 0 0 0px; text-transform: uppercase; font: normal  36px/25px 'UbuntuMedium', Arial, sans-serif }
 #contact-form .article .rest .text { margin: 0 0 0 0; padding: 0 0 0 0; clear: both; font: normal  13px/22px 'UbuntuRegular', Arial, sans-serif; }
-#contact-form .article .img { float: left; width: 471px; height: 374px }
+#contact-form .article .img {  float: left; width: 501px; height: 374px; margin-left: 2.8% }
 #contact-form #form1 { margin: 0 0 0 25px }
 #contact-form #form1 fieldset.right { float: right;  width: 200px;}
 #contact-form #form1 p.input-field { margin: 0 0 15px 0; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }

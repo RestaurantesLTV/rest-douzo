@@ -21,6 +21,8 @@
         <script src="http://localhost/douzo/assets/js/jquery.mCustomScrollbar.min.js"></script>
         <script src="http://localhost/douzo/assets/js/jquery.malihu.PageScroll2id.js"></script>
         <script src="http://localhost/douzo/assets/js/jquery.stickyfloat.js"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+        
 <!-- puto mandril -->
         <link href="http://localhost/douzo/assets/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
     <body class="page-__front ">
@@ -53,5 +55,6 @@
                 </nav>
             </div>
         </header>
+
 
 

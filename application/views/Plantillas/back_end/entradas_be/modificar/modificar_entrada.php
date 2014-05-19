@@ -1,7 +1,7 @@
 <?php /* EDITOR DE TEXTO */ ?>
 <script type="text/javascript">
     tinymce.init({
-        selector: "textarea",
+        selector: "#contenido",
         plugins: [
             "advlist autolink lists link image charmap print preview anchor",
             "searchreplace visualblocks code fullscreen",
@@ -13,9 +13,11 @@
 
 <section>
     <?php //echo validation_errors(); // --> Metodo que muestra los errores del formulario ?> 
-    <form role="form" class="formulario_entradas" method="post" action="http://localhost/douzo/index.php/form/validar_update">
+    <form role="form" class="formulario_entradas" method="post" action="http://localhost/douzo/index.php/back_end/update/<?php echo $detalle->url_art; ?>">
+        
+       
         <div class="col_form_uno">
-
+            
             <div class="form-group">
                 <label for="titulo">Titulo</label>
                 <input type="text" class="form-control" value="<?php echo $detalle->titulo_art; ?>" id="titulo" name="titulo" placeholder="Introduce el titulo">
@@ -23,7 +25,8 @@
             </div>
             <div class="form-group">
                 <label>Cabecera</label>
-                <input type="text" name="cabecera" value="<?php echo $detalle->cabecera_art; ?>" id="cabecera" class="form-control textArea_noResize" rows="2" placeholder="Introduce un resumen de la noticia...">
+                <textarea name="cabecera" id="cabecera"  class="form-control textArea_noResize" rows="3" placeholder=""><?php echo $detalle->cabecera_art; ?></textarea>
+                <!--<input type="text" name="cabecera" value="<?php echo $detalle->cabecera_art; ?>" id="cabecera" class="form-control textArea_noResize" rows="2" placeholder="Introduce un resumen de la noticia...">-->
                 <?php echo form_error('cabecera'); ?>
             </div>
         </div>
@@ -54,7 +57,7 @@
             </div>
         </div>
         <div class="btn_publicar">
-            <button type="submit" id="publicar" class="btn btn-primary" name="enviar">Publicar</button>
+            <button type="submit" id="publicar" class="btn btn-primary" name="enviar">Guardar</button>
             <button type="button" class="btn btn-info">Limpiar</button>
         </div>
         <div id="rest"></div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML> 
 <HTML >
     <HEAD>
@@ -20,42 +21,37 @@
         <script src="http://localhost/douzo/assets/js/jquery.mCustomScrollbar.min.js"></script>
         <script src="http://localhost/douzo/assets/js/jquery.malihu.PageScroll2id.js"></script>
         <script src="http://localhost/douzo/assets/js/jquery.stickyfloat.js"></script>
-        <!-- puto mandril -->
+<!-- puto mandril -->
         <link href="http://localhost/douzo/assets/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
-    <body class="page-__front">
+    <body class="page-__front ">
         <header class="header">
             <div class="wrap">
                 <a class="logo" title="My site" href="http://localhost/douzo/index.php">Creatalia</a>
                 <nav id="menu">            <ul class="level-0">
                         <li class="current" >
-                            <a href="http://localhost/douzo/index.php" title="Home">Inicio</a>
+                            <a href="http://localhost/douzo/index.php" title="inicio">Inicio</a>
                         </li>
                         <li  >
-                            <a href='http://localhost/douzo/index.php/carta' title="Menu">Carta</a>
+                            <a href='http://localhost/douzo/index.php/carta' title="carta">Carta</a>
                         </li>
                         <li class="has-submenu" >
-                            <a class="no-href" title="RECEPIES">Recetas</a>
-                            <ul class="level-1">
-                                <li  >
-                                    <a href="#" title="sakamushi">sakamushi</a>
-                                </li>
-                                <li  >
-                                    <a href="#" title="Chicken Teriyaki">Chicken Teriyaki</a>
-                                </li>
-                            </ul>
+                            <a href="http://localhost/douzo/index.php/reservas"title="reservas">Reservas</a>
+                          
 
                         </li>
                         <li  >
-                            <a href="equipo.html" title="The staff">Equipo</a>
+                            <a href="http://localhost/douzo/index.php/equipo" title="equipo">Equipo</a>
                         </li>
                         <li  >
                             <a href="http://localhost/douzo/index.php/blog" title="Blog">Blog</a>
                         </li>
                         <li  >
-                            <a href="contacto.html" title="Contact">Contacto</a>
+                            <a href="http://localhost/douzo/index.php/contacto" title="Contact">Contacto</a>
                         </li>
                     </ul>
 
                 </nav>
             </div>
         </header>
+
+

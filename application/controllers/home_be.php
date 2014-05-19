@@ -30,10 +30,8 @@ class Home_be extends CI_Controller {
         $url_limpia = $this->security->xss_clean($url_art);
         $datos['detalle'] = $this->Articulos_model->detalle_articulo($url_limpia);
         $datos['titulo'] = $datos['detalle']->titulo_art;
+        $datos["id_art"] = $this->input->post('id_art');
         $datos['contenido'] = "modificar_entrada";
-
-        //echo"hola";
-        //$this->load->view('Plantillas/detalle_art', $datos);
         $this->load->view('Plantillas/back_end/modificar_art_be', $datos);
     }
 
@@ -43,7 +41,15 @@ class Home_be extends CI_Controller {
         $datos['contenido'] = "lista_entradas";
         $this->load->view('Plantillas/back_end/entradas_be', $datos);
     }
-
+    
+    function borrar_entrada($url_art) {
+        $this->Articulos_model->borrar_entrada($url_art);
+        $datos['titulo'] = "Douzo|Entradas";
+        $datos['contenido'] = "lista_entradas";
+        //$this->load->view('Plantillas/back_end/entradas_be', $datos);
+        redirect('back_end/entradas','refresh');
+    }
+    
     function categorias() {
         $this->load->view('Plantillas/back_end/categorias_be');
     }
@@ -52,9 +58,6 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/reservas_be');
     }
 
-    function menu() {
-        $this->load->view('Plantillas/back_end/menu_be');
-    }
 
     function web() {
         $this->load->view('Plantillas/back_end/web_be');

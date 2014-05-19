@@ -1,3 +1,10 @@
+<div id="bambu_grande">
+    <img class="bambuG" src="http://localhost/douzo/assets/images/bambu.jpg" alt="Moonlight cooking" />
+</div>
+<div id="bambu_pequeño">
+    <img class="bambuP"src="http://localhost/douzo/assets/images/bambu1.jpg" alt="Moonlight cooking" />
+
+</div>
 <?php
 foreach ($articulo as $item) {
     ?>

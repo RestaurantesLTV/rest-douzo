@@ -147,7 +147,7 @@ body{
 }
 .btn_publicar{
     position: absolute;
-    margin: 2% 0% 0% 35%
+    margin: 0% 0% 0% 35%
 }
 .textArea_noResize{
     resize: none;
@@ -195,4 +195,11 @@ body{
 }
 .social_icons{
     margin-left: 70%;
+}
+
+.centrado{
+    margin-left: 17%;
+}
+.centrado2{
+    margin-left: 55%;
 }

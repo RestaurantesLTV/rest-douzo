@@ -1,0 +1,9 @@
+<?php
+$this->load->view('Plantillas/front_end/equipo/header');
+$this->load->view('Plantillas/front_end/equipo/top');
+$this->load->view('Plantillas/front_end/equipo/topCocina');
+//$this->load->view('Plantillas/front_end/index/'.$contenido);
+$this->load->view('Plantillas/front_end/equipo/lema');
+$this->load->view('Plantillas/front_end/equipo/content');
+//$this->load->view('Dinamicas/'.$contenido);
+$this->load->view('Plantillas/front_end/equipo/footer');
