@@ -203,3 +203,14 @@ body{
 .centrado2{
     margin-left: 55%;
 }
+.fila1{
+    margin-top: 10%;
+    display: inline;
+    margin-left: 0%;
+    margin-bottom: 1%;
+    max-height: 100%;
+    
+}
+.fila2{
+    
+}

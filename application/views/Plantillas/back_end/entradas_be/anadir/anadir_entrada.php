@@ -34,19 +34,22 @@
                 <?php echo form_error('autor'); ?>
             </div>
             <div class="form-group">
-                <?php
-              
+                Categoria: <select name="opciones"> 
+                    <?php
+                    foreach ($arrCategorias as $i => $categoria)
+                        echo '<option values="', $i, '">', $categoria, '</option>';
+                    ?>
+                </select>
 
-                echo form_label('Categoria'),form_dropdown('opciones', $opciones, 'large'); ?>
                 <!-- <label>Categoria</label>
                  <select name="opciones" id="categoria" class="form-control" >
                      <option value="" selected="selected">Selecciona Categoria</option>
-                     <option value="recetas" <?php echo set_select('opciones', 'recetas'); ?>>Recetas</option>
-                     <option value="noticias"<?php echo set_select('opciones', 'noticias'); ?>>Noticias</option>
-                     <option value="reservas"<?php echo set_select('opciones', 'reservas'); ?>>Reservas</option>
-                     <option value="offtopic"<?php echo set_select('opciones', 'offtopic'); ?>>Offtopic</option>
+                     <option value="recetas" <?php //echo set_select('opciones', 'recetas');  ?>>Recetas</option>
+                     <option value="noticias"<?php // echo set_select('opciones', 'noticias');  ?>>Noticias</option>
+                     <option value="reservas"<?php //echo set_select('opciones', 'reservas');  ?>>Reservas</option>
+                     <option value="offtopic"<?php //echo set_select('opciones', 'offtopic');  ?>>Offtopic</option>
                  </select>
-                <?php echo form_error('opciones'); ?>-->
+                <?php //echo form_error('opciones'); ?>-->
             </div> 
         </div>
         <div class="col_form_tres">
