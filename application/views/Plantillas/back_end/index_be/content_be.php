@@ -7,7 +7,6 @@
                 </div>
             </div>
             <h2>ENTRADAS</h2>
-
         </div>
     </a>
     <a href="http://localhost/douzo/index.php/back_end/categorias">

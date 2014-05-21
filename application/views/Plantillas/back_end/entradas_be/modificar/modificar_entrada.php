@@ -41,10 +41,10 @@
                 <label>Categoria</label>
                 <select name="opciones" id="categoria" class="form-control" >
                     <option value="" selected="selected">Selecciona Categoria</option>
-                    <option value="recetas" <?php echo set_select('opciones', 'recetas'); ?>>Recetas</option>
-                    <option value="noticias"<?php echo set_select('opciones', 'noticias'); ?>>Noticias</option>
-                    <option value="reservas"<?php echo set_select('opciones', 'reservas'); ?>>Reservas</option>
-                    <option value="offtopic"<?php echo set_select('opciones', 'offtopic'); ?>>Offtopic</option>
+                    <option value="1" <?php echo set_select('opciones', '1'); ?>>Recetas</option>
+                    <option value="3"<?php echo set_select('opciones', '3'); ?>>Noticias</option>
+                    <option value="2"<?php echo set_select('opciones', '2'); ?>>Reservas</option>
+                    <option value="4"<?php echo set_select('opciones', '4'); ?>>Offtopic</option>
                 </select>
                 <?php echo form_error('opciones'); ?>
             </div> 

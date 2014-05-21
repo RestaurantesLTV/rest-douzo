@@ -38,7 +38,7 @@ class Articulos_model extends CI_Model {
             'contenido_art' => $this->input->post('contenido'),
             'url_art' => $url, //capturo los datos que me envian desde la vista
             'autor_art' => $this->input->post('autor'),
-            'categoria_art' => $this->input->post('categoria'));
+            'id_cat' => $this->input->post('opciones'));
 
         return $this->db->insert('articulo', $data);
     }
@@ -54,7 +54,7 @@ class Articulos_model extends CI_Model {
             'contenido_art' => $this->input->post('contenido'),
             'url_art' => $url, //capturo los datos que me envian desde la vista
             'autor_art' => $this->input->post('autor'),
-            'categoria_art' => $this->input->post('categoria'));
+            'id_cat' => $this->input->post('opciones'));
 
         $this->db->where('url_art', $url_art);
         return $this->db->update('articulo', $data);

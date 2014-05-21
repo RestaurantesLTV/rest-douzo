@@ -223,7 +223,7 @@ object { max-width: 100% }
 #sidebar .menu li.current a { background-color: black; color: #fff; border-bottom: 1px solid #252525 }
 .bambuG{
     //width:;
-    position:absolute;
+    position: absolute ;
     max-height: 485px;
     z-index: 99;
     left: 80%;
@@ -238,12 +238,6 @@ object { max-width: 100% }
     top: 55.75%;
 }
 
-#bambu_pequeño{
-
-}
-#bambu_grande{
-
-}
 /* ===[ Tagline box ]=== */
 .tagline { width: 996px; height: 195px; color: #ffffff; text-align: center; clear: both; font: normal  28px/38px 'bonzai', Arial, sans-serif; background: transparent; }
 .tagline2 { width: 996px; height: 195px; margin-left: 10%; color: #ffffff; text-align: center; clear: both; font: normal  28px/38px 'bonzai', Arial, sans-serif; background: transparent; }
