@@ -1,11 +1,13 @@
 <div id="bambu_grande">
-    <img class="bambuG" src="http://localhost/douzo/assets/images/bambu.png" alt="Moonlight cooking" />
+    <img class="bambuG" src="<?php echo base_url(); ?>/assets/images/bambu.png" alt="Moonlight cooking" />
 </div>
 <div id="bambu_pequeño">
-    <img class="bambuP"src="http://localhost/douzo/assets/images/bambu1.png" alt="Moonlight cooking" />
+    <img class="bambuP"src="<?php echo base_url(); ?>/assets/images/bambu1.png" alt="Moonlight cooking" />
 
 </div>
-<?php
+
+<div id="post">
+     <?php
 foreach ($articulo as $item) {
     ?>
     <div style="position: relative;">
@@ -25,14 +27,16 @@ foreach ($articulo as $item) {
                     </div>
                     <div class="date"><?php echo $item->fecha_art; ?> <a class="read-more" href="#" title="<?php echo $item->titulo_art ?>"> <a href=" blog/<?php echo $item->url_art; ?>" class="light">Leer mas</a><br><br><br /></a>
                     </div>
-
+                    
                 </div>
             </article>
+            
         </section>
     </div>
     <?php
-}
+}  echo $this->pagination->create_links(); 
 ?>
+    </div>
 
 <!--  ENTRADAS ESTATICAS -------
 <article class="article" id="news-31">

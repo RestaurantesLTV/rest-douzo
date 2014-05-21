@@ -40,6 +40,7 @@
 $route['404_override'] = '';
 $route['default_controller'] = "home";
 $route['blog'] = 'home/entradas';
+$route['blog/pagina/(:num)'] = 'home/entradas/$1';
 $route['blog/(:any)'] = 'home/detalle_articulo/$1';
 $route['back_end'] = 'home_be';
 $route['back_end/entradas'] = 'home_be/entradas';

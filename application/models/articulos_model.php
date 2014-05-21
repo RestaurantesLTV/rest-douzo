@@ -10,8 +10,11 @@ class Articulos_model extends CI_Model {
      * Devuelve la lista de articulos
      * @return array
      */
-    function lista_articulos() {
+    function lista_articulos($inicio = FALSE, $limite = FALSE) {
         $this->db->order_by('id_art', 'desc');
+        if($inicio !== FALSE && $limite !== FALSE){
+            $this->db->limit($limite,$inicio);
+        }
         $consulta = $this->db->get('articulo');
         return $consulta->result();
     }
