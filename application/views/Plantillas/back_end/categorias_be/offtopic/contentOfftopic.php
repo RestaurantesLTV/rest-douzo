@@ -40,7 +40,7 @@ foreach ($categoria as $item) {
 
 
                     <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <form action="http://http://localhost/douzo/index.php/back_end/entradas/delete/<?php echo $item->url_art; ?> ">
+                        <form action="<?php echo base_url(); ?>/index.php/back_end/entradas/delete/<?php echo $item->url_art; ?> ">
                             <input value="Borrar articulo" type = "submit" class = "btn btn-danger "/>
                         </form>
                     </div>

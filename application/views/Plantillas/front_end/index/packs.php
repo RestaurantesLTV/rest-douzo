@@ -3,7 +3,7 @@
     <article class="article">
         <h2>Comida & Menú</h2>
         <div class="img-container">
-            <img src="http://localhost/douzo/assets/images/01-japan-home.jpg"/>
+            <img src="<?php echo base_url(); ?>/assets/images/01-japan-home.jpg"/>
         </div>
         <div class="text">
             <p>
@@ -18,7 +18,7 @@
     <article class="article">
         <h2>Llevatelo a casa!</h2>
         <div class="img-container">
-            <img src="http://localhost/douzo/assets/images/03-japan-home.jpg"/>
+            <img src="<?php echo base_url(); ?>/assets/images/03-japan-home.jpg"/>
         </div>
         <div class="text">
 
@@ -38,7 +38,7 @@
     <article class="article featured">
         <h2>Reserva tu mesa</h2>
         <div class="img-container">
-            <img src="http://localhost/douzo/assets/images/04-japan-home-1342427423.jpg"/>
+            <img src="<?php echo base_url(); ?>/assets/images/04-japan-home-1342427423.jpg"/>
         </div>
         <div class="text">
             <p>

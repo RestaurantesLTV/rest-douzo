@@ -3,7 +3,7 @@
 
       <article class="article" >
               <div class="img" >
-          <img src="http://localhost/douzo/assets/images/299x374/chef_gary_chu.jpg" alt="Award" />
+          <img src="<?php echo base_url(); ?>/assets/images/299x374/chef_gary_chu.jpg" alt="Award" />
         </div>
             <hgroup class="hgroup">
       <h1 >Jiro</h1>

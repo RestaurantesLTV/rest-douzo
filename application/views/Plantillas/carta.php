@@ -3,22 +3,22 @@
     <head>
         <title>Carta | Douzo</title>
         <meta charset=utf-8>
-        <link rel="shortcut icon" href="http://localhost/douzo/assets/carta/favicon.ico" type="image/x-icon"/>
-        <link rel="stylesheet" type="text/css" href="http://localhost/douzo/assets/carta/css/style.css" />
+        <link rel="shortcut icon" href="<?php echo base_url(); ?>/assets/carta/favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>/assets/carta/css/style.css" />
         <link  href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css" />
     </head>
     <body>
         <div id="ac_background" class="ac_background">
-            <img class="ac_bgimage" src="http://localhost/douzo/assets/carta/images/Default2.jpg" alt="Background"/>
+            <img class="ac_bgimage" src="<?php echo base_url(); ?>/assets/carta/images/Default2.jpg" alt="Background"/>
             <div class="ac_overlay"></div>
             <div class="ac_loading"></div>
         </div>
         <div id="ac_content" class="ac_content">
-            <a href="http://localhost/douzo"><h1 class="logo"><span>Douzo</span>Japón</h1></a>
+            <a href="<?php echo base_url(); ?>"><h1 class="logo"><span>Douzo</span>Japón</h1></a>
             <div class="ac_menu">
                 <ul>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/aperitivos.jpg">Aperitivos</a>
+                        <a href="<?php echo base_url(); ?>/assets/carta/images/aperitivos.jpg">Aperitivos</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Aperitivos</h2>
@@ -35,7 +35,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/temaki.jpg">Temaki</a>
+                        <a href="<?php echo base_url(); ?>/assets/carta/images/temaki.jpg">Temaki</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Temaki</h2>
@@ -53,7 +53,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/hosomaki.jpg">Hosomaki</a>
+                        <a href="<?php echo base_url(); ?>/assets/carta/images/hosomaki.jpg">Hosomaki</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Hosomaki</h2>
@@ -71,7 +71,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/futomaki.jpg">Futomaki</a>
+                        <a href="<?php echo base_url(); ?>/assets/carta/images/futomaki.jpg">Futomaki</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Futomaki</h2>
@@ -88,7 +88,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/nigiri.jpg">Nigiri</a>
+                        <a href="<?php echo base_url(); ?>/assets/carta/images/nigiri.jpg">Nigiri</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Nigiri</h2>
@@ -105,7 +105,7 @@
                         </div>
                     </li>
                     <li>
-                        <a href="http://localhost/douzo/assets/carta/images/gunkan.jpg">Gunkan</a>
+                        <a href="<?php echo base_url(); ?>/assets/carta/images/gunkan.jpg">Gunkan</a>
                         <div class="ac_subitem">
                             <span class="ac_close"></span>
                             <h2>Gunkan</h2>
@@ -125,11 +125,11 @@
             </div>
         </div>
         <div class="ac_footer">
-            <a href="http://localhost/douzo"> Volver </a>
+            <a href="<?php echo base_url(); ?>"> Volver </a>
         </div>
         <!-- The JavaScript -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-        <script type="text/javascript" src="http://localhost/douzo/assets/carta/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>/assets/carta/js/jquery.easing.1.3.js"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 //var logo = $('.logo');     

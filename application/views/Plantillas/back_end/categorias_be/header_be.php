@@ -9,8 +9,8 @@
 
         <!-- ************ Estilos CSS ****************** -->
 
-        <link rel="stylesheet" href="http://localhost/douzo/assets/css/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="http://localhost/douzo/assets/css/bootstrap/main.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/bootstrap/main.css">
 
         <!-- ************ /Estilos CSS ***************** -->
     </head>
@@ -18,9 +18,9 @@
 
         <!-- **************** Scripts ********************** -->
 
-        <script src="http://localhost/douzo/assets/js/bootstrap/jquery.js"></script>
-        <script src="http://localhost/douzo/assets/js/bootstrap/bootstrap.min.js"></script>
-        <script src="http://localhost/douzo/assets/js/bootstrap/main.js"></script>
+        <script src="<?php echo base_url(); ?>/assets/js/bootstrap/jquery.js"></script>
+        <script src="<?php echo base_url(); ?>/assets/js/bootstrap/bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>/assets/js/bootstrap/main.js"></script>
 
         <!-- **************** /Scripts ********************* -->
 
@@ -38,11 +38,11 @@
                 <div class="navbar-collapse collapse">
                     <!-- Elementos del menu aquí -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/">INICIO</a></li>
-                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/entradas">ENTRADAS</a></li>
-                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/categorias">CATEGORIAS</a></li>
-                        <li class="menuitem"><a href="http://localhost/douzo/index.php/back_end/reservas">RESERVAS</a></li>
-                        <li class="menuitem"><a href="http://localhost/douzo/index.php/">WEB</a></li>
+                        <li class="menuitem"><a href="<?php echo base_url(); ?>/index.php/back_end/">INICIO</a></li>
+                        <li class="menuitem"><a href="<?php echo base_url(); ?>/index.php/back_end/entradas">ENTRADAS</a></li>
+                        <li class="menuitem"><a href="<?php echo base_url(); ?>/index.php/back_end/categorias">CATEGORIAS</a></li>
+                        <li class="menuitem"><a href="<?php echo base_url(); ?>/index.php/back_end/reservas">RESERVAS</a></li>
+                        <li class="menuitem"><a href="<?php echo base_url(); ?>">WEB</a></li>
                     </ul>
                 </div><!--/.navbar-collapse -->
             </div>

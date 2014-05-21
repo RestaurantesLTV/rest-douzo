@@ -4,7 +4,7 @@
             <h1>Modificar articulo</h1>
         </div>
         <div class="botones_noticas">
-            <a href="http://localhost/douzo/index.php/back_end/entradas">
+            <a href="<?php echo base_url(); ?>/index.php/back_end/entradas">
                 <div class="btn_borrar_art">
                     <button type="button" class="btn btn-warning">Volver</button>
                 </div></a>

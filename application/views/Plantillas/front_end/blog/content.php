@@ -13,7 +13,7 @@ foreach ($articulo as $item) {
             <article class="article" id="news-32">
                 <div class="rope"></div>
                 <div class="img">
-                    <img src="http://localhost/douzo/assets/images/231x313/blog.jpg" alt="Moonlight cooking" />
+                    <img src ="<?php echo base_url(); ?>/assets/images/231x313/blog.jpg" alt="Moonlight cooking" />
                 </div>
                 <div class="rest">
                     <h2>

@@ -12,7 +12,7 @@
 </script>
 <section>
     <?php //echo validation_errors(); // --> Metodo que muestra los errores del formulario ?> 
-    <form role="form" class="formulario_entradas" method="post" action="http://localhost/douzo/index.php/form/validar">
+    <form role="form" class="formulario_entradas" method="post" action="<?php echo base_url(); ?>/index.php/form/validar">
         <div class="col_form_uno">
 
             <div class="form-group">

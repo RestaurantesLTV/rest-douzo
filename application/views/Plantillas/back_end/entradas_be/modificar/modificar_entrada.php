@@ -13,7 +13,7 @@
 
 <section>
     <?php //echo validation_errors(); // --> Metodo que muestra los errores del formulario ?> 
-    <form role="form" class="formulario_entradas" method="post" action="http://localhost/douzo/index.php/back_end/update/<?php echo $detalle->url_art; ?>">
+    <form role="form" class="formulario_entradas" method="post" action="<?php echo base_url(); ?>/index.php/back_end/update/<?php echo $detalle->url_art; ?>">
         
        
         <div class="col_form_uno">

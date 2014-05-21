@@ -38,7 +38,7 @@ foreach ($articulo as $item) {
                 </table>
 
                 <div class = "cols-xs-12 col-sm-12 col-md-12  col-lg-12">
-                    <!-- <a href = "http://localhost/douzo/index.php/back_end/entradas/modificar"> -->
+                    <!-- <a href = "<?php //echo base_url(); ?>/index.php/back_end/entradas/modificar"> -->
 
                     <div class = "col-xs-6 col-sm-6 col-md-6 col-lg-6">
                         <form action="entradas/<?php echo $item->url_art; ?> ">
