@@ -21,13 +21,15 @@
         <script src="<?php echo base_url(); ?>/assets/js/jquery.mCustomScrollbar.min.js"></script>
         <script src="<?php echo base_url(); ?>/assets/js/jquery.malihu.PageScroll2id.js"></script>
         <script src="<?php echo base_url(); ?>/assets/js/jquery.stickyfloat.js"></script>
-<!-- puto mandril -->
+        <script src="<?php echo base_url(); ?>/assets/js/jquery-ias.min.js"></script>
+ 
         <link href="<?php echo base_url(); ?>/assets/js/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" />
     <body class="page-__front ">
         <header class="header">
             <div class="wrap">
                 <a class="logo" title="My site" href="<?php echo base_url(); ?>">Creatalia</a>
-                <nav id="menu">            <ul class="level-0">
+                <nav id="menu">  
+                    <ul class="level-0">
                         <li class="current" >
                             <a href="<?php echo base_url(); ?>" title="inicio">Inicio</a>
                         </li>
@@ -36,7 +38,7 @@
                         </li>
                         <li class="has-submenu" >
                             <a href="<?php echo base_url(); ?>/index.php/reservas"title="reservas">Reservas</a>
-                          
+
 
                         </li>
                         <li  >

@@ -6,37 +6,57 @@
 
 </div>
 
-<div id="post">
-     <?php
-foreach ($articulo as $item) {
-    ?>
-    <div style="position: relative;">
-        <section class="section" id="post-list" >
-            <article class="article" id="news-32">
-                <div class="rope"></div>
-                <div class="img">
-                    <img src ="<?php echo base_url(); ?>/assets/images/231x313/blog.jpg" alt="Moonlight cooking" />
-                </div>
-                <div class="rest">
-                    <h2>
-                        <a href="#" title="<?php echo $item->titulo_art ?>"><?php echo $item->titulo_art ?></a>
-
-                    </h2>
-                    <div class="text">
-                        <?php echo $item->contenido_art; ?>
-                    </div>
-                    <div class="date"><?php echo $item->fecha_art; ?> <a class="read-more" href="#" title="<?php echo $item->titulo_art ?>"> <a href=" blog/<?php echo $item->url_art; ?>" class="light">Leer mas</a><br><br><br /></a>
-                    </div>
-                    
-                </div>
-            </article>
-            
-        </section>
-    </div>
+<div id="posts">
     <?php
-}  echo $this->pagination->create_links(); 
-?>
-    </div>
+    foreach ($articulo as $item) {
+        ?>
+        <div style="position: relative;" class="post">
+            <section class="section" id="post-list" >
+                <article class="article" id="news-32">
+                    <div class="rope"></div>
+                    <div class="img">
+                        <img src ="<?php echo base_url(); ?>/assets/images/231x313/blog.jpg" alt="Moonlight cooking" />
+                    </div>
+                    <div class="rest">
+                        <h2>
+                            <a href="#" title="<?php echo $item->titulo_art ?>"><?php echo $item->titulo_art ?></a>
+
+                        </h2>
+                        <div class="text">
+                            <?php echo $item->contenido_art; ?>
+                        </div>
+                        <div class="date"><?php echo $item->fecha_art; ?> <a class="read-more" href="#" title="<?php echo $item->titulo_art ?>"> <a href=" blog/<?php echo $item->url_art; ?>" class="light">Leer mas</a><br><br><br /></a>
+                        </div>
+
+                    </div>
+                </article>
+
+            </section>
+        </div>
+        <?php
+    }  echo $this->pagination->create_links(); 
+    ?>
+</div>
+<!--<div id="pagination">
+    <a href="blog/pagina/2" class="next">next</a>
+</div>-->
+<script>
+    var ias = jQuery.ias({
+        container: '#posts',
+        item: '.post',
+        pagination: '#pagination',
+        next: '.next'
+    });
+
+    // Adds a link which has to be clicked to load the next page
+    ias.extension(new IASTriggerExtension());
+
+// Adds a loader image which is displayed during loading
+    ias.extension(new IASSpinnerExtension());
+
+// Adds a text when there are no more pages left to load
+    ias.extension(new IASNoneLeftExtension());
+</script>
 
 <!--  ENTRADAS ESTATICAS -------
 <article class="article" id="news-31">
