@@ -4,14 +4,34 @@ var gTurno = "";
 var gDatos = new Array();
 var gTurnos = undefined;
 
+var gMenuCoords = {
+    x : 0,
+    y : 0
+};
+
+var gSeccionActual = "";
+/*Leyenda 'gSeccionActual':
+ * #reserva-tabla
+ */
+
 // Variables de filtracion
-var gFiltrarPorNombreAsc = true;
+var gToggle = {
+    'nombre': true,
+    'id': true,
+    'menu' : true
+}
 
 
 $(document).ready(function() {
     CargarTurnosFromDB(); // Carga los Strings correspondientes a los numeros de los turnos en el restaurante.
     SetInitialBindings();
     SetPageLoading(false);
+    //ShowMenu(false);
+    
+    $("#reserva-tabla").hide();
+    
+    /* ocultamos el menu*/
+    
 
     /*$.get(  "proximasreservas",
      function(data){
@@ -20,11 +40,44 @@ $(document).ready(function() {
      },"json");*/
 });
 
+/*
+ * Desplaza el menu (Oculta o lo hace visible).
+ * Para ello, el objeto a ser movido debe tener la siguiente propieda CSS:
+ * 'Position: relative', ya que se mueve relativamente desde su posicion 'x' pixeles.
+ * @param boolean b
+ * @returns {undefined}
+ */
+function ShowMenu(b){
+    var desplazamiento; 
+    if(b){
+        desplazamiento = "+=200px";
+        if(gToggle['menu']) return; // Evitamos el desplazamiento si ya esta visible
+        gToggle['menu'] = true;
+    }else{
+        desplazamiento = "-=200px";
+        if(!gToggle['menu']) return; // Evitamos el desplazamiento si ya esta oculto
+        gToggle['menu'] = false;
+    }
+    $("#cssmenu").clearQueue().stop();
+    
+    $("#cssmenu").animate({ 
+        left: desplazamiento,
+    },  1000);
+}
+
 function SetInitialBindings() {
     var pProximas_reservas = $("#proximas_reservas");
     var pReservas_completadas = $("#reservas_completadas");
     var pTodas_las_reservas = $("#todas_las_reservas");
     var pUtimos7dias = $("#ultimos7dias");
+    
+    /*$("#cssmenu").mouseenter(function(){
+       ShowMenu(true);
+    });
+    
+    $("#cssmenu").mouseleave(function(){
+       ShowMenu(false);
+    });*/
 
     $(pTodas_las_reservas).click(function() {
         $.get("todaslasreservas",
@@ -59,20 +112,24 @@ function SetInitialBindings() {
     });
     /*************************************************/
     // Filtrar por columna
+    $(".reserva-backend table td").eq(0).click(function() { // Columna "Seleccionar"
+        gDatos.reverse();
+        PrintReservasTable(gDatos);
+    });
 
-    $(".reserva-backend table td").eq(1).click(function() {
+    $(".reserva-backend table td").eq(1).click(function() { // Columna "ID Reserva"
         FiltrarPorIDReserva();
     });
 
-    $(".reserva-backend table td").eq(2).click(function() {
+    $(".reserva-backend table td").eq(2).click(function() { // Columna "Nombre"
         FiltrarPorNombre();
     });
 
-    $(".reserva-backend table td").eq(3).click(function() {
+    $(".reserva-backend table td").eq(3).click(function() { // Columna "Hora"
         FiltrarPorFecha();
     });
 
-    $(".reserva-backend table td").eq(4).click(function() {
+    $(".reserva-backend table td").eq(4).click(function() { // Columna "Turno"
         FiltrarPorHora();
     });
 
@@ -85,13 +142,13 @@ function FiltrarPorNombre() {
         var nameA = a['nombre'].toLowerCase();
         var nameB = b['nombre'].toLowerCase();
         console.log(nameA + " VS " + nameB);
-        if (gFiltrarPorNombreAsc) {
+        if (gToggle['nombre']) {
             if (nameA > nameB) //sort string ascending
                 return -1
             if (nameA < nameB)
                 return 1
         } else {
-            
+
             if (nameA < nameB) //sort string ascending
                 return -1
             if (nameA > nameB)
@@ -99,19 +156,27 @@ function FiltrarPorNombre() {
         }
         return 0 //default return value (no sorting)
     });
-    
-    gFiltrarPorNombreAsc = !gFiltrarPorNombreAsc;
-    PrintReservasTable(gDatos, false);
+
+    gToggle['nombre'] = !gToggle['nombre'];
+    PrintReservasTable(gDatos);
 }
 
 /**
  * Agrega nuevas filas a la tabla de reservas.
+ * Antes de hacerlo limpia todas las filas que hay.
  * @param Object[] data
  * @param boolean debug
  */
 function PrintReservasTable(data, debug) {
+    if(gSeccionActual != "#reserva-tabla"){
+        gSeccionActual = "#reserva-tabla";
+        $("#reserva-tabla").show();
+    }
     CleanTable();
-    //SetPageLoading(true);
+    SetPageLoading(true);
+    setTimeout(function() {
+        SetPageLoading(false)
+    }, 500);
 
     if (!debug) {
         debug = false;
@@ -137,7 +202,7 @@ function PrintReservasTable(data, debug) {
     //console.log(html);
     var pTabla = $(".reserva-backend table").append(html);
 
-    //SetPageLoading(false);
+    SetPageLoading(false);
 
 }
 
@@ -201,11 +266,35 @@ function SetPageLoading(loading) {
 
 // Funciones de filtracion
 
+
 function FiltrarPorIDReserva() {
-    gDatos.reverse();
-    PrintReservasTable(gDatos, false);
+    gDatos.sort(function(a, b) {
+        if (gToggle['id']) {
+            if (a['id'] > b['id']) {
+                return 1;
+            }
+            if (a['id'] < b['id']) {
+                return -1;
+            }
+        } else {
+            if (a['id'] < b['id']) {
+                return 1;
+            }
+            if (a['id'] > b['id']) {
+                return -1;
+            }
+        }
+        return 0;
+    });
+    gToggle['id'] = !gToggle['id'];
+    PrintReservasTable(gDatos);
 }
 
+/**
+ * Funcion auxiliar. Permite una Deep Copy (Diferente de Shallow Copy) de un objeto.
+ * @param Object obj
+ * @returns {Array|DeepCopy.copy}
+ */
 function DeepCopy(obj) {
     // Handle the 3 simple types, and null or undefined
     if (null == obj || "object" != typeof obj)
