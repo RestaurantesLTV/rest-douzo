@@ -32,21 +32,21 @@
                             <a href="<?php echo base_url(); ?>" title="inicio">Inicio</a>
                         </li>
                         <li  >
-                            <a href='<?php echo base_url(); ?>/index.php/carta' title="carta">Carta</a>
+                            <a href='<?php echo base_url(); ?>carta' title="carta">Carta</a>
                         </li>
                         <li class="has-submenu" >
-                            <a href="<?php echo base_url(); ?>/index.php/reservas"title="reservas">Reservas</a>
+                            <a href="<?php echo base_url(); ?>index.php/reservas"title="reservas">Reservas</a>
                           
 
                         </li>
                         <li  >
-                            <a href="<?php echo base_url(); ?>/index.php/equipo" title="equipo">Equipo</a>
+                            <a href="<?php echo base_url(); ?>index.php/equipo" title="equipo">Equipo</a>
                         </li>
                         <li  >
-                            <a href="<?php echo base_url(); ?>/index.php/blog" title="Blog">Blog</a>
+                            <a href="<?php echo base_url(); ?>index.php/blog" title="Blog">Blog</a>
                         </li>
                         <li  >
-                            <a href="<?php echo base_url(); ?>/index.php/contacto" title="Contact">Contacto</a>
+                            <a href="<?php echo base_url(); ?>index.php/contacto" title="Contact">Contacto</a>
                         </li>
                     </ul>
 

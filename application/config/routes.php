@@ -39,6 +39,7 @@
 */
 $route['404_override'] = '';
 $route['default_controller'] = "home";
+$route['chongwen'] = "chongwen";
 $route['blog'] = 'home/entradas';
 $route['blog/pagina/(:num)'] = 'home/entradas/$1';
 $route['blog/(:any)'] = 'home/detalle_articulo/$1';
@@ -53,16 +54,29 @@ $route['back_end/categorias/recetas'] = 'categorias/listar_recetas';
 $route['back_end/categorias/reservas'] = 'categorias/listar_reservas';
 $route['back_end/categorias/noticias'] = 'categorias/listar_noticias';
 $route['back_end/categorias/offtopic'] = 'categorias/listar_offtopic';
-$route['back_end/reservas'] = 'home_be/reservas';
+
 $route['back_end/web'] = 'home_be/web';
 $route['back_end/salir'] = 'home/salir';
 $route['equipo'] = 'equipo';
 $route['carta'] = 'carta';
 $route['contacto'] = 'contacto';
 
+// Reservas
+/************************************************************************/
 
+// Reserva FRONT END
+$route['reservas'] = "reserva_controller";
+$route['reserva/validar'] = "reserva_controller/validar";
+$route['testing_reservas'] = 'TestingReservasManager';
+$route['verificar'] = 'reserva_controller/verificarReserva';
 
+// Reserva BACK END
+$route['back_end/reservas'] = 'home_be/reserva'; /* Modificado por Leo */
 
+// Backend AJAX routes
+$route['back_end/proximasreservas'] = 'ajax_reserva/ajaxProximasReservas';
+$route['back_end/turnosdisponibles'] = 'ajax_reserva/getTurnos';
+$route['back_end/todaslasreservas'] = 'ajax_reserva/ajaxTodasLasReservas';
 
 
 

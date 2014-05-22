@@ -5,6 +5,12 @@ class Home_be extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Articulos_model');
+        /*$this->load->library(array('user', 'user_manager'));
+        
+        $this->user->onvalid_session('Plantillas/back_end/index_be');
+        $this->user->on_invalid_session('login');*/
+
+        
     }
 
     function index() {
@@ -41,23 +47,28 @@ class Home_be extends CI_Controller {
         $datos['contenido'] = "lista_entradas";
         $this->load->view('Plantillas/back_end/entradas_be', $datos);
     }
-    
+
     function borrar_entrada($url_art) {
         $this->Articulos_model->borrar_entrada($url_art);
         $datos['titulo'] = "Douzo|Entradas";
         $datos['contenido'] = "lista_entradas";
         //$this->load->view('Plantillas/back_end/entradas_be', $datos);
-        redirect('back_end/entradas','refresh');
+        redirect('back_end/entradas', 'refresh');
     }
-    
+
     function categorias() {
         $this->load->view('Plantillas/back_end/categorias_be');
     }
 
-    function reservas() {
-        $this->load->view('Plantillas/back_end/reservas_be');
-    }
+    /**
+     * @author unscathed18
+     */
+    function reserva() {
 
+        $datos['contenido'] = "reservas";
+
+        $this->load->view('Plantillas/back_end/reservas_be', $datos);
+    }
 
     function web() {
         $this->load->view('Plantillas/back_end/web_be');
@@ -71,4 +82,33 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/index');
     }
 
+    //LOGIN
+    /*     * ********************************************************************** */
+    function validate() {
+        // Receives the login data
+        $login = $this->input->post('login');
+        $password = $this->input->post('password');
+
+        /*
+         * Validates the user input
+         * The user->login returns true on success or false on fail.
+         * It also creates the user session.
+         */
+        if ($this->user->login($login, $password)) {
+            // Success
+            redirect('login/private_page');
+        } else {
+            // Oh, holdon sir.
+            redirect('login');
+        }
+    }
+
+    // Simple logout function
+    function logout() {
+        // Removes user session and redirects to login
+        $this->user->destroy_user('login');
+    }
+
+    // FUNCIONES DE RESERVA: @author unscathed18
+    /*     * ********************************************************************** */
 }
