@@ -6,32 +6,41 @@
 
 
 ::selection{
-	background-color:#3399FF;
+    background-color:#3399FF;
 }
 
 
 
+#Contenido-Principal{
+    border:1px solid black;
+    position: absolute; /* Arregla el supuesto problema con el menu flotante. Sin embargo,
+                        al abrir menu de navegacion en tamanio 'xs' este sigue sin moverse y lo solapa. */
+    top: 100px;
+    left:280px;
+    margin-right:10%; 
+}
+
 .reserva-backend{
-	width:60%;
-	border:1px solid black;
-	font-family: 'PT Serif', serif;
+    border:1px solid black;
+    font-family: 'PT Serif', serif;
+
 }
 
 .reserva-backend table{
-    border-collapse: collapse;
+    border-collapse: collapse; /* Junta las lineas de la tabla sin que haya espacios entre celda y celda */
     table-layout: fixed;
     width: 100%;
 }
 
 .reserva-backend table tr{
-	padding-top: .5em;
+    padding-top: .5em;
     padding-bottom: .5em;
-/*    height:30px;*/
+    /*    height:30px;*/
     border: 1px solid gray;
 }
 
 .reserva-backend table td{
-	border: 1px solid gray;
+    border: 1px solid gray;
     margin-bottom:3px;
     padding: 6px;
     /*max-width:200px;*/
@@ -45,39 +54,39 @@
 
 
 .reserva-backend table tr:nth-child(even){
-	background-color:#E6E6E6;
+    background-color:#E6E6E6;
 }
 
 .reserva-backend table tr:nth-child(odd){
-	background-color:#CFCFCF; /*#B8B8B8*/
+    background-color:#CFCFCF; /*#B8B8B8*/
 }
 
 /* ESTA TIENE QUE SITUARSE AQUI DEBAJO. Sino, 'even' le hace un override a este propiedad */
 .reserva-backend table tr:nth-child(1){
-	background: #6db3f2; /* Old browsers */
-	background: -moz-linear-gradient(top, #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6db3f2), color-stop(50%,#54a3ee), color-stop(51%,#3690f0), color-stop(100%,#1e69de)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* IE10+ */
-	background: linear-gradient(to bottom, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=0 ); /* IE6-9 */
+    background: #6db3f2; /* Old browsers */
+    background: -moz-linear-gradient(top, #6db3f2 0%, #54a3ee 50%, #3690f0 51%, #1e69de 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#6db3f2), color-stop(50%,#54a3ee), color-stop(51%,#3690f0), color-stop(100%,#1e69de)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #6db3f2 0%,#54a3ee 50%,#3690f0 51%,#1e69de 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6db3f2', endColorstr='#1e69de',GradientType=0 ); /* IE6-9 */
 }
 
 .reserva-backend table tr.navegacion td{ 
-	font-family: 'Roboto', sans-serif;
-	font-weight: lighter;
-	color:white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    color:white;
 }
 .reserva-backend table tr:hover{ 
-	background-color:#F8F8F8;
-	cursor:help;
+    background-color:#F8F8F8;
+    cursor:help;
 }
 
 .reserva-backend input[type='checkbox']{
-	display:none;
-	background:url('/douzo/assets/images/checkbox.png');
-	cursor:pointer;
+    display:none;
+    background:url('/douzo/assets/images/checkbox.png');
+    cursor:pointer;
 }
 
 input[type="checkbox"] + label {
@@ -91,23 +100,23 @@ input[type="checkbox"] + label {
 }
 
 .reserva-backend input[type='checkbox']:checked{
-	background:url(/douzo/assets/images/checkbox_checked.png) -19px top no-repeat;
+    background:url(/douzo/assets/images/checkbox_checked.png) -19px top no-repeat;
 }
 
 input[type="checkbox"]:checked + label {
-    background:url(/douzo/assets/images/checkbox_checked.png) left top no-repeat;
+    background:url(douzo/assets/images/checkbox_checked.png) left top no-repeat;
 
 }
 
 .reserva-modal{
-	padding:1%;
-	background: url('bg.jpg') no-repeat;
-	/*border-radius: 30px;*/
-	border-width: 10px;
-	font-family: 'PT Serif', serif;
-	border-image:url(cover.jpg) 30 30 round;
-	color:white;
-  
+    padding:1%;
+    background: url('bg.jpg') no-repeat;
+    /*border-radius: 30px;*/
+    border-width: 10px;
+    font-family: 'PT Serif', serif;
+    border-image:url(cover.jpg) 30 30 round;
+    color:white;
+
 }
 
 #reserva-loading-screen{
@@ -131,5 +140,78 @@ input[type="checkbox"]:checked + label {
 }
 /* http://webdesign.tutsplus.com/tutorials/quick-tip-easy-css3-checkboxes-and-radio-buttons--webdesign-8953 */
 
-/* ACORDION */
+#reserva-tabla-footer{
+    /*background-color:blue;*/
+    padding:20px;
+    color:black;
+;    text-align: justify;
 
+    /* Gradient */
+    background: rgb(203,96,179); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NiNjBiMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2MxNDZhMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2E4MDA3NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkYjM2YTQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(203,96,179,1) 0%, rgba(193,70,161,1) 50%, rgba(168,0,119,1) 51%, rgba(219,54,164,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(203,96,179,1)), color-stop(50%,rgba(193,70,161,1)), color-stop(51%,rgba(168,0,119,1)), color-stop(100%,rgba(219,54,164,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(203,96,179,1) 0%,rgba(193,70,161,1) 50%,rgba(168,0,119,1) 51%,rgba(219,54,164,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cb60b3', endColorstr='#db36a4',GradientType=0 ); /* IE6-8 */
+
+    /* ALT */
+    background: rgb(255,255,255); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ3JSIgc3RvcC1jb2xvcj0iI2Y2ZjZmNiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlZGVkZWQiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-8 */
+
+
+}
+
+#reserva-tabla-footer button{
+    display: inline-block;
+}
+
+//Botones
+/************************************************************/
+
+.reserva-button {
+   border-top: 1px solid #96d1f8;
+   background: #65a9d7;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3e779d), to(#65a9d7));
+   background: -webkit-linear-gradient(top, #3e779d, #65a9d7);
+   background: -moz-linear-gradient(top, #3e779d, #65a9d7);
+   background: -ms-linear-gradient(top, #3e779d, #65a9d7);
+   background: -o-linear-gradient(top, #3e779d, #65a9d7);
+   padding: 11px 22px;
+   -webkit-border-radius: 11px;
+   -moz-border-radius: 11px;
+   border-radius: 11px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: #ffffff;
+   font-size: 20px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.reserva-button:hover {
+   border-top-color: #28597a;
+   background: #28597a;
+   color: #120812;
+   }
+.reserva-button:active {
+   border-top-color: #082336;
+   background: #082336;
+   }
+   
+   #uncle-surprise:hover{
+       content:url("/douzo/assets/images/hkamen.jpg");
+   }

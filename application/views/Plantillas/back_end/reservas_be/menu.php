@@ -4,8 +4,9 @@
 <div id="btn-menu"></div>
 
 <div id='cssmenu'>
+    
     <ul>
-        <li class='active'><a href='#'><span>Inicio</span></a></li>
+        <li class='active'><a id="reserva-menu-inicio" href='#'><span>Inicio</span></a></li>
         <li class='has-sub'><a href='#'><span>Notificaciones</span></a>
         <li class='has-sub'><a href='#'><span>Correo</span></a>
             <ul>

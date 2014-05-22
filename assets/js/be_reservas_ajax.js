@@ -4,16 +4,6 @@ var gTurno = "";
 var gDatos = new Array();
 var gTurnos = undefined;
 
-var gMenuCoords = {
-    x : 0,
-    y : 0
-};
-
-var gSeccionActual = "";
-/*Leyenda 'gSeccionActual':
- * #reserva-tabla
- */
-
 // Variables de filtracion
 var gToggle = {
     'nombre': true,
@@ -24,11 +14,12 @@ var gToggle = {
 
 $(document).ready(function() {
     CargarTurnosFromDB(); // Carga los Strings correspondientes a los numeros de los turnos en el restaurante.
+    CambiarSeccion("reserva-inicio");
     SetInitialBindings();
     SetPageLoading(false);
     //ShowMenu(false);
     
-    $("#reserva-tabla").hide();
+    //$("#reserva-tabla").hide();
     
     /* ocultamos el menu*/
     
@@ -39,6 +30,20 @@ $(document).ready(function() {
      PrintReservasTable(data, true);
      },"json");*/
 });
+
+/**
+ * Leyenda 'gSeccionActual':
+ *      reserva-tabla
+ *      reserva-inicio
+ * 
+ * @param {type} id_seccion
+ * @returns {undefined}
+ */
+function CambiarSeccion(id_seccion){
+    gSeccionActual = id_seccion;
+    $("#Contenido-Principal").children().hide();
+    $("#" + id_seccion).show();
+}
 
 /*
  * Desplaza el menu (Oculta o lo hace visible).
@@ -66,6 +71,7 @@ function ShowMenu(b){
 }
 
 function SetInitialBindings() {
+    var pInicio = $("#reserva-menu-inicio");
     var pProximas_reservas = $("#proximas_reservas");
     var pReservas_completadas = $("#reservas_completadas");
     var pTodas_las_reservas = $("#todas_las_reservas");
@@ -78,6 +84,10 @@ function SetInitialBindings() {
     $("#cssmenu").mouseleave(function(){
        ShowMenu(false);
     });*/
+    
+    $(pInicio).click(function(){
+       CambiarSeccion("reserva-inicio");
+    });
 
     $(pTodas_las_reservas).click(function() {
         $.get("todaslasreservas",
@@ -168,10 +178,7 @@ function FiltrarPorNombre() {
  * @param boolean debug
  */
 function PrintReservasTable(data, debug) {
-    if(gSeccionActual != "#reserva-tabla"){
-        gSeccionActual = "#reserva-tabla";
-        $("#reserva-tabla").show();
-    }
+    CambiarSeccion("reserva-tabla");
     CleanTable();
     SetPageLoading(true);
     setTimeout(function() {
@@ -199,12 +206,13 @@ function PrintReservasTable(data, debug) {
         html = html + "</tr>";
     }
     html = html + "</table>";
-    //console.log(html);
+    
     var pTabla = $(".reserva-backend table").append(html);
 
     SetPageLoading(false);
-
 }
+
+
 
 function SetBindings() {
 

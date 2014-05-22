@@ -116,7 +116,6 @@
 }
 
 #cssmenu {
-    position: relative; /* Por Leonardo */
     width: 230px;
     height: auto;
     max-width: 270px;
