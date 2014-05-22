@@ -17,18 +17,6 @@ $(document).ready(function() {
     CambiarSeccion("reserva-inicio");
     SetInitialBindings();
     SetPageLoading(false);
-    //ShowMenu(false);
-    
-    //$("#reserva-tabla").hide();
-    
-    /* ocultamos el menu*/
-    
-
-    /*$.get(  "proximasreservas",
-     function(data){
-     gDatos = data;
-     PrintReservasTable(data, true);
-     },"json");*/
 });
 
 /**
@@ -85,6 +73,23 @@ function SetInitialBindings() {
        ShowMenu(false);
     });*/
     
+    $("#reserva-nombre-restaurante").click(function(){
+        var string = prompt("Introduzca un nuevo nombre del restaurante: ");
+        console.log(string);
+    });
+    
+    $("#reserva-email-restaurante").click(function(){
+        var string = prompt("Introduzca un nuevo email para el restaurante: ");
+        console.log(string);
+    });
+    
+    $("#reserva-horarios").click(function(){
+        alert("Por implementar");
+    });
+    $("#reserva-festivos").click(function(){
+        alert("Por implementar");
+    });
+    
     $(pInicio).click(function(){
        CambiarSeccion("reserva-inicio");
     });
@@ -136,11 +141,12 @@ function SetInitialBindings() {
     });
 
     $(".reserva-backend table td").eq(3).click(function() { // Columna "Hora"
-        FiltrarPorFecha();
+        //FiltrarPorFecha();
+        alert("Por implementar")
     });
 
     $(".reserva-backend table td").eq(4).click(function() { // Columna "Turno"
-        FiltrarPorHora();
+        alert("Por implementar")
     });
 
 
@@ -151,7 +157,6 @@ function FiltrarPorNombre() {
     gDatos.sort(function(a, b) {
         var nameA = a['nombre'].toLowerCase();
         var nameB = b['nombre'].toLowerCase();
-        console.log(nameA + " VS " + nameB);
         if (gToggle['nombre']) {
             if (nameA > nameB) //sort string ascending
                 return -1
@@ -178,6 +183,7 @@ function FiltrarPorNombre() {
  * @param boolean debug
  */
 function PrintReservasTable(data, debug) {
+    UnbindLastRows();
     CambiarSeccion("reserva-tabla");
     CleanTable();
     SetPageLoading(true);
@@ -210,12 +216,42 @@ function PrintReservasTable(data, debug) {
     var pTabla = $(".reserva-backend table").append(html);
 
     SetPageLoading(false);
+    SetRowBindings();
+}
+
+function UnbindLastRows(){
+    alert("POR IMPLEMENTAR: UnbindLastRows");
 }
 
 
+function SetRowBindings() {
+    $('.reserva-backend table tr:not(:eq(0))').each(function(index, element){
+        $(this).click(function(){
+           PrintJSON(gDatos[index]);
+        });
+    });
+    
+}
 
-function SetBindings() {
-
+function PrintJSON(json){
+    var texto = "";
+    var endline_ch = "\n";
+    texto = texto + endline_ch + "Nombre: " + json['nombre'];
+    texto = texto + endline_ch + "Apellido: " + json['apellido'];
+    texto = texto + endline_ch + "Codigo: " + json['codigo'];
+    texto = texto + endline_ch + "Datetime_registro: " + json['datetime_registro'];
+    texto = texto + endline_ch + "email: " + json['email'];
+    texto = texto + endline_ch + "fecha_reservada: " + json['fecha_reservada'];
+    texto = texto + endline_ch + "hora_reservada: " + json['hora_reservada'];
+    texto = texto + endline_ch + "id: " + json['id'];
+    texto = texto + endline_ch + "id_turno: " + json['id_turno'];
+    texto = texto + endline_ch + "ip: " + json['ip'];
+    texto = texto + endline_ch + "num_personas" + json['num_personas'];
+    texto = texto + endline_ch + "num_verificaciones: " + json['num_verificaciones'];
+    texto = texto + endline_ch + "observaciones: " + json['observaciones'];
+    texto = texto + endline_ch + "telefono: " + json['telefono'];
+    texto = texto + endline_ch + "verificado: " + json['verificado'];
+    alert(texto);
 }
 
 /**

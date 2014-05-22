@@ -11,7 +11,7 @@
     <!-- BEG INICIO -->
     
     <div id='reserva-inicio' class="reserva-backend">
-        <img id="uncle-surprise" src="<?php echo base_url();?>assets/images/uncle_sam.jpg"/>
+        <img src="<?php echo base_url();?>assets/images/uncle_sam.jpg"/>
     </div>
     
     

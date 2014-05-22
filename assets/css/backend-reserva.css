@@ -211,7 +211,3 @@ input[type="checkbox"]:checked + label {
    border-top-color: #082336;
    background: #082336;
    }
-   
-   #uncle-surprise:hover{
-       content:url("/douzo/assets/images/hkamen.jpg");
-   }

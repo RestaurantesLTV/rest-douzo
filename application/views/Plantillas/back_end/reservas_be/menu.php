@@ -25,10 +25,10 @@
         </li>
         <li class='has-sub'><a href='#'><span>Configuracion</span></a>
             <ul>
-                <li><a href='#'><span>Nombre restaurante</span></a></li>
-                <li><a href='#'><span>Email restaurante</span></a></li>
-                <li><a href='#'><span>Horarios</span></a></li>
-                <li class='last'><a href='#'><span>Festivos</span></a></li>
+                <li><a href='#' id="reserva-nombre-restaurante"><span>Nombre restaurante</span></a></li>
+                <li><a href='#' id="reserva-email-restaurante"><span>Email restaurante</span></a></li>
+                <li><a href='#' id="reserva-horarios"><span>Horarios</span></a></li>
+                <li class='last'><a href='#' id="reserva-festivos"><span>Festivos</span></a></li>
             </ul>
         </li>
     </ul>
