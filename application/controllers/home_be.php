@@ -5,6 +5,7 @@ class Home_be extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Articulos_model');
+        
         /*$this->load->library(array('user', 'user_manager'));
         
         $this->user->onvalid_session('Plantillas/back_end/index_be');

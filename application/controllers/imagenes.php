@@ -43,13 +43,13 @@ class Imagenes extends CI_Controller {
             $imagen = $file_info['file_name'];
             $this->imagenes_model->subir($titulo, $imagen);
             
-            if ($this->imagenes_model->subir($titulo, $imagen)){
+          /*  if ($this->imagenes_model->subir($titulo, $imagen)){
                 //si se ha subido
                  $rutaUltFoto = $this->imagenes_model->obtener_ruta_ultima_imagen();
                  
             }  else {
                 //si no se ha subido
-            }
+            }*/
             $datos['titulo'] = $titulo;
             $datos['imagen'] = $imagen;
             $datos['contenido'] = 'imagen_ok';
