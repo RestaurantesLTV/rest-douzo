@@ -6,9 +6,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/lib/jquery.min.js"></script>
-        <script type="text/javascript">var dom.query = jQuery.noConflict();</script>
+        <script type="text/javascript">jQuery.noConflict();</script> <!-- ESTA LINEA OCASIONA PROBLEMA -->
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/login.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/system.js"></script>
+      <!--  <script type="text/javascript" src="<?php //echo  base_url(); ?>assets/js/system.js"></script> <!-- Y ESTA OTRA TAMBIEN -->
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/script.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/script.js"></script>
         

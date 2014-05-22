@@ -42,13 +42,23 @@ class Imagenes extends CI_Controller {
             $titulo = $this->input->post('titulo');
             $imagen = $file_info['file_name'];
             $this->imagenes_model->subir($titulo, $imagen);
+            
+            if ($this->imagenes_model->subir($titulo, $imagen)){
+                //si se ha subido
+                 $rutaUltFoto = $this->imagenes_model->obtener_ruta_ultima_imagen();
+                 
+            }  else {
+                //si no se ha subido
+            }
             $datos['titulo'] = $titulo;
             $datos['imagen'] = $imagen;
             $datos['contenido'] = 'imagen_ok';
             $this->load->view('Plantillas/back_end/anadir_art_be', $datos);
         }
     }
-
+    
+    
+/*
     function _create_thumbnail($filename) {
         $config['image_library'] = 'gd2';
         //CARPETA EN LA QUE ESTÁ LA IMAGEN A REDIMENSIONAR

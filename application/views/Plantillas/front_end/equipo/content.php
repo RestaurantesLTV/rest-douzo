@@ -5,12 +5,12 @@
     <div class="img-container">
     
     
-    <img src="<?php echo base_url(); ?>/assets/images/staff1.png" alt="staff1.png" />
-    <img src="<?php echo base_url(); ?>/assets/images/staff2.png" alt="staff2.png" />
-    <img src="<?php echo base_url(); ?>/assets/images/staff3.png" alt="staff3.png" />
-    <img src="<?php echo base_url(); ?>/assets/images/staff4.png" alt="staff4.png" />
-    <img src="<?php echo base_url(); ?>/assets/images/staff5.png" alt="staff5.png" />
-    <img src="<?php echo base_url(); ?>/assets/images/staff1.png" alt="staff1.png" />
+    <img src="<?php echo base_url(); ?>assets/images/staff1.png" alt="staff1.png" />
+    <img src="<?php echo base_url(); ?>assets/images/staff2.png" alt="staff2.png" />
+    <img src="<?php echo base_url(); ?>assets/images/staff3.png" alt="staff3.png" />
+    <img src="<?php echo base_url(); ?>assets/images/staff4.png" alt="staff4.png" />
+    <img src="<?php echo base_url(); ?>assets/images/staff5.png" alt="staff5.png" />
+    <img src="<?php echo base_url(); ?>assets/images/staff1.png" alt="staff1.png" />
     </div>
     <div class="text">
     

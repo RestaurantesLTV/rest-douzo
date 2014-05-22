@@ -13,7 +13,7 @@
             <article class="article">
                 <h3>Ven a vernos!</h3>
                 <div class="text">
-                    <img src="<?php echo base_url(); ?>/assets/images/staticmap.png"><p>Douzo Restaurante,  Psg. Fabra i Puig, 545 <br>Barcelona 08031</p>
+                    <img src="<?php echo base_url(); ?>assets/images/staticmap.png"><p>Douzo Restaurante,  Psg. Fabra i Puig, 545 <br>Barcelona 08031</p>
                 </div>
             </article>
             <article class="article">
@@ -35,11 +35,11 @@
                     <p>Email:                       NikitoNipongo@douzo.com</p>
                     <p><span class="lms-userclass-text-separator">www.douzo.com </span></p>
                     <p>
-                       <img alt="facebook-icon.png" src="<?php echo base_url(); ?>/assets/images/facebook-icon.png" />   
-                       <img alt="mail-icon.png" src="<?php echo base_url(); ?>/assets/images/mail-icon.png" />      
-                       <img alt="twitter-icon.png" src="<?php echo base_url(); ?>/assets/images/twitter-icon.png" />      
-                       <img alt="linkedin-icon.png" src="<?php echo base_url(); ?>/assets/images/linkedin-icon.png" />     
-                       <img alt="rss-icon.png" src="<?php echo base_url(); ?>/assets/images/rss-icon.png" /><br />
+                       <img alt="facebook-icon.png" src="<?php echo base_url(); ?>assets/images/facebook-icon.png" />   
+                       <img alt="mail-icon.png" src="<?php echo base_url(); ?>assets/images/mail-icon.png" />      
+                       <img alt="twitter-icon.png" src="<?php echo base_url(); ?>assets/images/twitter-icon.png" />      
+                       <img alt="linkedin-icon.png" src="<?php echo base_url(); ?>assets/images/linkedin-icon.png" />     
+                       <img alt="rss-icon.png" src="<?php echo base_url(); ?>assets/images/rss-icon.png" /><br />
                     </p>  
 
                 </div>

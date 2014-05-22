@@ -4,7 +4,7 @@
             <h1>Noticas de Recetas</h1>
         </div>
         <div class="btn_volver">
-            <a href="<?php echo base_url(); ?>/index.php/back_end/categorias">
+            <a href="<?php echo base_url(); ?>back_end/categorias">
                 <div class="btn_borrar_art">
                     <button type="button" class="btn btn-warning">Volver</button>
                 </div></a>
