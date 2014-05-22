@@ -36,6 +36,12 @@ class Ajax_reserva extends CI_Controller{
         echo $this->dbResult_toJSON($todas);
     }
     
+    public function ajaxReservasCompletadas(){
+        $completadas = $this->model->getReservasCompletadas();
+        
+        echo $this->dbResult_toJSON($completadas);
+    }
+    
     public function ajaxReservasUltimos7Dias(){
         $ultimos_dias = $this->model->getReservasUltimos7Dias();
         echo $this->dbResult_toJSON($ultimos_dias);

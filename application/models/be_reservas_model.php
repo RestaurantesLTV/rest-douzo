@@ -81,12 +81,12 @@ class be_reservas_model extends CI_Model{
         //en MYSQL, la primera row es 0.
         $ayer = new DateTime(); // Se inicializa un objeto 'Fecha_tiempo' como fecha la de hoy.
         $ayer->sub(new DateInterval('P1D')); // Restamos un dia (Dia de ayer)
-        $ayer->format("Y-m-d"); // Obtenemos un String igual al formato de fechas de MYSQL.
+        $ayer = $ayer->format("Y-m-d"); // Obtenemos un String igual al formato de fechas de MYSQL.
         
         
         $orden = ($orderByDesc == true) ? "DESC" : "ASC";
         
-        $query = "SELECT * FROM reserva WHERE fecha_reservada < '{$ayer}' ORDER BY {$orden}  LIMIT {$desde_index}, {$reservas_por_pag}";
+        $query = "SELECT * FROM reserva WHERE fecha_reservada <= '{$ayer}' ORDER BY fecha_reservada {$orden}  LIMIT {$desde_index}, {$reservas_por_pag}";
         $resultados = $this->db->query($query);
         return $resultados;
     }

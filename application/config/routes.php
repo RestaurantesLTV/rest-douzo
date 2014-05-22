@@ -74,9 +74,12 @@ $route['verificar'] = 'reserva_controller/verificarReserva';
 $route['back_end/reservas'] = 'home_be/reserva'; /* Modificado por Leo */
 
 // Backend AJAX routes
-$route['back_end/proximasreservas'] = 'ajax_reserva/ajaxProximasReservas';
 $route['back_end/turnosdisponibles'] = 'ajax_reserva/getTurnos';
+$route['back_end/proximasreservas'] = 'ajax_reserva/ajaxProximasReservas';
+$route['back_end/ultimos7dias'] = 'ajax_reserva/ajaxReservasUltimos7Dias';
 $route['back_end/todaslasreservas'] = 'ajax_reserva/ajaxTodasLasReservas';
+$route['back_end/reservascompletadas'] = 'ajax_reserva/ajaxReservasCompletadas';
+
 
 
 
