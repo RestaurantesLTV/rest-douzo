@@ -34,4 +34,4 @@
     </ul>
 
 </div>
-<script type="text/javascript" src= " <?php base_url(); ?>/douzo/assets/js/menu.js" ></script>
+<script type="text/javascript" src= " <?php echo base_url(); ?>assets/js/menu.js" ></script>

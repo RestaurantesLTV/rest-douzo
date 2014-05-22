@@ -1,8 +1,8 @@
 <div id="bambu_grande">
-    <img class="bambuG" src="<?php echo base_url(); ?>/assets/images/bambu.png" alt="Moonlight cooking" />
+    <img class="bambuG" src="<?php echo base_url(); ?>assets/images/bambu.png" alt="Moonlight cooking" />
 </div>
 <div id="bambu_pequeño">
-    <img class="bambuP"src="<?php echo base_url(); ?>/assets/images/bambu1.png" alt="Moonlight cooking" />
+    <img class="bambuP"src="<?php echo base_url(); ?>assets/images/bambu1.png" alt="Moonlight cooking" />
 
 </div>
 
@@ -15,7 +15,7 @@
                 <article class="article" id="news-32">
                     <div class="rope"></div>
                     <div class="img">
-                        <img src ="<?php echo base_url(); ?>/assets/images/231x313/blog.jpg" alt="Moonlight cooking" />
+                        <img src ="<?php echo base_url(); ?>assets/images/231x313/blog.jpg" alt="Moonlight cooking" />
                     </div>
                     <div class="rest">
                         <h2>
