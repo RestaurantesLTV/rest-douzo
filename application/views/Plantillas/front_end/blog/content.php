@@ -15,7 +15,7 @@
                 <article class="article" id="news-32">
                     <div class="rope"></div>
                     <div class="img">
-                        <img src ="<?php echo base_url(); ?>assets/images/231x313/blog.jpg" alt="Moonlight cooking" />
+                        <img src ="<?php echo $item->imagen_art ?>" alt="Moonlight cooking" />
                     </div>
                     <div class="rest">
                         <h2>

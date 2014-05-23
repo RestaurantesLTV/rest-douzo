@@ -54,6 +54,8 @@ $route['back_end/categorias/recetas'] = 'categorias/listar_recetas';
 $route['back_end/categorias/reservas'] = 'categorias/listar_reservas';
 $route['back_end/categorias/noticias'] = 'categorias/listar_noticias';
 $route['back_end/categorias/offtopic'] = 'categorias/listar_offtopic';
+$route['imagenes/tratar_imagen'] = 'imagenes_controller/tratar_imagen';
+
 
 $route['back_end/web'] = 'home_be/web';
 $route['back_end/salir'] = 'home/salir';

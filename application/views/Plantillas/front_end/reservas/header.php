@@ -6,11 +6,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/lib/jquery.min.js"></script>
-        <script type="text/javascript">jQuery.noConflict();</script> <!-- ESTA LINEA OCASIONA PROBLEMA -->
+        
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/login.js"></script>
       <!--  <script type="text/javascript" src="<?php //echo  base_url(); ?>assets/js/system.js"></script> <!-- Y ESTA OTRA TAMBIEN -->
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/plugins/script.js"></script>
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/script.js"></script>
+        
+        
         
 
         <link href="<?php echo base_url(); ?>assets/css/base.css" media="screen" rel="stylesheet" type="text/css" />
@@ -26,6 +26,7 @@
         <script src="<?php echo base_url(); ?>assets/js/jquery.mCustomScrollbar.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/jquery.malihu.PageScroll2id.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/jquery.stickyfloat.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/script.js"></script>
 
 		<script src="<?php echo base_url();?>assets/components/alertify.js/lib/alertify.min.js"></script>
         <script src="<?php echo base_url();?>assets/components/qtip2/jquery.qtip.min.js"></script>

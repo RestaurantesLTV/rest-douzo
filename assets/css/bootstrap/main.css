@@ -166,8 +166,12 @@ body{
     font-weight: bold;
 }
 .upload_foto{
-    margin-left: 70%;
-    margin-top:  2%;
+    margin-left: 40%;
+    margin-top:  5%;
+    margin-bottom: 20.1%;
+}
+.form_img{
+    width: 40%;
 }
 .foto_prueba{
     background-color: black;

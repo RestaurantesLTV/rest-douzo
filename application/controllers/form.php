@@ -5,7 +5,8 @@ class Form extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('form_validation');
-        $this->load->model('Imagenes_model');
+        $this->load->library('Imagenes');
+        
     }
 
     function index() {
@@ -30,8 +31,8 @@ class Form extends CI_Controller {
             $this->load->model('Articulos_model');
             $this->Articulos_model->guardar_entradas_bd();
             
-            if(!$this->Imagenes_model->set_imagen()){
-                echo 'error';
+            if(!$this->imagenes->set_imagen()){
+               
             }else{
             $datos['titulo'] = 'Validacion OK';
             $datos['contenido'] = 'entrada_ok';

@@ -136,7 +136,7 @@
                 )
         ) . "<br/>";
         ?>
-        <!-- BEG Calendario --> <!--
+        <!-- BEG Calendario -->
         <script charset="utf-8">
             $(document).ready(function() {
 
@@ -279,7 +279,7 @@
                         }
                     });
         </script> 
-                                -->
+                               
         <!-- END Calendario -->
 
         <?php

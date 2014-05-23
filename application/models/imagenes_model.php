@@ -10,7 +10,7 @@ class Imagenes_model extends CI_Model {
     function subir($titulo, $imagen) {
         $data = array(
             'titulo' => $titulo,
-            'ruta' => 'http://localhost/douzo/assets/images/471x374' . $imagen
+            'ruta' => 'http://localhost/douzo/assets/images/471x374/' . $imagen
         );
         /* $data = array(
           'titulo' => $this->input->post($titulo),

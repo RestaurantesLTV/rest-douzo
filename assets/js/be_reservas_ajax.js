@@ -183,7 +183,7 @@ function FiltrarPorNombre() {
  * @param boolean debug
  */
 function PrintReservasTable(data, debug) {
-    UnbindLastRows();
+    //UnbindLastRows();
     CambiarSeccion("reserva-tabla");
     CleanTable();
     SetPageLoading(true);
