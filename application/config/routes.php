@@ -45,6 +45,7 @@ $route['blog/pagina/(:num)'] = 'home/entradas/$1';
 $route['blog/(:any)'] = 'home/detalle_articulo/$1';
 $route['back_end'] = 'home_be';
 $route['back_end/entradas'] = 'home_be/entradas';
+$route['back_end/foto'] = 'home_be/subir_imagen';
 $route['back_end/entradas/anadir'] = 'form';
 $route['back_end/entradas/(:any)'] = 'home_be/modificarEntrada/$1';
 $route['back_end/update/(:any)'] = 'form/validar_update/$1';

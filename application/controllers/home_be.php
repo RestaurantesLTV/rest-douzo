@@ -26,7 +26,10 @@ class Home_be extends CI_Controller {
         $datos['articulo'] = $this->Articulos_model->lista_articulos();
         $datos['titulo'] = "Douzo|Entradas";
         $datos['contenido'] = "lista_entradas";
-        $this->load->view('Plantillas/back_end/subir_foto', $datos);
+        $this->load->view('Plantillas/back_end/entradas_be', $datos);
+    }
+    function subir_imagen(){
+        $this->load->view('Plantillas/back_end/subir_foto');
     }
 
     function anadirEntrada() {

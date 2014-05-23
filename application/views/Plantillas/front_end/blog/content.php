@@ -25,7 +25,7 @@
                         <div class="text">
                             <?php echo $item->contenido_art; ?>
                         </div>
-                        <div class="date"><?php echo $item->fecha_art; ?> <a class="read-more" href="#" title="<?php echo $item->titulo_art ?>"> <a href=" blog/<?php echo $item->url_art; ?>" class="light">Leer mas</a><br><br><br /></a>
+                        <div class="date"><?php echo $item->fecha_art; ?> <a class="read-more" href="#" title="<?php echo $item->titulo_art ?>"> <a href=" <?php echo base_url(); ?>blog/<?php echo $item->url_art; ?>" class="light">Leer mas</a><br><br><br /></a>
                         </div>
 
                     </div>

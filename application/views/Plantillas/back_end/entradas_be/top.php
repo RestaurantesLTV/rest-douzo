@@ -4,7 +4,7 @@
             <h1>Lista de noticias</h1>
         </div>
         <div class="cols-xs-12 col-sm-12 col-md-offset-3 col-md-6 col-lg-offset-3 col-lg-6">
-            <a href="<?php echo base_url(); ?>back_end/entradas/anadir"><div class="col-xs-3 col-sm-4 col-md-4 col-lg-4">
+            <a href="<?php echo base_url(); ?>back_end/foto"><div class="col-xs-3 col-sm-4 col-md-4 col-lg-4">
                 <button type="button" class="btn btn-info">Añadir articulo</button>
             </div></a>
         </div>
