@@ -8,7 +8,7 @@
 Hemos aprendido a:
 -Utilizar el UML a nuestro favor.
 	A Leo por ejemplo, le resulto muy util el diagrama de actividades, ya que es una extension
-	mas completa del diagrama de flujos y permite visualizar bien los pasos a desempeñar
+	mas completa del diagrama de flujos y permite visualizar bien los pasos a desempeï¿½ar
 	para lograr un caso de uso se cumpla. Con la ventaja ademas de ver que sistema
 	se encarga de la parte del trabajo en cada momento.
 
@@ -23,12 +23,12 @@ factor importante. Como recien comenzamos, este punto no puede ser utilizado en 
 seria bastante incomodo y tedioso. Para poder acceder a toda la informacion, se debe navegar
 por paneles y menus desplegables que el usuario tiene que abrir-cerrar/mostrar-ocultar. De esta manera se camufla el exceso de informacion en una sola pagina.
 
--------Diseño web empresa-------
--Hemos cambiado la pagina de color negro a blanco por cuestiones de opiniones. Esto requirió ajustar los tonalidades acorde de todos los elementos de la pagina.
-En palabras del diseñador de la empresa de Tomas: "Por estadística el negro vende menos que el blanco".
--Implementado animación SVG con libreria jQuery.
+-------Diseï¿½o web empresa-------
+-Hemos cambiado la pagina de color negro a blanco por cuestiones de opiniones. Esto requiriï¿½ ajustar los tonalidades acorde de todos los elementos de la pagina.
+En palabras del diseï¿½ador de la empresa de Tomas: "Por estadï¿½stica el negro vende menos que el blanco".
+-Implementado animaciï¿½n SVG con libreria jQuery.
 -Bootstrap. Responsiveness
--Propuestas de diseño de navegacion diferentes al principio del proyecto.
+-Propuestas de diseï¿½o de navegacion diferentes al principio del proyecto.
 -Navegacion pensada para moviles: La web tiene falta de barra de scroll.
 -Al ir a una seccion (accediendo desde el menu de navegacion de tope de pagina), la vista de la pagina se desliza con animacion suave hacia esa seccion.
 -Utilizado Photoshop Para: *Completar con lista
@@ -39,7 +39,9 @@ En palabras del diseñador de la empresa de Tomas: "Por estadística el negro vend
 	-Blog (Hecho por nosotros)
 	-Backend
 	-Sistema de reservas (Hecho por nosotros desde 0) (Frontend y Backend)
-	-
+	-Hemos creado 2 librerias
+	-Utlizamos sistema de usuarios
+	-Utilizamos Captcha??
 -jQuery
 -Photoshop
 -AAALogo
