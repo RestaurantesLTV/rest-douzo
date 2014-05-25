@@ -44,7 +44,7 @@
         $data = array(
             "name" => 'email',
             "id" => 'email',
-            "value" => "unscathd21@hotmail.com",
+            "value" => "unscathed21@hotmail.com",
             "placeholder" => "ejemplo@servidor.com"
         );
         echo form_input($data) . "<br/>";
