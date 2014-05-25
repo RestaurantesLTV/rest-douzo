@@ -333,5 +333,20 @@ class ReservasManager {
         }
         return $this->CI->be_reservas_model;
     }
+    
+                        // Cambiar archivo de configuracion JSON
+    /************************************************************************************/
+    public function modifyConfigFile($index, $value){
+        $jsonString = file_get_contents(__DIR__ . "/" . $this->config_filename);
+        file_put_contents(__DIR__ . "/" . $this->config_filename.".bak", $jsonString); // Creamos un back up
+        
+        $data = json_decode($jsonString, true);
+        
+        $data[$index] = $value;
+        
+        $newJsonString = json_encode($data);
+        file_put_contents(__DIR__ . "/" . $this->config_filename, $newJsonString);
+        return true;
+    }
 
 }

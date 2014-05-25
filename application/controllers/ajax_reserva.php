@@ -71,4 +71,37 @@ class Ajax_reserva extends CI_Controller{
         
         return json_encode($json);
     }
+    
+    public function ajaxModificarConfig(){
+        
+        $request = $this->input->get("req");
+        $valor = $this->input->get("valor");
+        
+        if($valor == ""){
+            die("El nombre no ha sido cambiado: esta vacio");
+        }
+        $success = true;
+        
+        
+        
+        switch($request){
+            case "nombre":
+                $success = $this->reservasmanager->modifyConfigFile($request, $valor);
+                break;
+            case "email":
+                $success = $this->reservasmanager->modifyConfigFile($request, $valor);
+                break;
+            default:
+                echo "Request invalida.";
+        }
+        
+        
+        if($success){
+            echo "Modificado con exito!";
+        }else{
+            die("Ha ocurrido un problema modificando el parametro");
+        }
+        
+        
+    }
 }

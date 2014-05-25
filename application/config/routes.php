@@ -91,7 +91,8 @@ $route['back_end/todaslasreservas'] = 'ajax_reserva/ajaxTodasLasReservas';
 $route['back_end/reservascompletadas'] = 'ajax_reserva/ajaxReservasCompletadas';
 
 
-
+// Otras funciones AJAX
+$route['back_end/modificarconfig'] = "ajax_reserva/ajaxModificarConfig";
 
 
 

@@ -104,7 +104,7 @@
                 <option></option>
                 <option value="00">00</option>
                 <?php
-                for ($i = 10; $i <= 60; $i += 10) {
+                for ($i = 10; $i <= 50; $i += 10) {
                     echo "<option value='" . $i . "'>" . $i . "</option>";
                 }
                 ?>

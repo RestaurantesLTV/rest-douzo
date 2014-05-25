@@ -20,6 +20,8 @@ $(document).ready(function() {
 });
 
 /**
+ * Ocultan todos los divs de la pagina, y muestra aquel que corresponde
+ * a esa seccion en el backend.
  * Leyenda 'gSeccionActual':
  *      reserva-tabla
  *      reserva-inicio
@@ -65,22 +67,14 @@ function SetInitialBindings() {
     var pTodas_las_reservas = $("#todas_las_reservas");
     var pUtimos7dias = $("#ultimos7dias");
     
-    /*$("#cssmenu").mouseenter(function(){
-       ShowMenu(true);
-    });
-    
-    $("#cssmenu").mouseleave(function(){
-       ShowMenu(false);
-    });*/
-    
     $("#reserva-nombre-restaurante").click(function(){
         var string = prompt("Introduzca un nuevo nombre del restaurante: ");
-        console.log(string);
+        ModificarConfig("nombre", string);
     });
     
     $("#reserva-email-restaurante").click(function(){
         var string = prompt("Introduzca un nuevo email para el restaurante: ");
-        console.log(string);
+        ModificarConfig("email", string);
     });
     
     $("#reserva-horarios").click(function(){
@@ -152,28 +146,16 @@ function SetInitialBindings() {
 
 }
 
-function FiltrarPorNombre() {
-    //Primero al reves
-    gDatos.sort(function(a, b) {
-        var nameA = a['nombre'].toLowerCase();
-        var nameB = b['nombre'].toLowerCase();
-        if (gToggle['nombre']) {
-            if (nameA > nameB) //sort string ascending
-                return -1
-            if (nameA < nameB)
-                return 1
-        } else {
-
-            if (nameA < nameB) //sort string ascending
-                return -1
-            if (nameA > nameB)
-                return 1
-        }
-        return 0 //default return value (no sorting)
-    });
-
-    gToggle['nombre'] = !gToggle['nombre'];
-    PrintReservasTable(gDatos);
+/**
+ * Hace una peticion ajax al servidor pidiendole que modifique
+ * el fichero de configuracion del sistema de reservas.
+ * @param String peticion
+ * @param String valor
+ */
+function ModificarConfig(peticion, valor){
+    $.get("modificarconfig?req=" + peticion + "&valor=" + valor, function(data){
+            console.log("Nombre restaurante cambiado. El servidor dice: " + data);
+        });
 }
 
 /**
@@ -202,7 +184,7 @@ function PrintReservasTable(data, debug) {
         var id_turno = data[i]["id_turno"] - 1;
         var turno_string = gTurnos[id_turno];
 
-        html = html + "<tr>";
+        html = html + "<tr id='DatosRef-" + i +  "'>";
         html = html + "<td>" + '<input type="checkbox" id="res' + data[i]["id"] + '"><label for="1"></label>' + "</td>";
         html = html + "<td>" + data[i]["id"] + "</td>";
         html = html + "<td>" + data[i]["nombre"] + " " + data[i]['apellido'] + "</td>";
@@ -219,20 +201,33 @@ function PrintReservasTable(data, debug) {
     SetRowBindings();
 }
 
-function UnbindLastRows(){
-    alert("POR IMPLEMENTAR: UnbindLastRows");
-}
-
-
+/**
+ * Esta rutina debe llamarse cada vez que se desee dibujar la tabla.
+ * Su funcion es la de asignarle un evento click a cada fila de la tabla.
+ * Al hacer click lo que hara es lo siguiente:
+ * De la fila clickeada, obtendremos el ID que hace referencia
+ * a la informacion a esa fila en el array "gDatos".
+ * Una vez sepamos la el index del array en esa fila de la tabla,
+ * llamamos a PrintJSON para que nos aparezca por pantalla la informacion
+ * de esa reserva en concreto.
+ * 
+ * Funcion testeada. Funciona a la perfeccion.
+ */
 function SetRowBindings() {
     $('.reserva-backend table tr:not(:eq(0))').each(function(index, element){
         $(this).click(function(){
-           PrintJSON(gDatos[index]);
+           datos_index = ($(element).attr("id")).split("-")[1];
+           PrintJSON(gDatos[datos_index]);
         });
     });
     
 }
 
+/**
+ * A partir de un objeto JSON de la reserva, imprimimos toda su informacion
+ * en un pop up.
+ * @param JSON json
+ */
 function PrintJSON(json){
     var texto = "";
     var endline_ch = "\n";
@@ -313,6 +308,7 @@ function SetPageLoading(loading) {
 
 function FiltrarPorIDReserva() {
     gDatos.sort(function(a, b) {
+        //ASCENDENTE
         if (gToggle['id']) {
             if (a['id'] > b['id']) {
                 return 1;
@@ -320,7 +316,7 @@ function FiltrarPorIDReserva() {
             if (a['id'] < b['id']) {
                 return -1;
             }
-        } else {
+        } else { // DESCENDENTE
             if (a['id'] < b['id']) {
                 return 1;
             }
@@ -330,7 +326,33 @@ function FiltrarPorIDReserva() {
         }
         return 0;
     });
-    gToggle['id'] = !gToggle['id'];
+    gToggle['id'] = !gToggle['id']; 
+    PrintReservasTable(gDatos);
+}
+
+function FiltrarPorNombre() {
+    //Primero al reves
+    gDatos.sort(function(a, b) {
+        var nameA = a['nombre'].toLowerCase();
+        var nameB = b['nombre'].toLowerCase();
+        
+        // ASCENDENTE
+        if (gToggle['nombre']) {
+            if (nameA > nameB)
+                return -1
+            if (nameA < nameB)
+                return 1
+        } else { // DESCENDENTE
+
+            if (nameA < nameB)
+                return -1
+            if (nameA > nameB)
+                return 1
+        }
+        return 0 //default return value (no sorting)
+    });
+
+    gToggle['nombre'] = !gToggle['nombre'];
     PrintReservasTable(gDatos);
 }
 
