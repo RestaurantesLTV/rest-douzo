@@ -7,7 +7,7 @@
     
     <ul>
         <li class='active'><a id="reserva-menu-inicio" href='#'><span>Inicio</span></a></li>
-        <li class='has-sub'><a href='#'><span>Notificaciones</span></a>
+        <li class='has-sub'><a id="reserva-menu-notificaciones" href='#'><span>Notificaciones</span></a>
         <li class='has-sub'><a href='#'><span>Correo</span></a>
             <ul>
                 <li><a href='#'><span>Bandeja de entrada</span></a></li>

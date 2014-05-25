@@ -17,7 +17,7 @@
     
     <!-- END INICIO -->
     
-    <!-- BEG TABLE -->
+    <!-- BEG RESERVA TABLE -->
     <div id='reserva-tabla' class="reserva-backend">
         <table>
             <tr class="navegacion">
@@ -48,7 +48,28 @@
             <button class="reserva-button">ADASD</button>
         </footer>
     </div>
-    <!-- END TABLE -->
+    <!-- END RESERVA TABLE -->
+    
+        <!-- BEG RESERVA TABLE -->
+    <div id='reserva-notificaciones' class="reserva-backend">
+        <table>
+            <tr class="navegacion">
+                <td>
+                    Seleccionar
+                </td>
+                <td>
+                    Fecha
+                </td>
+                <td>
+                    Asunto
+                </td>
+            </tr>
+        </table>
+        <footer id='reserva-tabla-footer'>
+            <button class="reserva-button" id="reserva-visto-btn">Marcar como visto</button>
+        </footer>
+    </div>
+    <!-- END RESERVA TABLE -->
     
     
     

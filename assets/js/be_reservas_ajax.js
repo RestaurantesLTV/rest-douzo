@@ -1,14 +1,15 @@
 //Environment variables
 
 var gTurno = "";
-var gDatos = new Array();
+var gDatos = new Array(); // Para Reservas
+var gNotificaciones = new Array(); // Para notificaciones
 var gTurnos = undefined;
 
-// Variables de filtracion
+// Variables de filtracion. Nos sirve para alternar entre orden ascendente y descendente.
 var gToggle = {
     'nombre': true,
     'id': true,
-    'menu' : true
+    'menu': true
 }
 
 
@@ -25,11 +26,12 @@ $(document).ready(function() {
  * Leyenda 'gSeccionActual':
  *      reserva-tabla
  *      reserva-inicio
+ *      reserva-notificaciones
  * 
  * @param {type} id_seccion
  * @returns {undefined}
  */
-function CambiarSeccion(id_seccion){
+function CambiarSeccion(id_seccion) {
     gSeccionActual = id_seccion;
     $("#Contenido-Principal").children().hide();
     $("#" + id_seccion).show();
@@ -42,22 +44,24 @@ function CambiarSeccion(id_seccion){
  * @param boolean b
  * @returns {undefined}
  */
-function ShowMenu(b){
-    var desplazamiento; 
-    if(b){
+function ShowMenu(b) {
+    var desplazamiento;
+    if (b) {
         desplazamiento = "+=200px";
-        if(gToggle['menu']) return; // Evitamos el desplazamiento si ya esta visible
+        if (gToggle['menu'])
+            return; // Evitamos el desplazamiento si ya esta visible
         gToggle['menu'] = true;
-    }else{
+    } else {
         desplazamiento = "-=200px";
-        if(!gToggle['menu']) return; // Evitamos el desplazamiento si ya esta oculto
+        if (!gToggle['menu'])
+            return; // Evitamos el desplazamiento si ya esta oculto
         gToggle['menu'] = false;
     }
     $("#cssmenu").clearQueue().stop();
-    
-    $("#cssmenu").animate({ 
+
+    $("#cssmenu").animate({
         left: desplazamiento,
-    },  1000);
+    }, 1000);
 }
 
 function SetInitialBindings() {
@@ -66,26 +70,26 @@ function SetInitialBindings() {
     var pReservas_completadas = $("#reservas_completadas");
     var pTodas_las_reservas = $("#todas_las_reservas");
     var pUtimos7dias = $("#ultimos7dias");
-    
-    $("#reserva-nombre-restaurante").click(function(){
+
+    $("#reserva-nombre-restaurante").click(function() {
         var string = prompt("Introduzca un nuevo nombre del restaurante: ");
         ModificarConfig("nombre", string);
     });
-    
-    $("#reserva-email-restaurante").click(function(){
+
+    $("#reserva-email-restaurante").click(function() {
         var string = prompt("Introduzca un nuevo email para el restaurante: ");
         ModificarConfig("email", string);
     });
-    
-    $("#reserva-horarios").click(function(){
+
+    $("#reserva-horarios").click(function() {
         alert("Por implementar");
     });
-    $("#reserva-festivos").click(function(){
+    $("#reserva-festivos").click(function() {
         alert("Por implementar");
     });
-    
-    $(pInicio).click(function(){
-       CambiarSeccion("reserva-inicio");
+
+    $(pInicio).click(function() {
+        CambiarSeccion("reserva-inicio");
     });
 
     $(pTodas_las_reservas).click(function() {
@@ -119,6 +123,23 @@ function SetInitialBindings() {
                     PrintReservasTable(data, true);
                 }, "json");
     });
+
+    $("#reserva-menu-notificaciones").click(function() {
+        //CambiarSeccion("reserva-notificaciones");
+        //CleanTable("reserva-notificaciones");
+        $.get("notificaciones",
+                function(data) {
+                    gNotificaciones = data;
+                    //console.log(data);
+                    PrintNotificacionesTable(data);
+                }, "json");
+    });
+
+    $("#reserva-visto-btn").click(function() {
+        DeleteSelectedRows();
+    });
+
+
     /*************************************************/
     // Filtrar por columna
     $(".reserva-backend table td").eq(0).click(function() { // Columna "Seleccionar"
@@ -146,16 +167,38 @@ function SetInitialBindings() {
 
 }
 
+function PrintNotificacionesTable(data, debug) {
+    CambiarSeccion("reserva-notificaciones");
+    CleanTable("reserva-notificaciones");
+    SetPageLoading(true);
+    var html = "";
+
+    for (var i = 0; i < data.length; i++) {
+        html = html + "<tr id='NotifRef-" + i + "'>";
+        html = html + "<td>" + '<input type="checkbox" id="notif' + data[i]["id"] + '"><label for="1"></label>' + "</td>";
+        html = html + "<td>" + data[i]["datetime_registro"] + "</td>";
+        html = html + "<td>" + data[i]['asunto'] + "</td>";
+        html = html + "</tr>";
+    }
+    html = html + "</table>";
+
+    var pTabla = $("#reserva-notificaciones table").append(html);
+
+    SetPageLoading(false);
+    //SetRowBindingsNotificaciones();
+
+}
+
 /**
  * Hace una peticion ajax al servidor pidiendole que modifique
  * el fichero de configuracion del sistema de reservas.
  * @param String peticion
  * @param String valor
  */
-function ModificarConfig(peticion, valor){
-    $.get("modificarconfig?req=" + peticion + "&valor=" + valor, function(data){
-            console.log("Nombre restaurante cambiado. El servidor dice: " + data);
-        });
+function ModificarConfig(peticion, valor) {
+    $.get("modificarconfig?req=" + peticion + "&valor=" + valor, function(data) {
+        console.log("Nombre restaurante cambiado. El servidor dice: " + data);
+    });
 }
 
 /**
@@ -165,9 +208,9 @@ function ModificarConfig(peticion, valor){
  * @param boolean debug
  */
 function PrintReservasTable(data, debug) {
-    //UnbindLastRows();
+    //UnbindLastRows();    
     CambiarSeccion("reserva-tabla");
-    CleanTable();
+    CleanTable("reserva-tabla");
     SetPageLoading(true);
     setTimeout(function() {
         SetPageLoading(false)
@@ -184,7 +227,7 @@ function PrintReservasTable(data, debug) {
         var id_turno = data[i]["id_turno"] - 1;
         var turno_string = gTurnos[id_turno];
 
-        html = html + "<tr id='DatosRef-" + i +  "'>";
+        html = html + "<tr id='DatosRef-" + i + "'>";
         html = html + "<td>" + '<input type="checkbox" id="res' + data[i]["id"] + '"><label for="1"></label>' + "</td>";
         html = html + "<td>" + data[i]["id"] + "</td>";
         html = html + "<td>" + data[i]["nombre"] + " " + data[i]['apellido'] + "</td>";
@@ -194,12 +237,20 @@ function PrintReservasTable(data, debug) {
         html = html + "</tr>";
     }
     html = html + "</table>";
-    
-    var pTabla = $(".reserva-backend table").append(html);
+
+    var pTabla = $("#reserva-tabla table").append(html);
 
     SetPageLoading(false);
     SetRowBindings();
 }
+
+function FiltrarPorFechaYHora(datos) {
+    datos.sort(function() {
+
+    });
+}
+
+
 
 /**
  * Esta rutina debe llamarse cada vez que se desee dibujar la tabla.
@@ -214,13 +265,49 @@ function PrintReservasTable(data, debug) {
  * Funcion testeada. Funciona a la perfeccion.
  */
 function SetRowBindings() {
-    $('.reserva-backend table tr:not(:eq(0))').each(function(index, element){
-        $(this).click(function(){
-           datos_index = ($(element).attr("id")).split("-")[1];
-           PrintJSON(gDatos[datos_index]);
+    $('#reserva-tabla table tr:not(:eq(0))').each(function(index, element) {
+        $(this).click(function() {
+
+            datos_index = ($(element).attr("id")).split("-")[1];
+            PrintJSON(gDatos[datos_index]);
         });
     });
-    
+}
+
+/**
+ * Funciona siempre y cuando no se filtre!
+ * @returns {undefined}
+ */
+function DeleteSelectedRows() {
+    var ids = new Array();
+    $('#reserva-notificaciones table tr:not(:eq(0)) input[type=checkbox]').each(function(index, element) {
+        //datos_index = ($(element).attr("id")).split("-")[1];
+        if (element.checked) {
+            ids[ids.length] = gNotificaciones[index]['id'];
+        }
+
+
+    });
+
+    if (ids.length != 0) {
+        var string_get = "";
+        for (var i = 0; i < ids.length; i++) {
+            string_get = string_get + "marcar[]=" + ids[i];
+            if ((i + 1) != ids.length) {
+                string_get = string_get + "&";
+            }
+        }
+        $.get("marcarcomovisto?" + string_get, function(respuesta) {
+                $.get("notificaciones",
+                        function(data) {
+                            gNotificaciones = data;
+                            //console.log(data);
+                            PrintNotificacionesTable(data);
+                        }, "json");
+            
+        });
+    }
+
 }
 
 /**
@@ -228,7 +315,7 @@ function SetRowBindings() {
  * en un pop up.
  * @param JSON json
  */
-function PrintJSON(json){
+function PrintJSON(json) {
     var texto = "";
     var endline_ch = "\n";
     texto = texto + endline_ch + "Nombre: " + json['nombre'];
@@ -253,8 +340,8 @@ function PrintJSON(json){
  * Borra toda la tabla de reservas excepto la primera row
  * que contiene el encabezad de la tabla con los nombres de cada columna.
  */
-function CleanTable() {
-    pTabla = $(".reserva-backend table tr:not(:first)"); // Seleccionamos toda la tabla excepto su encabezado
+function CleanTable(nombreTabla) {
+    pTabla = $("#" + nombreTabla + " tr:not(:first)"); // Seleccionamos toda la tabla excepto su encabezado
     $(pTabla).html("");
 }
 
@@ -326,7 +413,7 @@ function FiltrarPorIDReserva() {
         }
         return 0;
     });
-    gToggle['id'] = !gToggle['id']; 
+    gToggle['id'] = !gToggle['id'];
     PrintReservasTable(gDatos);
 }
 
@@ -335,7 +422,7 @@ function FiltrarPorNombre() {
     gDatos.sort(function(a, b) {
         var nameA = a['nombre'].toLowerCase();
         var nameB = b['nombre'].toLowerCase();
-        
+
         // ASCENDENTE
         if (gToggle['nombre']) {
             if (nameA > nameB)

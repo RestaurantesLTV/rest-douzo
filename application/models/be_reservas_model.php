@@ -91,5 +91,30 @@ class be_reservas_model extends CI_Model{
         return $resultados;
     }
     
+    public function marcarComoVisto($ids){
+        $where_string = "WHERE id IN(";
+        $length = count($ids);
+        
+        foreach($ids as $index => $id){
+            $where_string = $where_string .$id;
+            if($index+1 != $length){
+                $where_string .= ",";
+            }else{
+                $where_string .= ")";
+            }
+        }
+        
+        $query = "UPDATE reserva SET checked_by_admin = 1 ".$where_string;
+        $this->db->query($query);
+        
+        
+        if($this->db->affected_rows() <= 0){
+            return false;
+        }
+        
+        return true;
+        
+    }
+    
     
 }

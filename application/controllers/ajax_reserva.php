@@ -57,7 +57,7 @@ class Ajax_reserva extends CI_Controller{
         echo $this->dbResult_toJSON($turnos);
     }
     
-    public function dbResult_toJSON($result){
+    public function dbResult_toJSON($result, $incluirAsunto=""){
         $i = 0;
         $json = null; /* Si la query no da ningun resultado (Por lo tanto no entrara 
                         * por el 'foreach' de debajo), esto permanecera NULL.*/
@@ -65,6 +65,9 @@ class Ajax_reserva extends CI_Controller{
         foreach($result->result_array() as $row){
             foreach($row as $key => $value){
                 $json[$i][$key] = $value;
+                if(!empty($incluirAsunto)){
+                    $json[$i]["asunto"] = "Nueva reserva";
+                }
             }
             $i++;
         }
@@ -102,6 +105,21 @@ class Ajax_reserva extends CI_Controller{
             die("Ha ocurrido un problema modificando el parametro");
         }
         
+        
+    }
+    public function ajaxNotificaciones(){
+        $no_vistas = $this->model->getReservasNoVistas();
+        echo $this->dbResult_toJSON($no_vistas, "Nueva reserva");
+    }
+    
+    public function ajaxMarcarComoVisto(){
+        $ids_marcados = $this->input->get('marcar');
+        if(count($ids_marcados) == 0){
+            die("No hay ni un solo id!");
+        }
+        
+        $success = $this->model->marcarComoVisto($ids_marcados);
+        echo $success;
         
     }
 }

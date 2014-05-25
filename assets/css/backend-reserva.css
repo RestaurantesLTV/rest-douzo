@@ -82,7 +82,7 @@
     background-color:#F8F8F8;
     cursor:help;
 }
-
+/*
 .reserva-backend input[type='checkbox']{
     display:none;
     background:url('/douzo/assets/images/checkbox.png');
@@ -107,7 +107,7 @@ input[type="checkbox"]:checked + label {
     background:url(douzo/assets/images/checkbox_checked.png) left top no-repeat;
 
 }
-
+*/
 .reserva-modal{
     padding:1%;
     background: url('bg.jpg') no-repeat;
