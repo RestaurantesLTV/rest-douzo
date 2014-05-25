@@ -5,6 +5,7 @@ class Home_be extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Articulos_model');
+        
         /*$this->load->library(array('user', 'user_manager'));
         
         $this->user->onvalid_session('Plantillas/back_end/index_be');
@@ -26,6 +27,9 @@ class Home_be extends CI_Controller {
         $datos['titulo'] = "Douzo|Entradas";
         $datos['contenido'] = "lista_entradas";
         $this->load->view('Plantillas/back_end/entradas_be', $datos);
+    }
+    function subir_imagen(){
+        $this->load->view('Plantillas/back_end/subir_foto');
     }
 
     function anadirEntrada() {

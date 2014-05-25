@@ -44,7 +44,9 @@ En palabras del dise�ador de la empresa de Tomas: "Por estad�stica el negro 
 	-Blog (Hecho por nosotros)
 	-Backend
 	-Sistema de reservas (Hecho por nosotros desde 0) (Frontend y Backend)
-	-
+	-Hemos creado 2 librerias
+	-Utlizamos sistema de usuarios
+	-Utilizamos Captcha??
 -jQuery
 -Photoshop
 -AAALogo

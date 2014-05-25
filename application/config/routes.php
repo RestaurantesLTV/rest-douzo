@@ -53,6 +53,7 @@ $route['blog/(:any)'] = 'home/detalle_articulo/$1';
 // BACKEND
 $route['back_end'] = 'home_be';
 $route['back_end/entradas'] = 'home_be/entradas';
+$route['back_end/foto'] = 'home_be/subir_imagen';
 $route['back_end/entradas/anadir'] = 'form';
 $route['back_end/entradas/(:any)'] = 'home_be/modificarEntrada/$1';
 $route['back_end/update/(:any)'] = 'form/validar_update/$1';
@@ -62,6 +63,8 @@ $route['back_end/categorias/recetas'] = 'categorias/listar_recetas';
 $route['back_end/categorias/reservas'] = 'categorias/listar_reservas';
 $route['back_end/categorias/noticias'] = 'categorias/listar_noticias';
 $route['back_end/categorias/offtopic'] = 'categorias/listar_offtopic';
+$route['imagenes/tratar_imagen'] = 'imagenes_controller/tratar_imagen';
+
 
 $route['back_end/web'] = 'home_be/web';
 $route['back_end/salir'] = 'home/salir';

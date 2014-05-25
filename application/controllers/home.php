@@ -30,11 +30,13 @@ class Home extends CI_Controller {
         }
         $this->load->library('pagination');   //--> Cargo libreria
         $datos['articulo'] = $this->Articulos_model->lista_articulos($inicio,$limite);
-        $config['base_url'] = base_url().'/index.php/blog/pagina/';
+        $config['base_url'] = base_url().'blog/pagina/';
         $config['total_rows'] = count($this->Articulos_model->lista_articulos());
         $config['per_page'] = $limite;
         $config['uri_segment'] = 3;
-        $config['first_url'] = base_url().'/index.php/blog';
+        $config['first_url'] = base_url().'blog';
+        $config['last_link'] = 'Ultima &rsaquo;';
+        $config['first_link'] = '&lsaquo; Primera';
         $this->pagination->initialize($config);
         $datos['titulo'] = "Douzo|Blog";
         $datos['contenido'] = "content";

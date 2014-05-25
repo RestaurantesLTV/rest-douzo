@@ -5,7 +5,8 @@ class Form extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->library('form_validation');
-        //$this->load->model('Articulos_model');
+        $this->load->library('Imagenes');
+        
     }
 
     function index() {
@@ -29,9 +30,14 @@ class Form extends CI_Controller {
         } else {
             $this->load->model('Articulos_model');
             $this->Articulos_model->guardar_entradas_bd();
+            
+            if(!$this->imagenes->set_imagen()){
+               
+            }else{
             $datos['titulo'] = 'Validacion OK';
             $datos['contenido'] = 'entrada_ok';
             $this->load->view('Plantillas/back_end/anadir_art_be', $datos);
+            }
         }
     }
 
