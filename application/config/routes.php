@@ -39,10 +39,18 @@
 */
 $route['404_override'] = '';
 $route['default_controller'] = "home";
-$route['chongwen'] = "chongwen";
+
+// Front-end Cliente (Paginas)
+$route['equipo'] = 'equipo';
+$route['carta'] = 'carta';
+$route['contacto'] = 'contacto';
+
+// Front-end CMS
 $route['blog'] = 'home/entradas';
 $route['blog/pagina/(:num)'] = 'home/entradas/$1';
 $route['blog/(:any)'] = 'home/detalle_articulo/$1';
+
+// BACKEND
 $route['back_end'] = 'home_be';
 $route['back_end/entradas'] = 'home_be/entradas';
 $route['back_end/entradas/anadir'] = 'form';
@@ -57,11 +65,10 @@ $route['back_end/categorias/offtopic'] = 'categorias/listar_offtopic';
 
 $route['back_end/web'] = 'home_be/web';
 $route['back_end/salir'] = 'home/salir';
-$route['equipo'] = 'equipo';
-$route['carta'] = 'carta';
-$route['contacto'] = 'contacto';
 
-// Reservas
+
+
+// Reservas Front-end y Back-end
 /************************************************************************/
 
 // Reserva FRONT END
