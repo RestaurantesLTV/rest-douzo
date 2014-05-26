@@ -19,7 +19,7 @@ class ReservaPorTurnos extends Reserva{
     private $turnos = array();
     
     public function __construct($turno, $telefono, $email, $fecha_hora, 
-            $numPersonas, $observaciones){
+            $numPersonas, $observaciones,$nombre, $apellido){
         parent::__construct();
         
         
@@ -33,6 +33,8 @@ class ReservaPorTurnos extends Reserva{
         $this->fecha_hora = $fecha_hora;
         $this->numPersonas = $numPersonas;
         $this->observaciones = $observaciones;
+        $this->nombre = $nombre;
+        $this->apellido = $apellido;
     }
     
     public function dumpObject(){

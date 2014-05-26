@@ -39,6 +39,10 @@ abstract class Reserva {
      */
     protected $fecha_hora;
     
+    protected $nombre;
+    
+    protected $apellido;
+    
     protected $email;
     
     protected $telefono;
@@ -52,6 +56,22 @@ abstract class Reserva {
     
     public function __construct(){
         $this->CI =& get_instance();
+    }
+    
+    public function getNombre(){
+        return $this->nombre;
+    }
+    
+    public function getApellido(){
+        return $this->apellido;
+    }
+    
+    public function setNombre($no){
+        $this->nombre = $no;
+    }
+    
+    public function setApellido($ap){
+        $this->apellido = $ap;
     }
     
     public function setID($id){

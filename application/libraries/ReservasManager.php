@@ -248,6 +248,8 @@ class ReservasManager {
             
             /* BEG INSERTAR*/
             $data = array(
+                'nombre'                => $r->getNombre(),
+                'apellido'              => $r->getApellido(),
                 'codigo' 		=> $cod_reserva,
                 'fecha_reservada'	=> $r->getFecha(),
                 'hora_reservada' 	=> $r->getTiempo(),

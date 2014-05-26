@@ -63,7 +63,7 @@ class Reserva_Controller extends CI_Controller {
             $hora_fecha = $fecha_YMD . " " . $hora;
             $d = new DateTime($hora_fecha);
 
-            $r = new ReservaPorTurnos($this->input->post('turno'), $this->input->post('telefono'), $this->input->post('email'), $d, $this->input->post('num_personas'), $this->input->post('observaciones'));
+            $r = new ReservaPorTurnos($this->input->post('turno'), $this->input->post('telefono'), $this->input->post('email'), $d, $this->input->post('num_personas'), $this->input->post('observaciones'),$this->input->post('nombre'),$this->input->post('apellido'));
 
             $this->reservasmanager->nuevaReserva($r);
 
