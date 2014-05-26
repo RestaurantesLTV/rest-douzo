@@ -89,12 +89,16 @@ $route['back_end/proximasreservas'] = 'ajax_reserva/ajaxProximasReservas';
 $route['back_end/ultimos7dias'] = 'ajax_reserva/ajaxReservasUltimos7Dias';
 $route['back_end/todaslasreservas'] = 'ajax_reserva/ajaxTodasLasReservas';
 $route['back_end/reservascompletadas'] = 'ajax_reserva/ajaxReservasCompletadas';
+$route['back_end/noverificadas'] = 'ajax_reserva/ajaxNoVerificadas';
+
+
 
 
 // Otras funciones AJAX
 $route['back_end/modificarconfig'] = "ajax_reserva/ajaxModificarConfig";
 $route['back_end/notificaciones'] = "ajax_reserva/ajaxNotificaciones";
 $route['back_end/marcarcomovisto'] = "ajax_reserva/ajaxMarcarComoVisto";
+$route['back_end/borrar_reserva'] = 'ajax_reserva/ajaxBorrarReserva';
 
 
 

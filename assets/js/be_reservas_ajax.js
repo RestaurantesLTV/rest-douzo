@@ -4,12 +4,15 @@ var gTurno = "";
 var gDatos = new Array(); // Para Reservas
 var gNotificaciones = new Array(); // Para notificaciones
 var gTurnos = undefined;
+var gSeccionReserva = "";
 
 // Variables de filtracion. Nos sirve para alternar entre orden ascendente y descendente.
 var gToggle = {
-    'nombre': true,
-    'id': true,
-    'menu': true
+    'nombre': false,
+    'id': false,
+    'menu': false,
+    'fecha-notificaciones': false,
+    "checkbox" : false
 }
 
 
@@ -26,6 +29,9 @@ function PopUp(element_id) {
         opacity: 0.6,
         positionStyle: 'fixed', //'fixed' or 'absolute'
         modalColor: "#99CCFF",
+        onClose: function(element) {
+            $("#" + element_id).remove();
+        }
     });
 }
 
@@ -41,36 +47,14 @@ function PopUp(element_id) {
  * @returns {undefined}
  */
 function CambiarSeccion(id_seccion) {
+    for(var propiedad in gToggle){
+        gToggle[propiedad] = false;
+        console.log(propiedad + ": " + gToggle[propiedad]);
+    }
+    
     gSeccionActual = id_seccion;
     $("#Contenido-Principal").children().hide();
     $("#" + id_seccion).show();
-}
-
-/*
- * Desplaza el menu (Oculta o lo hace visible).
- * Para ello, el objeto a ser movido debe tener la siguiente propieda CSS:
- * 'Position: relative', ya que se mueve relativamente desde su posicion 'x' pixeles.
- * @param boolean b
- * @returns {undefined}
- */
-function ShowMenu(b) {
-    var desplazamiento;
-    if (b) {
-        desplazamiento = "+=200px";
-        if (gToggle['menu'])
-            return; // Evitamos el desplazamiento si ya esta visible
-        gToggle['menu'] = true;
-    } else {
-        desplazamiento = "-=200px";
-        if (!gToggle['menu'])
-            return; // Evitamos el desplazamiento si ya esta oculto
-        gToggle['menu'] = false;
-    }
-    $("#cssmenu").clearQueue().stop();
-
-    $("#cssmenu").animate({
-        left: desplazamiento,
-    }, 1000);
 }
 
 function SetInitialBindings() {
@@ -102,6 +86,7 @@ function SetInitialBindings() {
     });
 
     $(pTodas_las_reservas).click(function() {
+        gSeccionReserva = "todaslasreservas";
         $.get("todaslasreservas",
                 function(data) {
                     gDatos = data;
@@ -110,6 +95,7 @@ function SetInitialBindings() {
     });
 
     $(pReservas_completadas).click(function() {
+        gSeccionReserva = "reservascompletadas";
         $.get("reservascompletadas",
                 function(data) {
                     gDatos = data;
@@ -118,6 +104,7 @@ function SetInitialBindings() {
     });
 
     $(pUtimos7dias).click(function() {
+        gSeccionReserva = "ultimos7dias";
         $.get("ultimos7dias",
                 function(data) {
                     gDatos = data;
@@ -126,34 +113,48 @@ function SetInitialBindings() {
     });
 
     $(pProximas_reservas).click(function() {
+        gSeccionReserva = "proximasreservas";
         $.get("proximasreservas",
                 function(data) {
                     gDatos = data;
                     PrintReservasTable(data, true);
                 }, "json");
     });
-
+    
+    $("#reserva_no_verificada").click(function() {
+        gSeccionReserva = "noverificadas";
+        $.get("noverificadas",
+                function(data) {
+                    gDatos = data;
+                    PrintReservasTable(data, true);
+                }, "json");
+    });
+    
     $("#reserva-menu-notificaciones").click(function() {
         //CambiarSeccion("reserva-notificaciones");
         //CleanTable("reserva-notificaciones");
         $.get("notificaciones",
                 function(data) {
                     gNotificaciones = data;
-                    //console.log(data);
                     PrintNotificacionesTable(data);
                 }, "json");
     });
 
     $("#reserva-visto-btn").click(function() {
-        DeleteSelectedRows();
+        MarcarComoVistas();
+    });
+
+    $("#reserva-borrar").click(function() {
+        BorrarReservas();
     });
 
 
     /*************************************************/
     // Filtrar por columna
     $(".reserva-backend table td").eq(0).click(function() { // Columna "Seleccionar"
-        gDatos.reverse();
-        PrintReservasTable(gDatos);
+        //Seleccionamos todos los checkbox
+        
+        //PrintReservasTable(gDatos);
     });
 
     $(".reserva-backend table td").eq(1).click(function() { // Columna "ID Reserva"
@@ -165,7 +166,7 @@ function SetInitialBindings() {
     });
 
     $(".reserva-backend table td").eq(3).click(function() { // Columna "Hora"
-        //FiltrarPorFecha();
+        //FiltrarPorFecha(gDatos);
         alert("Por implementar")
     });
 
@@ -177,7 +178,7 @@ function SetInitialBindings() {
 }
 
 function PrintNotificacionesTable(data, debug) {
-    if(data == null){
+    if (data == null) {
         alert("No hay notificaciones disponibles!");
         return;
     }
@@ -214,6 +215,37 @@ function ModificarConfig(peticion, valor) {
     });
 }
 
+function BorrarReservas() {
+    var ids = new Array();
+    $('#reserva-tabla table tr:not(:eq(0)) input[type=checkbox]').each(function(index, element) {
+        //datos_index = ($(element).attr("id")).split("-")[1];
+        if (element.checked) {
+            ids[ids.length] = gDatos[index]['id'];
+        }
+
+    });
+
+    if (ids.length != 0) {
+        var string_get = "";
+        for (var i = 0; i < ids.length; i++) {
+            string_get = string_get + "borrar[]=" + ids[i];
+            if ((i + 1) != ids.length) {
+                string_get = string_get + "&";
+            }
+        }
+
+        $.get("borrar_reserva?" + string_get, function(respuesta) {
+            if (respuesta) {
+                $.get(gSeccionReserva,
+                        function(data) {
+                            gDatos = data;
+                            PrintReservasTable(gDatos); // Actualizamos
+                        }, "json");
+            }
+        });
+    }
+}
+
 /**
  * Agrega nuevas filas a la tabla de reservas.
  * Antes de hacerlo limpia todas las filas que hay.
@@ -240,11 +272,14 @@ function PrintReservasTable(data, debug) {
         var id_turno = data[i]["id_turno"] - 1;
         var turno_string = gTurnos[id_turno];
 
+        var fecha_reserva = new Date(data[i]["fecha_reservada"]);
+
+
         html = html + "<tr id='DatosRef-" + i + "'>";
-        html = html + "<td>" + '<input type="checkbox" id="res' + data[i]["id"] + '"><label for="1"></label>' + "</td>";
+        html = html + "<td class='reserva_selec_col'>" + '<input type="checkbox" id="res' + data[i]["id"] + '"><label for="1"></label>' + "</td>";
         html = html + "<td>" + data[i]["id"] + "</td>";
         html = html + "<td>" + data[i]["nombre"] + " " + data[i]['apellido'] + "</td>";
-        html = html + "<td>" + data[i]["fecha_reservada"] + "</td>";
+        html = html + "<td>" + fecha_reserva.toLocaleDateString() + "</td>";
         html = html + "<td>" + data[i]["hora_reservada"] + "</td>";
         html = html + "<td>" + turno_string + "</td>";
         html = html + "</tr>";
@@ -257,11 +292,21 @@ function PrintReservasTable(data, debug) {
     SetRowBindings();
 }
 
-function FiltrarPorFechaYHora(datos) {
-    datos.sort(function() {
-
-    });
-}
+/*function FiltrarPorFechaYHora(datos) {
+ datos.sort(function(a, b) {
+ if (gToggle['fecha-notificaciones']) {
+ if (a['fecha'] > b['fecha']) {
+ return 1;
+ }
+ if (a['fecha'] < b['fecha']) {
+ return -1;
+ }
+ }
+ 
+ });
+ gToggle['fecha-notificaciones'] = !gToggle['fecha-notificaciones'];
+ 
+ }*/
 
 
 
@@ -279,10 +324,13 @@ function FiltrarPorFechaYHora(datos) {
  */
 function SetRowBindings() {
     $('#reserva-tabla table tr:not(:eq(0))').each(function(index, element) {
-        $(this).click(function() {
+        $(this).click(function(e) {
 
-            datos_index = ($(element).attr("id")).split("-")[1];
-            PrintJSON(gDatos[datos_index]);
+            // Si no clickeamos la primera columna  (donde estan situados los checkbox)
+            if ($(e.target).parents(".reserva_selec_col").length <= 0 && $(e.target).attr("class") != "reserva_selec_col") {
+                datos_index = ($(element).attr("id")).split("-")[1];
+                PrintJSON(gDatos[datos_index]);
+            }
         });
     });
 }
@@ -291,7 +339,7 @@ function SetRowBindings() {
  * Funciona siempre y cuando no se filtre!
  * @returns {undefined}
  */
-function DeleteSelectedRows() {
+function MarcarComoVistas() {
     var ids = new Array();
     $('#reserva-notificaciones table tr:not(:eq(0)) input[type=checkbox]').each(function(index, element) {
         //datos_index = ($(element).attr("id")).split("-")[1];
@@ -314,7 +362,6 @@ function DeleteSelectedRows() {
             $.get("notificaciones",
                     function(data) {
                         gNotificaciones = data;
-                        //console.log(data);
                         PrintNotificacionesTable(data);
                     }, "json");
 
@@ -332,64 +379,65 @@ function PrintJSON(json) {
     var texto = "";
     //var endline_ch = "\n";
     /*texto = texto + endline_ch + "Nombre: " + json['nombre'];
-    texto = texto + endline_ch + "Apellido: " + json['apellido'];
-    texto = texto + endline_ch + "Codigo: " + json['codigo'];
-    texto = texto + endline_ch + "Datetime_registro: " + json['datetime_registro'];
-    texto = texto + endline_ch + "email: " + json['email'];
-    texto = texto + endline_ch + "fecha_reservada: " + json['fecha_reservada'];
-    texto = texto + endline_ch + "hora_reservada: " + json['hora_reservada'];
-    texto = texto + endline_ch + "id: " + json['id'];
-    texto = texto + endline_ch + "id_turno: " + json['id_turno'];
-    texto = texto + endline_ch + "ip: " + json['ip'];
-    texto = texto + endline_ch + "num_personas" + json['num_personas'];
-    texto = texto + endline_ch + "num_verificaciones: " + json['num_verificaciones'];
-    texto = texto + endline_ch + "observaciones: " + json['observaciones'];
-    texto = texto + endline_ch + "telefono: " + json['telefono'];
-    texto = texto + endline_ch + "verificado: " + json['verificado'];*/
-    
+     texto = texto + endline_ch + "Apellido: " + json['apellido'];
+     texto = texto + endline_ch + "Codigo: " + json['codigo'];
+     texto = texto + endline_ch + "Datetime_registro: " + json['datetime_registro'];
+     texto = texto + endline_ch + "email: " + json['email'];
+     texto = texto + endline_ch + "fecha_reservada: " + json['fecha_reservada'];
+     texto = texto + endline_ch + "hora_reservada: " + json['hora_reservada'];
+     texto = texto + endline_ch + "id: " + json['id'];
+     texto = texto + endline_ch + "id_turno: " + json['id_turno'];
+     texto = texto + endline_ch + "ip: " + json['ip'];
+     texto = texto + endline_ch + "num_personas" + json['num_personas'];
+     texto = texto + endline_ch + "num_verificaciones: " + json['num_verificaciones'];
+     texto = texto + endline_ch + "observaciones: " + json['observaciones'];
+     texto = texto + endline_ch + "telefono: " + json['telefono'];
+     texto = texto + endline_ch + "verificado: " + json['verificado'];*/
+
     $verificado = json['verificado'];
-    
-    if($verificado == 1){
+
+    if ($verificado == 1) {
         $verificado = "Si";
-    }else{ $verificado = "No"; }
-    
-    var id_turno = parseInt(json['id_turno'])-1;
+    } else {
+        $verificado = "No";
+    }
+
+    var id_turno = parseInt(json['id_turno']) - 1;
     var turno_string = gTurnos[id_turno];
-    
+
     var idElement = "reserva-popup-" + json['id'];
-    texto = "<table id='"+ idElement +"' class='CSSTableGenerator'>";
+    texto = "<table id='" + idElement + "' class='CSSTableGenerator'>";
     // Header Tabla
     texto = texto + getPopUpTableHeader();
     texto = texto + "<tr>";
-        texto = texto + "<td>" + json['nombre'] + " " + json['apellido'] +"</td>";
-        texto = texto + "<td>" + json['codigo'] +"</td>";
-        texto = texto + "<td>" + json['datetime_registro'] +"</td>";
-        texto = texto + "<td>" + json['fecha_reservada'] + " " + json['hora_reservada'] +"</td>";
-        texto = texto + "<td>" + json['email'] +"</td>";
-        texto = texto + "<td>" + turno_string +"</td>";
-        texto = texto + "<td>" + json['num_personas'] +"</td>";
-        texto = texto + "<td>" + json['telefono'] +"</td>";
-        texto = texto + "<td>" + $verificado +"</td>";
+    texto = texto + "<td>" + json['nombre'] + " " + json['apellido'] + "</td>";
+    texto = texto + "<td>" + json['codigo'] + "</td>";
+    texto = texto + "<td>" + json['datetime_registro'] + "</td>";
+    texto = texto + "<td>" + json['fecha_reservada'] + " " + json['hora_reservada'] + "</td>";
+    texto = texto + "<td>" + json['email'] + "</td>";
+    texto = texto + "<td>" + turno_string + "</td>";
+    texto = texto + "<td>" + json['num_personas'] + "</td>";
+    texto = texto + "<td>" + json['telefono'] + "</td>";
+    texto = texto + "<td>" + $verificado + "</td>";
     texto = texto + "</tr>";
-    
-    
+
+
     //Observaciones
     texto = texto + "<tr><td colspan='9' style=''>";
-        texto = texto + "<center><textarea readonly>" + json['observaciones'] +"</textarea></center>";
+    texto = texto + "<center><textarea readonly>" + json['observaciones'] + "</textarea></center>";
     texto = texto + "</td></tr>";
-    
-    
-    
+
+
+
     texto = texto + "</table>";
-    
-    
+
+
     $("body").append(texto);
     PopUp(idElement);
-    $("body").remove("#" + idElement);
     //alert(texto);
 }
 
-function getPopUpTableHeader(){
+function getPopUpTableHeader() {
     var texto = "";
     texto = texto + "<tr>";
     texto = texto + "<td>Nombre completo</td>";
@@ -450,7 +498,6 @@ function ucfirst(string) {
 /***************************************************/
 
 function SetPageLoading(loading) {
-    console.log("estado carga: " + loading);
     if (loading) {
         $("#reserva-loading-screen").show();
         $("#reserva-loading-gif").show();

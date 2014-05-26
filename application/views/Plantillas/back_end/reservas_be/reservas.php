@@ -43,10 +43,10 @@
             </tr>
         </table>
         <footer id='reserva-tabla-footer'>
+            <button id="reserva-borrar" class="reserva-button">Eliminar</button>
+            <!-- <button class="reserva-button">ADASD</button>
             <button class="reserva-button">ADASD</button>
-            <button class="reserva-button">ADASD</button>
-            <button class="reserva-button">ADASD</button>
-            <button class="reserva-button">ADASD</button>
+            <button class="reserva-button">ADASD</button> -->
         </footer>
     </div>
     <!-- END RESERVA TABLE -->

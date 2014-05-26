@@ -42,6 +42,11 @@ class Ajax_reserva extends CI_Controller{
         echo $this->dbResult_toJSON($completadas);
     }
     
+    public function ajaxNoVerificadas(){
+        $noVerificadas = $this->model->getReservasNoVerificadas();
+        echo $this->dbResult_toJSON($noVerificadas);
+    }
+    
     public function ajaxReservasUltimos7Dias(){
         $ultimos_dias = $this->model->getReservasUltimos7Dias();
         echo $this->dbResult_toJSON($ultimos_dias);
@@ -50,6 +55,18 @@ class Ajax_reserva extends CI_Controller{
     public function ajaxProximasReservas(){
         $proximas_reservas = $this->model->getProximasReservas();
         echo $this->dbResult_toJSON($proximas_reservas);
+    }
+    
+    public function ajaxBorrarReserva(){
+        $ids_marcados = $this->input->get('borrar');
+        if(count($ids_marcados) == 0){
+            die("No hay ni un solo id!");
+        }
+        
+        $success = $this->model->borrarReserva($ids_marcados);
+        echo $success;
+        
+        
     }
     
     public function getTurnos(){

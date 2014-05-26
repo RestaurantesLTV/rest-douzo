@@ -20,7 +20,7 @@
                 <li><a id="ultimos7dias" href='#'><span>&Uacute;ltimos 7 dias</span></a></li>
                 <li><a id="reservas_completadas" href='#'><span>Reservas completadas</span></a></li>
                 <li class=''><a id="todas_las_reservas" href='#'><span>Todas las reservas</span></a></li>
-                <li  class='last'><input id="calendar" placeholder="Fecha concreta" style='width:100%' type="text"/></li>
+                <li class=''><a id="reserva_no_verificada" href='#'><span>No verificadas</span></a></li>
             </ul>
         </li>
         <li class='has-sub'><a href='#'><span>Configuracion</span></a>
