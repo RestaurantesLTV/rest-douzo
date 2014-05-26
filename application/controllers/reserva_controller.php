@@ -33,10 +33,6 @@ class Reserva_Controller extends CI_Controller {
         // http://stackoverflow.com/questions/4527345/determine-if-user-is-using-proxy
     }
 
-    /* public function validar(){
-      echo "EXITO!";
-      } */
-
     public function validar() {
 
 

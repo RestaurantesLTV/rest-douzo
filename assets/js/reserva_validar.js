@@ -13,7 +13,7 @@ $(document).ready(function() {
 
             return false;
         });
-        console.log("Enviado");
+        //console.log("Enviado");
     });
 
     function HandleResponse(response) {
