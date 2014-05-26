@@ -163,8 +163,11 @@ function SetInitialBindings() {
         //Seleccionamos todos los checkbox
         console.log("Clickeado");
         SelectAllCheckbox("reserva-tabla");
-
-        //PrintReservasTable(gDatos);
+    });
+    
+    $("#reserva-notificaciones table td").eq(0).click(function() { // Columna "Seleccionar"
+        //Seleccionamos todos los checkbox
+        SelectAllCheckbox("reserva-notificaciones");
     });
 
     /*************************************************/
@@ -180,11 +183,11 @@ function SetInitialBindings() {
 
     $(".reserva-backend table td").eq(3).click(function() { // Columna "Hora"
         //FiltrarPorFecha(gDatos);
-        alert("Por implementar")
+        alert("Por implementar");
     });
 
     $(".reserva-backend table td").eq(4).click(function() { // Columna "Turno"
-        alert("Por implementar")
+        alert("Por implementar");
     });
 
 
@@ -403,23 +406,6 @@ function MarcarComoVistas() {
  */
 function PrintJSON(json) {
     var texto = "";
-    //var endline_ch = "\n";
-    /*texto = texto + endline_ch + "Nombre: " + json['nombre'];
-     texto = texto + endline_ch + "Apellido: " + json['apellido'];
-     texto = texto + endline_ch + "Codigo: " + json['codigo'];
-     texto = texto + endline_ch + "Datetime_registro: " + json['datetime_registro'];
-     texto = texto + endline_ch + "email: " + json['email'];
-     texto = texto + endline_ch + "fecha_reservada: " + json['fecha_reservada'];
-     texto = texto + endline_ch + "hora_reservada: " + json['hora_reservada'];
-     texto = texto + endline_ch + "id: " + json['id'];
-     texto = texto + endline_ch + "id_turno: " + json['id_turno'];
-     texto = texto + endline_ch + "ip: " + json['ip'];
-     texto = texto + endline_ch + "num_personas" + json['num_personas'];
-     texto = texto + endline_ch + "num_verificaciones: " + json['num_verificaciones'];
-     texto = texto + endline_ch + "observaciones: " + json['observaciones'];
-     texto = texto + endline_ch + "telefono: " + json['telefono'];
-     texto = texto + endline_ch + "verificado: " + json['verificado'];*/
-
     $verificado = json['verificado'];
 
     if ($verificado == 1) {
