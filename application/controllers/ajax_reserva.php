@@ -54,8 +54,7 @@ class Ajax_reserva extends CI_Controller{
     
     public function ajaxProximasReservas(){
         $proximas_reservas = $this->model->getProximasReservas();
-        //echo $this->dbResult_toJSON($proximas_reservas);
-        print_r($proximas_reservas);
+        echo $this->dbResult_toJSON($proximas_reservas);
     }
     
     public function ajaxBorrarReserva(){

@@ -122,6 +122,7 @@ function SetInitialBindings() {
     $(pProximas_reservas).click(function() {
         CambiarSeccion("reserva-tabla");
         gSeccionReserva = "proximasreservas";
+        console.log("Proximas reservas")
         $.get("proximasreservas",
                 function(data) {
                     gDatos = data;

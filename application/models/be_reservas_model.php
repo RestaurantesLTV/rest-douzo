@@ -29,7 +29,6 @@ class be_reservas_model extends CI_Model {
 
     public function getProximasReservas() {
         $query = "SELECT * FROM reserva WHERE fecha_reservada >= DATE(NOW()) ";
-        echo "<p>PROXIMAS: ".$query."</p>";
         $resultados = $this->db->query($query);
         return $resultados;
     }
