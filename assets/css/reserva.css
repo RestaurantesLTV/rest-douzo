@@ -25,7 +25,9 @@
     border-radius: 5px;
 }
 .calendario{
-    left: 60%;
+    left:78%;
+    top: -92%;
+    position: absolute;
 }
 .pasos{
     padding: 2% 4%;
@@ -40,9 +42,9 @@
 }
 .paso2{
     position: relative;
-    margin-top: -26.8%;
+    margin-top: -26.2%;
     margin-bottom: 8%;
-    left: 45%;
+    left: 37%;
 }
 .pasoInf{
     margin-top: 2%;
@@ -54,13 +56,13 @@
 }
 .paso4{
     position: relative;
-    left: 40.55%;
+    left: 32.55%;
     margin-top: -13%;
 }
 
 input, textarea, select{
-    background-color:black;
-    color:white;
+    background-color:#f7f7f7;
+    color:black;
     /*-webkit-box-shadow: 1px 1px 5px 0px rgba(255, 255, 255, 0.30);
     -moz-box-shadow:    1px 1px 5px 0px rgba(255, 255, 255, 0.30);
     box-shadow:         1px 1px 5px 0px rgba(255, 255, 255, 0.30);*/
