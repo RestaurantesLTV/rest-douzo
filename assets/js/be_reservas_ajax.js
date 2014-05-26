@@ -12,7 +12,7 @@ var gToggle = {
     'id': false,
     'menu': false,
     'fecha-notificaciones': false,
-    "checkbox" : false
+    "checkbox": false
 }
 
 
@@ -22,6 +22,13 @@ $(document).ready(function() {
     SetInitialBindings();
     SetPageLoading(false);
 });
+
+function LimpiarVariables() {
+    for (var propiedad in gToggle) {
+        gToggle[propiedad] = false;
+        //console.log(propiedad + ": " + gToggle[propiedad]);
+    }
+}
 
 function PopUp(element_id) {
     $('#' + element_id).bPopup({
@@ -47,11 +54,8 @@ function PopUp(element_id) {
  * @returns {undefined}
  */
 function CambiarSeccion(id_seccion) {
-    for(var propiedad in gToggle){
-        gToggle[propiedad] = false;
-        console.log(propiedad + ": " + gToggle[propiedad]);
-    }
-    
+
+    LimpiarVariables();
     gSeccionActual = id_seccion;
     $("#Contenido-Principal").children().hide();
     $("#" + id_seccion).show();
@@ -86,6 +90,7 @@ function SetInitialBindings() {
     });
 
     $(pTodas_las_reservas).click(function() {
+        CambiarSeccion("reserva-tabla");
         gSeccionReserva = "todaslasreservas";
         $.get("todaslasreservas",
                 function(data) {
@@ -95,6 +100,7 @@ function SetInitialBindings() {
     });
 
     $(pReservas_completadas).click(function() {
+        CambiarSeccion("reserva-tabla");
         gSeccionReserva = "reservascompletadas";
         $.get("reservascompletadas",
                 function(data) {
@@ -104,6 +110,7 @@ function SetInitialBindings() {
     });
 
     $(pUtimos7dias).click(function() {
+        CambiarSeccion("reserva-tabla");
         gSeccionReserva = "ultimos7dias";
         $.get("ultimos7dias",
                 function(data) {
@@ -113,6 +120,7 @@ function SetInitialBindings() {
     });
 
     $(pProximas_reservas).click(function() {
+        CambiarSeccion("reserva-tabla");
         gSeccionReserva = "proximasreservas";
         $.get("proximasreservas",
                 function(data) {
@@ -120,8 +128,9 @@ function SetInitialBindings() {
                     PrintReservasTable(data, true);
                 }, "json");
     });
-    
+
     $("#reserva_no_verificada").click(function() {
+        CambiarSeccion("reserva-tabla");
         gSeccionReserva = "noverificadas";
         $.get("noverificadas",
                 function(data) {
@@ -129,10 +138,9 @@ function SetInitialBindings() {
                     PrintReservasTable(data, true);
                 }, "json");
     });
-    
+
     $("#reserva-menu-notificaciones").click(function() {
-        //CambiarSeccion("reserva-notificaciones");
-        //CleanTable("reserva-notificaciones");
+        CambiarSeccion("reserva-notificaciones");
         $.get("notificaciones",
                 function(data) {
                     gNotificaciones = data;
@@ -149,13 +157,18 @@ function SetInitialBindings() {
     });
 
 
-    /*************************************************/
-    // Filtrar por columna
-    $(".reserva-backend table td").eq(0).click(function() { // Columna "Seleccionar"
+    // SELECCIONAR TODOS LOS CHECKBOX
+
+    $("#reserva-tabla table td").eq(0).click(function() { // Columna "Seleccionar"
         //Seleccionamos todos los checkbox
-        
+        console.log("Clickeado");
+        SelectAllCheckbox("reserva-tabla");
+
         //PrintReservasTable(gDatos);
     });
+
+    /*************************************************/
+    // Filtrar por columna
 
     $(".reserva-backend table td").eq(1).click(function() { // Columna "ID Reserva"
         FiltrarPorIDReserva();
@@ -177,12 +190,25 @@ function SetInitialBindings() {
 
 }
 
+function SelectAllCheckbox(id_element) {
+    var valor;
+    if (gToggle['checkbox']) {
+        valor = false;
+    } else {
+        valor = true;
+    }
+
+    $("#" + id_element).find("input[type=checkbox]").prop("checked", valor);
+    gToggle['checkbox'] = !gToggle['checkbox'];
+}
+
 function PrintNotificacionesTable(data, debug) {
     if (data == null) {
         alert("No hay notificaciones disponibles!");
         return;
     }
-    CambiarSeccion("reserva-notificaciones");
+    LimpiarVariables();
+    
     CleanTable("reserva-notificaciones");
     SetPageLoading(true);
     var html = "";
@@ -239,6 +265,7 @@ function BorrarReservas() {
                 $.get(gSeccionReserva,
                         function(data) {
                             gDatos = data;
+                            
                             PrintReservasTable(gDatos); // Actualizamos
                         }, "json");
             }
@@ -253,8 +280,7 @@ function BorrarReservas() {
  * @param boolean debug
  */
 function PrintReservasTable(data, debug) {
-    //UnbindLastRows();    
-    CambiarSeccion("reserva-tabla");
+    gToggle['checkbox'] = false;
     CleanTable("reserva-tabla");
     SetPageLoading(true);
     setTimeout(function() {

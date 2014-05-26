@@ -5,16 +5,29 @@ class Home_be extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Articulos_model');
-        
-        /*$this->load->library(array('user', 'user_manager'));
-        
-        $this->user->onvalid_session('Plantillas/back_end/index_be');
-        $this->user->on_invalid_session('login');*/
+        $this->load->library("Aauth");
+    }
 
-        
+    /**
+     * @author unscathed21@hotmail.com Leonardo
+     */
+    public function validarLogin() {
+        $user = $this->input->post('login');
+        $password = $this->input->post('password');
+
+        if (!$this->aauth->login($user, $password)) {
+            $this->session->set_flashdata('bad_login', "Sus credenciales son err&oacute;neas.");
+        }
+        redirect("back_end", 'refresh');
     }
 
     function index() {
+        if (!$this->aauth->is_loggedin()) {
+            //$this->aauth->create_user('admin@admin.com', 'admin', 'Mr. Sharingan');
+            $this->load->view('login');
+            return;
+        }
+
         $this->load->view('Plantillas/back_end/index_be');
     }
 
@@ -23,20 +36,38 @@ class Home_be extends CI_Controller {
      * Carga la vista lista_entradas ----> $this->load->view('Dinamicas/back_end/'.$contenido);
      */
     function entradas() {
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
+
         $datos['articulo'] = $this->Articulos_model->lista_articulos();
         $datos['titulo'] = "Douzo|Entradas";
         $datos['contenido'] = "lista_entradas";
         $this->load->view('Plantillas/back_end/entradas_be', $datos);
     }
-    function subir_imagen(){
+
+    function subir_imagen() {
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
         $this->load->view('Plantillas/back_end/subir_foto');
     }
 
     function anadirEntrada() {
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
         $this->load->view('Plantillas/back_end/anadir_art_be');
     }
 
     function modificarEntrada($url_art) {
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
         $url_limpia = $this->security->xss_clean($url_art);
         $datos['detalle'] = $this->Articulos_model->detalle_articulo($url_limpia);
         $datos['titulo'] = $datos['detalle']->titulo_art;
@@ -46,6 +77,10 @@ class Home_be extends CI_Controller {
     }
 
     function entradaModificada() {
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
         $this->Articulos_model->actualizar_entrada();
         $datos['titulo'] = "Douzo|Entradas";
         $datos['contenido'] = "lista_entradas";
@@ -53,6 +88,10 @@ class Home_be extends CI_Controller {
     }
 
     function borrar_entrada($url_art) {
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
         $this->Articulos_model->borrar_entrada($url_art);
         $datos['titulo'] = "Douzo|Entradas";
         $datos['contenido'] = "lista_entradas";
@@ -61,6 +100,10 @@ class Home_be extends CI_Controller {
     }
 
     function categorias() {
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
         $this->load->view('Plantillas/back_end/categorias_be');
     }
 
@@ -68,13 +111,20 @@ class Home_be extends CI_Controller {
      * @author unscathed18
      */
     function reserva() {
-
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
         $datos['contenido'] = "reservas";
 
         $this->load->view('Plantillas/back_end/reservas_be', $datos);
     }
 
     function web() {
+        if (!$this->aauth->is_loggedin()) {
+            $this->load->view('login');
+            return;
+        }
         $this->load->view('Plantillas/back_end/web_be');
     }
 
@@ -83,36 +133,10 @@ class Home_be extends CI_Controller {
      * @todo implementar el sistema de usuarios para hacer logout
      */
     function salir() {
-        $this->load->view('Plantillas/index');
+        $this->aauth->logout();
+        $datos['articulo'] = $this->Articulos_model->ultimo_articulo();
+        $datos['contenido'] = "presentacion";
+        $this->load->view('Plantillas/index', $datos);
     }
 
-    //LOGIN
-    /*     * ********************************************************************** */
-    function validate() {
-        // Receives the login data
-        $login = $this->input->post('login');
-        $password = $this->input->post('password');
-
-        /*
-         * Validates the user input
-         * The user->login returns true on success or false on fail.
-         * It also creates the user session.
-         */
-        if ($this->user->login($login, $password)) {
-            // Success
-            redirect('login/private_page');
-        } else {
-            // Oh, holdon sir.
-            redirect('login');
-        }
-    }
-
-    // Simple logout function
-    function logout() {
-        // Removes user session and redirects to login
-        $this->user->destroy_user('login');
-    }
-
-    // FUNCIONES DE RESERVA: @author unscathed18
-    /*     * ********************************************************************** */
 }

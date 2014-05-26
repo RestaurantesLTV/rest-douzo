@@ -101,6 +101,9 @@ $route['back_end/marcarcomovisto'] = "ajax_reserva/ajaxMarcarComoVisto";
 $route['back_end/borrar_reserva'] = 'ajax_reserva/ajaxBorrarReserva';
 
 
+//Login
+$route['login/validate'] = 'home_be/validarLogin';
+$route['back_end/salir'] = "home_be/salir";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
