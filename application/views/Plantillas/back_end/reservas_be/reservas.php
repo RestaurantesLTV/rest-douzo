@@ -4,6 +4,7 @@
 
 <!-- JS -->
 <script src="<?php echo base_url(); ?>assets/js/be_reservas_ajax.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/lib/jquery.bpopup.min.js"></script>
 <div id="reserva-loading-screen"></div> <!-- Pantalla de carga trasparente que cubre toda la pantalla -->
 <div id="reserva-loading-gif"></div> <!-- Barra de carga que aparece en la mitad de la pantalla cuando la web esta en fase de carga -->
 <div id="Contenido-Principal">
@@ -11,7 +12,7 @@
     <!-- BEG INICIO -->
     
     <div id='reserva-inicio' class="reserva-backend">
-        <img src="<?php echo base_url();?>assets/images/uncle_sam.jpg"/>
+        <img style="width:900px" src="<?php echo base_url();?>assets/images/uncle_sam.png"/>
     </div>
     
     

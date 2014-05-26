@@ -20,6 +20,15 @@ $(document).ready(function() {
     SetPageLoading(false);
 });
 
+function PopUp(element_id) {
+    $('#' + element_id).bPopup({
+        modalClose: true,
+        opacity: 0.6,
+        positionStyle: 'fixed', //'fixed' or 'absolute'
+        modalColor: "#99CCFF",
+    });
+}
+
 /**
  * Ocultan todos los divs de la pagina, y muestra aquel que corresponde
  * a esa seccion en el backend.
@@ -168,6 +177,10 @@ function SetInitialBindings() {
 }
 
 function PrintNotificacionesTable(data, debug) {
+    if(data == null){
+        alert("No hay notificaciones disponibles!");
+        return;
+    }
     CambiarSeccion("reserva-notificaciones");
     CleanTable("reserva-notificaciones");
     SetPageLoading(true);
@@ -298,13 +311,13 @@ function DeleteSelectedRows() {
             }
         }
         $.get("marcarcomovisto?" + string_get, function(respuesta) {
-                $.get("notificaciones",
-                        function(data) {
-                            gNotificaciones = data;
-                            //console.log(data);
-                            PrintNotificacionesTable(data);
-                        }, "json");
-            
+            $.get("notificaciones",
+                    function(data) {
+                        gNotificaciones = data;
+                        //console.log(data);
+                        PrintNotificacionesTable(data);
+                    }, "json");
+
         });
     }
 
@@ -317,8 +330,8 @@ function DeleteSelectedRows() {
  */
 function PrintJSON(json) {
     var texto = "";
-    var endline_ch = "\n";
-    texto = texto + endline_ch + "Nombre: " + json['nombre'];
+    //var endline_ch = "\n";
+    /*texto = texto + endline_ch + "Nombre: " + json['nombre'];
     texto = texto + endline_ch + "Apellido: " + json['apellido'];
     texto = texto + endline_ch + "Codigo: " + json['codigo'];
     texto = texto + endline_ch + "Datetime_registro: " + json['datetime_registro'];
@@ -332,9 +345,66 @@ function PrintJSON(json) {
     texto = texto + endline_ch + "num_verificaciones: " + json['num_verificaciones'];
     texto = texto + endline_ch + "observaciones: " + json['observaciones'];
     texto = texto + endline_ch + "telefono: " + json['telefono'];
-    texto = texto + endline_ch + "verificado: " + json['verificado'];
-    alert(texto);
+    texto = texto + endline_ch + "verificado: " + json['verificado'];*/
+    
+    $verificado = json['verificado'];
+    
+    if($verificado == 1){
+        $verificado = "Si";
+    }else{ $verificado = "No"; }
+    
+    var id_turno = parseInt(json['id_turno'])-1;
+    var turno_string = gTurnos[id_turno];
+    
+    var idElement = "reserva-popup-" + json['id'];
+    texto = "<table id='"+ idElement +"' class='CSSTableGenerator'>";
+    // Header Tabla
+    texto = texto + getPopUpTableHeader();
+    texto = texto + "<tr>";
+        texto = texto + "<td>" + json['nombre'] + " " + json['apellido'] +"</td>";
+        texto = texto + "<td>" + json['codigo'] +"</td>";
+        texto = texto + "<td>" + json['datetime_registro'] +"</td>";
+        texto = texto + "<td>" + json['fecha_reservada'] + " " + json['hora_reservada'] +"</td>";
+        texto = texto + "<td>" + json['email'] +"</td>";
+        texto = texto + "<td>" + turno_string +"</td>";
+        texto = texto + "<td>" + json['num_personas'] +"</td>";
+        texto = texto + "<td>" + json['telefono'] +"</td>";
+        texto = texto + "<td>" + $verificado +"</td>";
+    texto = texto + "</tr>";
+    
+    
+    //Observaciones
+    texto = texto + "<tr><td colspan='9' style=''>";
+        texto = texto + "<center><textarea readonly>" + json['observaciones'] +"</textarea></center>";
+    texto = texto + "</td></tr>";
+    
+    
+    
+    texto = texto + "</table>";
+    
+    
+    $("body").append(texto);
+    PopUp(idElement);
+    $("body").remove("#" + idElement);
+    //alert(texto);
 }
+
+function getPopUpTableHeader(){
+    var texto = "";
+    texto = texto + "<tr>";
+    texto = texto + "<td>Nombre completo</td>";
+    texto = texto + "<td>Codigo</td>";
+    texto = texto + "<td>Fecha de registro</td>";
+    texto = texto + "<td>Fecha de reserva</td>";
+    texto = texto + "<td>Email</td>";
+    texto = texto + "<td>Turno</td>";
+    texto = texto + "<td>Personas</td>";
+    texto = texto + "<td>Telefono</td>";
+    texto = texto + "<td>Verificado</td>";
+    texto = texto + "</tr>";
+    return texto;
+}
+
 
 /**
  * Borra toda la tabla de reservas excepto la primera row
