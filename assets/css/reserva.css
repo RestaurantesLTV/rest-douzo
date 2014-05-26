@@ -57,3 +57,25 @@
     left: 40.55%;
     margin-top: -13%;
 }
+
+input, textarea, select{
+    background-color:black;
+    color:white;
+    /*-webkit-box-shadow: 1px 1px 5px 0px rgba(255, 255, 255, 0.30);
+    -moz-box-shadow:    1px 1px 5px 0px rgba(255, 255, 255, 0.30);
+    box-shadow:         1px 1px 5px 0px rgba(255, 255, 255, 0.30);*/
+    border:1px solid rgba(50,50,50,1);
+    outline:0;
+}
+input:focus, textarea:focus, select:focus{
+    -webkit-box-shadow: 1px 1px 8px 0px rgba(255, 255, 255, 0.75);
+    -moz-box-shadow:    1px 1px 8px 0px rgba(255, 255, 255, 0.75);
+    box-shadow:         1px 1px 8px 0px rgba(255, 255, 255, 0.75);
+
+    outline:0;
+}
+
+/* http://stackoverflow.com/questions/2610497/change-an-inputs-html5-placeholder-color-with-css */
+::-webkit-input-placeholder,  ::-moz-placeholder, :-ms-input-placeholder, :-moz-placeholder{
+    font-style:italic;
+}
