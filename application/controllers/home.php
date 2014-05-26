@@ -14,7 +14,7 @@ class Home extends CI_Controller {
      * Funcion por defecto
      */
     function index() {
-        $this->output->enable_profiler(TRUE);
+       
         //$query = $this->Articulos_model->ultimo_articulo();
         //$datos['articulo'] = $query;
         $datos['articulo'] = $this->Articulos_model->ultimo_articulo();

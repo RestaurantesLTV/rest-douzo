@@ -5,9 +5,55 @@
 /* CSS */
 .reserva{
     font-family: 'Open Sans', sans-serif;
-    
+
     font-size: 0.8em;
     padding:15px;
-    
-}
 
+}
+.cajaTexto{
+    padding: 7px 12px;
+    border-radius: 5px;
+    width: 22%;
+    margin: 0.5%;
+}
+.cajaTextoSelect{
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+.cajaTextArea{
+    padding: 7px 12px;
+    border-radius: 5px;
+}
+.calendario{
+    left: 60%;
+}
+.pasos{
+    padding: 2% 4%;
+}
+.pasoSup{
+    position: relative;
+    left: 10%;
+}
+.paso1{
+    margin-left: 5%;
+    margin-bottom: 12.6%;
+}
+.paso2{
+    position: relative;
+    margin-top: -26.8%;
+    margin-bottom: 8%;
+    left: 45%;
+}
+.pasoInf{
+    margin-top: 2%;
+    position: relative;
+    left: 15%;
+}
+.paso3{
+
+}
+.paso4{
+    position: relative;
+    left: 40.55%;
+    margin-top: -13%;
+}

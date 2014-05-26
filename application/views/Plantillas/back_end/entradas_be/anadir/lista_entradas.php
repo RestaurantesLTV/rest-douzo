@@ -14,6 +14,7 @@ foreach ($articulo as $item) {
                         </td>
                         <th colspan="2">
                     <center>
+                       <!-- <div style="width: 8%; height: 10%;"><img src="<?php echo $item->imagen_art ?>"></div>-->
                         <h2><b><?php echo $item->titulo_art ?></b></h2> 
                     </center>
                     </th>
