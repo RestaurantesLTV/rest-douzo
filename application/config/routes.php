@@ -102,6 +102,7 @@ $route['back_end/borrar_reserva'] = 'ajax_reserva/ajaxBorrarReserva';
 
 
 //Login
+$route['login'] = 'home_be/login';
 $route['login/validate'] = 'home_be/validarLogin';
 $route['back_end/salir'] = "home_be/salir";
 

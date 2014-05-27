@@ -21,7 +21,10 @@ class Home extends CI_Controller {
         $datos['contenido'] = "presentacion";
         $this->load->view('Plantillas/index', $datos);
     }
-
+    /**
+     * Recibe el numero de pagina en el que se encuentra
+     * @param type $pagina 
+     */
     function entradas($pagina = FALSE) {
         $inicio = 0;
         $limite = 5;
@@ -42,7 +45,13 @@ class Home extends CI_Controller {
         $datos['contenido'] = "content";
         $this->load->view('Plantillas/blog', $datos);
     }
-
+    
+    /**
+     * Funcion que carga la vista en detalle de cada articulo segun el que se haya seleccionado
+     * @param type $url_art
+     * 
+     * @return view Vista detalle
+     */
      function detalle_articulo($url_art) {
         //$this->output->enable_profiler(TRUE);
         $url_limpia = $this->security->xss_clean($url_art);

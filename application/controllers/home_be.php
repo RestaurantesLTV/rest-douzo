@@ -5,6 +5,7 @@ class Home_be extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('Articulos_model');
+        $this->load->library("session");
         $this->load->library("Aauth");
     }
 
@@ -22,8 +23,10 @@ class Home_be extends CI_Controller {
     }
 
     function index() {
+        //$this->aauth->create_user('victor@hotmail.com', 'admin', 'Jose');
+
         if (!$this->aauth->is_loggedin()) {
-            //$this->aauth->create_user('admin@admin.com', 'admin', 'Mr. Sharingan');
+
             $this->load->view('login');
             return;
         }
@@ -31,9 +34,13 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/index_be');
     }
 
+    function login() {
+        $this->load->view('login');
+    }
+
     /**
      * Recoge la lista de articulos
-     * Carga la vista lista_entradas ----> $this->load->view('Dinamicas/back_end/'.$contenido);
+     * Carga la vista lista_entradas ----> $this->load->view('Plantillas/back_end/entradas_be'.$contenido);
      */
     function entradas() {
         if (!$this->aauth->is_loggedin()) {
@@ -47,6 +54,10 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/entradas_be', $datos);
     }
 
+    /**
+     * 
+     * @return false si no esta logged
+     */
     function subir_imagen() {
         if (!$this->aauth->is_loggedin()) {
             $this->load->view('login');
@@ -55,6 +66,10 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/subir_foto');
     }
 
+    /**
+     * 
+     *  @return false si no esta logged
+     */
     function anadirEntrada() {
         if (!$this->aauth->is_loggedin()) {
             $this->load->view('login');
@@ -63,6 +78,13 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/anadir_art_be');
     }
 
+    /**
+     * Funcion que se encarga de modificar una entrada
+     * 
+     * @param type $url_art
+     * @return false si no esta logged
+     * @author Victor Arnau
+     */
     function modificarEntrada($url_art) {
         if (!$this->aauth->is_loggedin()) {
             $this->load->view('login');
@@ -76,6 +98,11 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/modificar_art_be', $datos);
     }
 
+    /**
+     * Funcion que se encarga de actualizar la entrada en la bd y cargar la vista datos 
+     * @return false si no esta logged
+     * @author Victor Arnau
+     */
     function entradaModificada() {
         if (!$this->aauth->is_loggedin()) {
             $this->load->view('login');
@@ -87,6 +114,13 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/entradas_be', $datos);
     }
 
+    /**
+     * Funcion que borra el articulo seleccionado segun su url
+     * 
+     * @param type $url_art --> url del articulo
+     * @return false si no esta logged
+     * @author Victor Arnau
+     */
     function borrar_entrada($url_art) {
         if (!$this->aauth->is_loggedin()) {
             $this->load->view('login');
@@ -99,6 +133,11 @@ class Home_be extends CI_Controller {
         redirect('back_end/entradas', 'refresh');
     }
 
+    /**
+     * Funcion que carga la vista categorias
+     * @return false si no esta logged
+     * @author Victor Arnau
+     */
     function categorias() {
         if (!$this->aauth->is_loggedin()) {
             $this->load->view('login');
@@ -120,6 +159,11 @@ class Home_be extends CI_Controller {
         $this->load->view('Plantillas/back_end/reservas_be', $datos);
     }
 
+    /**
+     * Funcion que carga la pagina web (front-end)
+     * @return false si no esta logged
+     * @author Victor Arnau
+     */
     function web() {
         if (!$this->aauth->is_loggedin()) {
             $this->load->view('login');
@@ -134,9 +178,7 @@ class Home_be extends CI_Controller {
      */
     function salir() {
         $this->aauth->logout();
-        $datos['articulo'] = $this->Articulos_model->ultimo_articulo();
-        $datos['contenido'] = "presentacion";
-        $this->load->view('Plantillas/index', $datos);
+        redirect('login', 'refresh');
     }
 
 }
