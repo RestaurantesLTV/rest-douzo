@@ -1,11 +1,11 @@
 <?php
 
-//Load dependencies
+//Load dependencies. Necesario para cargar la clase padre "Reserva".
 get_instance()->customautoloader->load("Reserva");
 
 /**
- * Description of ReservaPorTurnos
- *
+ * Reserva mas especifica para restaurantes que hagan reservas a partir
+ * diversos turnos diarios.
  * @author unscathed18
  */
 class ReservaPorTurnos extends Reserva{
@@ -16,7 +16,6 @@ class ReservaPorTurnos extends Reserva{
      * @var int
      */
     private $turno = -1;
-    private $turnos = array();
     
     public function __construct($turno, $telefono, $email, $fecha_hora, 
             $numPersonas, $observaciones,$nombre, $apellido){
@@ -37,6 +36,10 @@ class ReservaPorTurnos extends Reserva{
         $this->apellido = $apellido;
     }
     
+    /**
+     * Funcion que sirve para debugear el contenido del objeto
+     * @return string
+     */
     public function dumpObject(){
         $value  = "<p>Turno: ".$this->turno."</p>";
         $value .= "<p>Telefono: ".$this->telefono."</p>";
@@ -47,20 +50,22 @@ class ReservaPorTurnos extends Reserva{
         return $value;
     }
     
-    public function getTurnos(){
-        return $this->turnos;
-    }
-    
-    
     /**
-     * @todo Hacer checkeo de comprobaciones de incoherencia.
-     * @param type $turno
+     * @param int $turno
      */
     public function setTurno($turno){
         $this->turno = $turno;
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getTurno(){
         return $this->turno;
+    }
+    
+    public function __toString() {
+        return $this->dumpObject();
     }
 }

@@ -2,7 +2,7 @@
 
 /**
  * Este objeto representa una reserva.
- *
+ * Contiene toda la informacion de un cliente.
  * @author unscathed18
  */
 abstract class Reserva {
@@ -23,8 +23,16 @@ abstract class Reserva {
      */
     protected $observaciones = null;
     
+    /**
+     * Codigo asociado a la reserva. Su cometido es verificar la confirmacion del usuario.
+     * @var string
+     */
     protected $cod_reserva;
     
+    /**
+     *
+     * @var int ID en la BD.
+     */
     protected $id = -1;
     
     /**
@@ -39,12 +47,28 @@ abstract class Reserva {
      */
     protected $fecha_hora;
     
+    /**
+     *
+     * @var string
+     */
     protected $nombre;
     
+    /**
+     *
+     * @var string
+     */
     protected $apellido;
     
+    /**
+     *
+     * @var string
+     */
     protected $email;
     
+    /**
+     *
+     * @var int
+     */
     protected $telefono;
     
     /**
@@ -58,41 +82,73 @@ abstract class Reserva {
         $this->CI =& get_instance();
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getNombre(){
         return $this->nombre;
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getApellido(){
         return $this->apellido;
     }
     
+    /**
+     * 
+     * @param string $no
+     */
     public function setNombre($no){
         $this->nombre = $no;
     }
     
+    /**
+     * 
+     * @param string $ap
+     */
     public function setApellido($ap){
         $this->apellido = $ap;
     }
     
+    /**
+     * 
+     * @param int $id
+     */
     public function setID($id){
         $this->id = $id;
     }
     
+    /**
+     * ID de la base de datos
+     * @return int
+     */
     public function getID(){
         return $this->id;
     }
     
+    /**
+     * 
+     * @param string $cod
+     */
     public function setCodigo($cod){
         $this->cod_reserva = $cod;
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getCodigo(){
         return $this->cod_reserva;
         
     }
     
     /**
-     * Nos devuelve la fecha en el formato "Year-Month-Day"
+     * Nos devuelve la fecha en el formato (MySQL) "Year-Month-Day"
      * @return String
      */
     public function getFecha(){
@@ -108,10 +164,18 @@ abstract class Reserva {
         return $this->fecha_hora->format("H:i:00");
     }
     
+    /**
+     * 
+     * @return int
+     */
     public function getNumPersonas(){
         return $this->numPersonas;
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getObservaciones(){
         return $this->observaciones;
     }
@@ -163,10 +227,18 @@ abstract class Reserva {
         return $string_dia;
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getTelefono(){
         return $this->telefono;
     }
     
+    /**
+     * 
+     * @return string
+     */
     public function getEmail(){
         return $this->email;
     }
