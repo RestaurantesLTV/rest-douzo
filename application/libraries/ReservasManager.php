@@ -378,6 +378,10 @@ class ReservasManager {
         return $this->CI->be_reservas_model;
     }
     
+    private function generarCodigoReserva(){
+        return mt_rand();
+    }
+    
                         // Cambiar archivo de configuracion JSON
     /************************************************************************************/
     /**
