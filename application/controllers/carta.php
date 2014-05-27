@@ -1,6 +1,9 @@
 <?php
-/*
+/**
  * Controlador que me redirige a la vista de la carta
+ * @package	Creatalia
+ * @subpackage	Frontend
+ * @category	Controllers
  */
 class Carta extends CI_Controller {
 

@@ -6,8 +6,14 @@
  * Cada funcion del modelo "be_reservas_model" tiene su equivalente con prefijo "ajax",
  * la cual convierte todos los resultados de la BD en format JSON. Esto permite
  * la directa manipulacion en el navegador con JS.
+ * 
+ * @package	Creatalia
+ * @subpackage	Frontend
+ * @category	Controllers
  * @author unscathed18
  */
+
+
 class Ajax_reserva extends CI_Controller{
     
     /**

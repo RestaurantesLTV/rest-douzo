@@ -3,9 +3,14 @@
 //Load dependencies. Necesario para cargar la clase padre "Reserva".
 get_instance()->customautoloader->load("Reserva");
 
+
 /**
  * Reserva mas especifica para restaurantes que hagan reservas a partir
  * diversos turnos diarios.
+ * @todo Implementar
+ * @package	Creatalia
+ * @subpackage	Reserva
+ * @category	Classes
  * @author unscathed18
  */
 class ReservaPorTurnos extends Reserva{

@@ -4,6 +4,9 @@
  * Esta libreria nos permite cargar clases en cualquier parte del proyecto.
  * Esto borrar la limitacion de CodeIgniter, ya que no permite
  * instanciar clases.
+ * @package	Creatalia
+ * @subpackage	Libraries
+ * @category	Libraries
  * @see http://stackoverflow.com/questions/9511636/custom-classes-in-codeigniter
  * @author unscathed18 <unscathed21@hotmail.com>
  */

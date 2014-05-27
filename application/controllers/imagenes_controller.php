@@ -1,6 +1,10 @@
 <?php
 /**
  * Controlador para las imagenes, hace uso de la libreria Imagenes. 
+ * @package	Creatalia
+ * @subpackage	Frontend
+ * @category	Controllers
+ * @author Vicargo
  */
 class Imagenes_controller extends CI_Controller {
 

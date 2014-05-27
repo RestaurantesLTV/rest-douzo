@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Bcrypt | Douzo</title>
+
+	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
+	<script type="text/javascript" src="elementlist.js?92650134"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-CodeIgniter.html">CodeIgniter<span></span></a>
+						<ul>
+				<li><a href="package-CodeIgniter.Drivers.html">Drivers</a>
+						</li>
+				<li><a href="package-CodeIgniter.Libraries.html">Libraries</a>
+						</li>
+							</ul></li>
+				<li><a href="package-Creatalia.html">Creatalia<span></span></a>
+						<ul>
+				<li><a href="package-Creatalia.Backend.html">Backend</a>
+						</li>
+				<li><a href="package-Creatalia.Frontend.html">Frontend</a>
+						</li>
+				<li><a href="package-Creatalia.Libraries.html">Libraries</a>
+						</li>
+				<li><a href="package-Creatalia.Reserva.html">Reserva</a>
+						</li>
+							</ul></li>
+				<li><a href="package-None.html">None</a>
+						</li>
+				<li class="active"><a href="package-Orion.html">Orion<span></span></a>
+						<ul>
+				<li class="active"><a href="package-Orion.Libraries.html">Libraries</a>
+						</li>
+							</ul></li>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Bcrypt.html">Bcrypt</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Orion.Libraries.html" title="Summary of Orion\Libraries"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Bcrypt</h1>
+
+
+	<div class="description">
+	
+<p>Bcrypt Class</p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Orion.html">Orion</a>\<a href="package-Orion.Libraries.html">Libraries</a><br />
+
+				<b>Category:</b>
+				Crypt<br />
+				<b>Author:</b>
+				Waldir Bertazzi Junior<br />
+				<b>Link:</b>
+				<a href="http://waldir.org/">http://waldir.org/</a><br />
+		<b>Located at</b> <a href="source-class-Bcrypt.html#4-148" title="Go to source code">application/libraries/Bcrypt.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Bcrypt.html#17-20" title="Go to source code">__construct</a>( <span>mixed <var>$times</var> = <span class="php-num">12</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="hash" id="_hash">
+
+		<td class="attributes"><code>
+			 public 
+			String
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_hash">#</a>
+		<code><a href="source-class-Bcrypt.html#22-38" title="Go to source code">hash</a>( <span>String <var>$input</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Hashes a input using bcrypt.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Hashes a input using bcrypt.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$input</var></dt>
+					<dd><code>String</code><br>input string to be hashed</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>String</code><br>contains hashed input<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Waldir Bertazzi Junior<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="compare" id="_compare">
+
+		<td class="attributes"><code>
+			 public 
+			Boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_compare">#</a>
+		<code><a href="source-class-Bcrypt.html#40-54" title="Go to source code">compare</a>( <span>String <var>$input</var></span>, <span>String <var>$hashed_string</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Function that compares the input with the correspondent hash. The same input
+should return the same hash. Return true if the input is the same as the hashed
+input.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Function that compares the input with the correspondent hash. The same input
+should return the same hash. Return true if the input is the same as the hashed
+input.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$input</var></dt>
+					<dd><code>String</code><br>input string without hash</dd>
+					<dt><var>$hashed_string</var></dt>
+					<dd><code>String</code><br>previous hashed string</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>Boolean</code><br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Waldir Bertazzi Junior<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="generate_salt" id="_generate_salt">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_generate_salt">#</a>
+		<code><a href="source-class-Bcrypt.html#57-66" title="Go to source code">generate_salt</a>( )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get_random_bytes" id="_get_random_bytes">
+
+		<td class="attributes"><code>
+			 public 
+			random
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get_random_bytes">#</a>
+		<code><a href="source-class-Bcrypt.html#68-111" title="Go to source code">get_random_bytes</a>( <span>numero <var>$count</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Function that return random bytes from various sources.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Function that return random bytes from various sources.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$count</var></dt>
+					<dd><code>numero</code><br>de bytes pra gerar</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>random</code><br>bytes<br />
+				</div>
+
+
+				<h4>Author</h4>
+				<div class="list">
+						Waldir Bertazzi Junior<br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="encode_bytes" id="_encode_bytes">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_encode_bytes">#</a>
+		<code><a href="source-class-Bcrypt.html#113-146" title="Go to source code">encode_bytes</a>( <span>mixed <var>$input</var></span> )</code>
+
+		<div class="description short">
+			
+<p>Function taken from PHP Password Hashing Framework</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Function taken from PHP Password Hashing Framework</p>
+
+
+
+
+
+
+				<h4>Author</h4>
+				<div class="list">
+						PHP Password Hashing Framework<br />
+				</div>
+				<h4>Link</h4>
+				<div class="list">
+						<a href="http://www.openwall.com/phpass/">http://www.openwall.com/phpass/</a><br />
+				</div>
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Douzo API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

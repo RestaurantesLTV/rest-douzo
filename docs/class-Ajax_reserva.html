@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="generator" content="ApiGen 2.8.0" />
+
+	<title>Class Ajax_reserva | Douzo</title>
+
+	<script type="text/javascript" src="resources/combined.js?1889508232"></script>
+	<script type="text/javascript" src="elementlist.js?92650134"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+			<h3>Packages</h3>
+			<ul>
+				<li><a href="package-CodeIgniter.html">CodeIgniter<span></span></a>
+						<ul>
+				<li><a href="package-CodeIgniter.Drivers.html">Drivers</a>
+						</li>
+				<li><a href="package-CodeIgniter.Libraries.html">Libraries</a>
+						</li>
+							</ul></li>
+				<li class="active"><a href="package-Creatalia.html">Creatalia<span></span></a>
+						<ul>
+				<li><a href="package-Creatalia.Backend.html">Backend</a>
+						</li>
+				<li class="active"><a href="package-Creatalia.Frontend.html">Frontend</a>
+						</li>
+				<li><a href="package-Creatalia.Libraries.html">Libraries</a>
+						</li>
+				<li><a href="package-Creatalia.Reserva.html">Reserva</a>
+						</li>
+							</ul></li>
+				<li><a href="package-None.html">None</a>
+						</li>
+				<li><a href="package-Orion.html">Orion<span></span></a>
+						<ul>
+				<li><a href="package-Orion.Libraries.html">Libraries</a>
+						</li>
+							</ul></li>
+				<li><a href="package-PHP.html">PHP</a>
+						</li>
+			</ul>
+		</div>
+
+		<hr />
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-Ajax_reserva.html">Ajax_reserva</a></li>
+				<li><a href="class-Blog.html">Blog</a></li>
+				<li><a href="class-Carta.html">Carta</a></li>
+				<li><a href="class-Categorias.html">Categorias</a></li>
+				<li><a href="class-Contacto.html">Contacto</a></li>
+				<li><a href="class-Equipo.html">Equipo</a></li>
+				<li><a href="class-Form.html">Form</a></li>
+				<li><a href="class-Home.html">Home</a></li>
+				<li><a href="class-Imagenes_controller.html">Imagenes_controller</a></li>
+				<li><a href="class-Reserva_Controller.html">Reserva_Controller</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="" />
+		<input type="hidden" name="ie" value="UTF-8" />
+		<input type="text" name="q" class="text" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="package-Creatalia.Frontend.html" title="Summary of Creatalia\Frontend"><span>Package</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Ajax_reserva</h1>
+
+
+	<div class="description">
+	
+<p>Pensado para el backend del sistema de reservas. Este controlador esta
+preparado para responder a peticiones AJAX. Cada funcion del modelo
+"be_reservas_model" tiene su equivalente con prefijo "ajax", la cual convierte
+todos los resultados de la BD en format JSON. Esto permite la directa
+manipulacion en el navegador con JS.</p>
+
+	</div>
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-CI_Controller.html"><span>CI_Controller</span></a>
+			
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by" />
+<b><span>Ajax_reserva</span></b>			
+			
+			
+		</dd>
+	</dl>
+
+
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		
+		<b>Package:</b> <a href="package-Creatalia.html">Creatalia</a>\<a href="package-Creatalia.Frontend.html">Frontend</a><br />
+
+				<b>Category:</b>
+				Controllers<br />
+				<b>Author:</b>
+				unscathed18<br />
+		<b>Located at</b> <a href="source-class-Ajax_reserva.html#5-190" title="Go to source code">application/controllers/ajax_reserva.php</a><br />
+	</div>
+
+
+
+	<table class="summary" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="__construct" id="___construct">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#___construct">#</a>
+		<code><a href="source-class-Ajax_reserva.html#24-30" title="Go to source code">__construct</a>( )</code>
+
+		<div class="description short">
+			
+<p>Constructor</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Constructor</p>
+
+
+
+
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-CI_Controller.html#___construct">CI_Controller::__construct()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxReservasNoVistas" id="_ajaxReservasNoVistas">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxReservasNoVistas">#</a>
+		<code><a href="source-class-Ajax_reserva.html#32-39" title="Go to source code">ajaxReservasNoVistas</a>( )</code>
+
+		<div class="description short">
+			
+<p>Devuelve las reservas no vistas por el administrador en formato JSON.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Devuelve las reservas no vistas por el administrador en formato JSON.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxTodasLasReservas" id="_ajaxTodasLasReservas">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxTodasLasReservas">#</a>
+		<code><a href="source-class-Ajax_reserva.html#41-48" title="Go to source code">ajaxTodasLasReservas</a>( )</code>
+
+		<div class="description short">
+			
+<p>Devuelve todas las reservas en formato JSON</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Devuelve todas las reservas en formato JSON</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxReservasCompletadas" id="_ajaxReservasCompletadas">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxReservasCompletadas">#</a>
+		<code><a href="source-class-Ajax_reserva.html#50-57" title="Go to source code">ajaxReservasCompletadas</a>( )</code>
+
+		<div class="description short">
+			
+<p>Devuelve todas aquellas reservas completadas en formato JSON.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Devuelve todas aquellas reservas completadas en formato JSON.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxNoVerificadas" id="_ajaxNoVerificadas">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxNoVerificadas">#</a>
+		<code><a href="source-class-Ajax_reserva.html#59-65" title="Go to source code">ajaxNoVerificadas</a>( )</code>
+
+		<div class="description short">
+			
+<p>Devuelve las reservas que no han sido verificados por los clientes en formato
+JSON.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Devuelve las reservas que no han sido verificados por los clientes en formato
+JSON.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxReservasUltimos7Dias" id="_ajaxReservasUltimos7Dias">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxReservasUltimos7Dias">#</a>
+		<code><a href="source-class-Ajax_reserva.html#67-73" title="Go to source code">ajaxReservasUltimos7Dias</a>( )</code>
+
+		<div class="description short">
+			
+<p>Devuelve las reservas comprendidas en un periodo de una semana en formato
+JSON.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Devuelve las reservas comprendidas en un periodo de una semana en formato
+JSON.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxProximasReservas" id="_ajaxProximasReservas">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxProximasReservas">#</a>
+		<code><a href="source-class-Ajax_reserva.html#75-81" title="Go to source code">ajaxProximasReservas</a>( )</code>
+
+		<div class="description short">
+			
+<p>Devuelve todas las reservas desde el dia actual en adelante en formato
+JSON.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Devuelve todas las reservas desde el dia actual en adelante en formato
+JSON.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxBorrarReserva" id="_ajaxBorrarReserva">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxBorrarReserva">#</a>
+		<code><a href="source-class-Ajax_reserva.html#83-97" title="Go to source code">ajaxBorrarReserva</a>( )</code>
+
+		<div class="description short">
+			
+<p>Borra una reserva. Obtiene el ID de la reserva a partir de un parametro
+GET.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Borra una reserva. Obtiene el ID de la reserva a partir de un parametro
+GET.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getTurnos" id="_getTurnos">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getTurnos">#</a>
+		<code><a href="source-class-Ajax_reserva.html#99-105" title="Go to source code">getTurnos</a>( )</code>
+
+		<div class="description short">
+			
+<p>Devuelve los Strings de los turnos disponibles en el restaurante en formato
+JSON.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Devuelve los Strings de los turnos disponibles en el restaurante en formato
+JSON.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="dbResult_toJSON" id="_dbResult_toJSON">
+
+		<td class="attributes"><code>
+			 public 
+			json
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_dbResult_toJSON">#</a>
+		<code><a href="source-class-Ajax_reserva.html#107-129" title="Go to source code">dbResult_toJSON</a>( <span>CI_DB_OBJECT <var>$result</var></span>, <span>string <var>$incluirAsunto</var> = <span class="php-quote">&quot;&quot;</span></span> )</code>
+
+		<div class="description short">
+			
+<p>Convierte a JSON los resultados de un query.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Convierte a JSON los resultados de un query.</p>
+
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$result</var></dt>
+					<dd><code>CI_DB_OBJECT</code><br>$result</dd>
+					<dt><var>$incluirAsunto</var></dt>
+					<dd><code>string</code><br>$incluirAsunto Parametro que permite aniadir un comentario adicional a alguna
+columna de la reserva</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code>json</code><br />
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxModificarConfig" id="_ajaxModificarConfig">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxModificarConfig">#</a>
+		<code><a href="source-class-Ajax_reserva.html#131-166" title="Go to source code">ajaxModificarConfig</a>( )</code>
+
+		<div class="description short">
+			
+<p>Modifica un parametro del fichero de configuracion del sistema de
+reservas.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Modifica un parametro del fichero de configuracion del sistema de
+reservas.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxNotificaciones" id="_ajaxNotificaciones">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxNotificaciones">#</a>
+		<code><a href="source-class-Ajax_reserva.html#168-174" title="Go to source code">ajaxNotificaciones</a>( )</code>
+
+		<div class="description short">
+			
+<p>Devuelve 'mensajes' no vistos por el administrador del restaurante en formato
+JSON.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Devuelve 'mensajes' no vistos por el administrador del restaurante en formato
+JSON.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="ajaxMarcarComoVisto" id="_ajaxMarcarComoVisto">
+
+		<td class="attributes"><code>
+			 public 
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_ajaxMarcarComoVisto">#</a>
+		<code><a href="source-class-Ajax_reserva.html#176-189" title="Go to source code">ajaxMarcarComoVisto</a>( )</code>
+
+		<div class="description short">
+			
+<p>Marca como vistos los 'mensajes'. Toma los IDs de los mensajes pasado por
+parametro GET para llevarlo a cabo.</p>
+
+		</div>
+
+		<div class="description detailed hidden">
+			
+<p>Marca como vistos los 'mensajes'. Toma los IDs de los mensajes pasado por
+parametro GET para llevarlo a cabo.</p>
+
+
+
+
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-CI_Controller.html#methods">CI_Controller</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-CI_Controller.html#_get_instance">get_instance()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		Douzo API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
+	</div>
+</div>
+</div>
+</body>
+</html>

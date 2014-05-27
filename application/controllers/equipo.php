@@ -1,6 +1,9 @@
 <?php
-/*
+/**
  * Controlador que me redirige a la vista del equipo
+ * @package	Creatalia
+ * @subpackage	Frontend
+ * @category	Controllers
  */
 class Equipo extends CI_Controller {
 

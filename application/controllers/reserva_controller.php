@@ -2,7 +2,9 @@
 
 /**
  * Front-end de Reserva
- *
+ * @package	Creatalia
+ * @subpackage	Frontend
+ * @category	Controllers
  * @author unscathed18
  */
 class Reserva_Controller extends CI_Controller {

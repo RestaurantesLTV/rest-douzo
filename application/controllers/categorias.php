@@ -1,6 +1,9 @@
 <?php
-/*
+/**
  * Controlador para las categorias
+ * @package	Creatalia
+ * @subpackage	Frontend
+ * @category	Controllers
  */
 class Categorias extends CI_Controller {
     

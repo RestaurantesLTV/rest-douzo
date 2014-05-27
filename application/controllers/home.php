@@ -1,7 +1,9 @@
 <?php
 
 /**
- * 
+ * @package	Creatalia
+ * @subpackage	Frontend
+ * @category	Controllers
  */
 class Home extends CI_Controller {
 

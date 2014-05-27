@@ -3,6 +3,9 @@
 /**
  * Administra el sistema de reservas. Tiene una agregacion respecto a un objecto de tipo
  * 'Reserva'.
+ * @package	Creatalia
+ * @subpackage	Libraries
+ * @category	Libraries
  * @author unscathed18
  */
 class ReservasManager {

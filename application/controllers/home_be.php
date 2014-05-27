@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @package	Creatalia
+ * @subpackage	Backend
+ * @category	Controllers
+ * @author Vicargo
+ */
 class Home_be extends CI_Controller {
 
     public function __construct() {

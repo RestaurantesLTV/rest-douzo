@@ -1,8 +1,12 @@
 <?php
 
+
 /**
  * Este objeto representa una reserva.
  * Contiene toda la informacion de un cliente.
+ * @package	Creatalia
+ * @subpackage	Reserva
+ * @category	Classes
  * @author unscathed18
  */
 abstract class Reserva {

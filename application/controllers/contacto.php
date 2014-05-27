@@ -1,6 +1,9 @@
 <?php
-/*
+/**
  * Controlador que me redirige a la vista del contacto
+ * @package	Creatalia
+ * @subpackage	Frontend
+ * @category	Controllers
  */
 class Contacto extends CI_Controller {
 

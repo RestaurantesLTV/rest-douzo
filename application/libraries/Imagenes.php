@@ -5,6 +5,9 @@ if (!defined('BASEPATH'))
 
 /**
  * Clase para tratar todas las imagenes de la web
+ * @package	Creatalia
+ * @subpackage	Libraries
+ * @category	Libraries
  * @author Victor Arnau
  */
 Class Imagenes {
