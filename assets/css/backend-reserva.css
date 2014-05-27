@@ -12,7 +12,8 @@
 
 
 #Contenido-Principal{
-    border:1px solid black;
+    /*border:1px solid black;*/
+    border:0;
     position: absolute; /* Arregla el supuesto problema con el menu flotante. Sin embargo,
                         al abrir menu de navegacion en tamanio 'xs' este sigue sin moverse y lo solapa. */
     top: 100px;
@@ -21,7 +22,7 @@
 }
 
 .reserva-backend{
-    border:1px solid black;
+    /*border:1px solid black;*/
     font-family: 'PT Serif', serif;
 
 }

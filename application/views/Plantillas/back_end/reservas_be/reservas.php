@@ -12,7 +12,7 @@
     <!-- BEG INICIO -->
     
     <div id='reserva-inicio' class="reserva-backend">
-        <img style="width:900px" src="<?php echo base_url();?>assets/images/uncle_sam.png"/>
+        <img style="width:60%; margin-left:20%; border:0px;" src="<?php echo base_url();?>assets/images/yume.png"/>
     </div>
     
     
