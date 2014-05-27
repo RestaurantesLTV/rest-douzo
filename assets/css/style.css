@@ -360,3 +360,48 @@ a.button.reserve{color:#fff; margin:25px 48px; width: 150px; text-decoration: no
 /* ===[ Clear floats from main container ]=== */
 .content { display: inline-block }
 .content:after { display: block; height: 0; font-size: 0; content: "."; clear: both; visibility: hidden; }
+
+.titulo_det{
+    position: relative;
+    left: 40%;
+    margin-top:10%;
+    padding: 20px 0px 0px 0px;
+}
+
+.titulo_det > h1{
+    
+}
+.imagen_det{
+    position: relative;
+    margin-top: 31%;
+}
+.content_det{
+    background-image: url('http://localhost/douzo/assets/images/chino6.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 5%;
+
+}
+.contenido_det{
+    width: 66%;
+    padding: 10px 10px 10px 10px;
+
+}
+.contenido_det > p{
+    color: #f7f7f7;
+}
+.bambuG_det{
+    position: absolute;
+    max-height: 485px;
+    z-index: 99;
+    left: 90%;
+    top: 54.65%;
+
+}
+.bambuP_det{
+    position:absolute;
+    max-height: 485px;
+    z-index: 99;
+    left: -20%;
+    top: 54.65%;
+}
