@@ -4,7 +4,7 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 /**
- * 
+ * Ejemplo practico del uso de la libreria 'aauth'.
  * @property Login_control $Login_control
  * @property Aauth $aauth Description
  */

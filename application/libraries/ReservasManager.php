@@ -46,12 +46,24 @@ class ReservasManager {
      * @var String[]
      */
     protected $config = null;
+    
+    /**
+     *
+     * @var int[] 
+     */
     private $turnos = array();
 
+    /**
+     * Inicializa el objeto (libreria) y se comporta a partir de como
+     * dicta el fichero de configuracion "json". Este determina su forma de trabajar.
+     * @throws Exception El archivo de configuracion no existe/o no ha podido ser abierto.
+     * @throws Exception El archivo de configuracion tienes valores erroneos.
+     */
     public function __construct() {
         $this->CI = & get_instance();
         $this->fechaActual = new DateTime();
         $this->loadConfig();
+        
         if ($this->checkConfigParams()) {
             throw new Exception("El archivo de configuracion '" . $this->config_filename . "' tiene valores erroneos.");
         }
@@ -65,6 +77,10 @@ class ReservasManager {
         }
     }
 
+    /**
+     * Devuelve el numero de aforo foro disponible para un momento determinado.
+     * @return int
+     */
     public function disponibilidadAforo() {
         $queryString = "SELECT IFNULL(SUM(num_personas),0) as aforo FROM reserva "
                 . "WHERE fecha_reservada = '" . $this->reserva->getFecha() . "' AND id_turno = " . $this->reserva->getTurno();
@@ -74,10 +90,17 @@ class ReservasManager {
         return $aforo_restante;
     }
 
+    /**
+     * Devuelve el numero de turnos disponibles en el restaurante.
+     * @return String[]
+     */
     public function getTurnos() {
         return $this->turnos;
     }
 
+    /**
+     * 
+     */
     private function loadTurnosFromDB() {
         $query = $this->CI->db->query("SELECT * from turno");
         foreach ($query->result() as $row) {
@@ -220,16 +243,15 @@ class ReservasManager {
     }
 
     /**
-     * Si la reserva fue bien devuelve true, sino false.
-     * @return boolean
+     * Hace la reserva y la guarda en la BD.
+     * Si la reserva fue bien devuelve un string con los errores ocurridos.
+     * Si el string esta vacio, todo ha ido bien.
+     * @return string
      */
     public function reservar() {
         $errores = "";
         $errores .= $this->disponible();
-        
-        
-
-
+       
         $disponible;    
 
         if ($errores == "") {
@@ -265,29 +287,38 @@ class ReservasManager {
 
             $this->CI->db->insert('reserva', $data); 
             $insert_id = $this->CI->db->insert_id();
-            $this->CI->db->trans_complete();
-            
-            $this->reserva->setID($insert_id);
+            $this->CI->db->trans_complete(); // No podemos hacer roll_back
             /* END INSERTAR*/
+            
+            $this->reserva->setID($insert_id); // Modificamos el ID del objeto reserva
+            
         }
             return $errores;
     }
     
     
 
+    /**
+     * 
+     * @return int
+     */
     public function aforoRestante() {
         $query = $this->CI->db->query("SELECT sum(num_personas) as num_personas FROM reserva WHERE = " . $this->reserva->getFecha());
         return $this->config['aforo'] - $query->row()->num_personas;
     }
 
-    protected function generarCodigoReserva() {
-        return mt_rand();
-    }
-
+    /**
+     * 
+     * @return Reserva
+     */
     public function getReserva() {
         return $this->reserva;
     }
 
+    /**
+     * 
+     * @param Reserva $r
+     */
     public function nuevaReserva($r) {
         $this->reserva = $r;
     }
@@ -325,10 +356,18 @@ class ReservasManager {
         return false;
     }
 
+    /**
+     * 
+     * @return string
+     */
     public function __toString() {
         return "[Objeto] Sistema de reservas";
     }
     
+    /**
+     * 
+     * @return CI_Model
+     */
     public function getModel(){
         if(!$this->modelInitialized){
             $this->CI->load->model("be_reservas_model");
@@ -338,6 +377,12 @@ class ReservasManager {
     
                         // Cambiar archivo de configuracion JSON
     /************************************************************************************/
+    /**
+     * Modifica un parametro del archivo de configuracion
+     * @param string nombre del parametro
+     * @param string nuevo valor
+     * @return boolean
+     */
     public function modifyConfigFile($index, $value){
         $jsonString = file_get_contents(__DIR__ . "/" . $this->config_filename);
         file_put_contents(__DIR__ . "/" . $this->config_filename.".bak", $jsonString); // Creamos un back up

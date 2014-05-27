@@ -6,7 +6,6 @@
  * @author unscathed18
  */
 class Reserva_Controller extends CI_Controller {
-//http://davidwalsh.name/gmail-php-imap
     private $reserva = null; // Por turnos
 
     public function __construct() {
@@ -28,11 +27,24 @@ class Reserva_Controller extends CI_Controller {
                                                             'h' => new DateTime(), 'd' => $d));
     }
 
+    /**
+     * 
+     * Prototipo de funcion. Garantiza seguridad.
+     * No se utiliza en el proyecto.
+     * @todo Completarla
+     */
     private function _requestIsFromProxy() {
         //http://stackoverflow.com/questions/3003145/how-to-get-the-client-ip-address-in-php
         // http://stackoverflow.com/questions/4527345/determine-if-user-is-using-proxy
     }
-
+    
+    /**
+     * Valida el formulario del front-end de reservas.
+     * En caso de estar validado, se comunica con la libreria ReservasManager
+     * y hace la reserva. En caso de que todo haya salido bien, se 
+     * envia un correo al cliente.
+     * Via AJAX!
+     */
     public function validar() {
 
 
@@ -41,9 +53,10 @@ class Reserva_Controller extends CI_Controller {
         $this->form_validation->set_rules("telefono", "Telefono", "trim|required|numeric|is_natural");
 
         //Hora y tiempo
-        $this->form_validation->set_rules("hora", "Hora", "trim|required|numeric|is_natural");
-        $this->form_validation->set_rules("minuto", "Minuto", "trim|required|is_natural");
-        $this->form_validation->set_rules("turno", "Turno", "trim|required|is_natural");
+        $this->form_validation->set_rules("hora", "Hora", "trim|required|numeric|is_natural"); // Este parametro no necesita de verificacion; Limitamos el rango de valores via un "select".
+        $this->form_validation->set_rules("minuto", "Minuto", "trim|required|is_natural"); // Este parametro no necesita de verificacion; Limitamos el rango de valores via un "select".
+        $this->form_validation->set_rules("turno", "Turno", "trim|required|is_natural"); // Este parametro no necesita de verificacion; Limitamos el rango de valores via un "select".
+        /* A la hora de la verdad necesitaria, por cuestiones de seguridad, verificar los valores de las 3 variables de arriba. */
 
         //Otros
         $this->form_validation->set_rules("observaciones", "Observaciones", "trim|max_length[600]");
@@ -89,6 +102,15 @@ class Reserva_Controller extends CI_Controller {
         }
     }
 
+    /**
+     * Esta funcion es la encargada de enviarle el email al cliente con
+     * el email y password del restaurante. Para mas informacion:
+     * @link http://davidwalsh.name/gmail-php-imap Para mas informacion
+     * @param String $subject
+     * @param int $id_row
+     * @param string $email
+     * @param string $cod_reserva
+     */
     private function _enviarEmail($subject, $id_row, $email, $cod_reserva) {
         error_reporting(E_ALL);
         ini_set('display_errors', 1);
@@ -158,7 +180,13 @@ class Reserva_Controller extends CI_Controller {
         }
         echo "Verificado con &eacute;xito! Su reserva ya esta hecha por completo.";
     }
-
+    
+    /**
+     * Verifica que la fecha sea correcta
+     * @deprecated 0.1 La encargada de verificar la fecha es la libreria Form de CI.
+     * @param type $str
+     * @return boolean
+     */
     function fecha_check($str) {
         $fecha = explode("/", $str);
         if (count($fecha) == 3) {
