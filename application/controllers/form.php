@@ -18,7 +18,6 @@ class Form extends CI_Controller {
     /*
      * - Valida todos los campos del formulario y carga la vista ok!
      */
-
     function validar() {
         $this->form_validation->set_message('required', 'Es obligatorio rellenar el campo %s'); //Cambio mensaje de error
         $this->form_validation->set_error_delimiters('<div class="mensaje_error_form" >', '</div>'); //Pone el mensaje de error al lado del div
@@ -40,7 +39,10 @@ class Form extends CI_Controller {
             }
         }
     }
-
+    /**
+     * Actualiza el estado de un articulo segun el que haya sido seleccionado
+     * @param type $url_art --> url del articulo 
+     */
     function validar_update($url_art) {
         //$this->form_validation->set_message('required', 'Es obligatorio rellenar el campo %s'); //Cambio mensaje de error
         //$this->form_validation->set_error_delimiters('<div class="mensaje_error_form" >', '</div>'); //Pone el mensaje de error al lado del div
@@ -80,7 +82,9 @@ class Form extends CI_Controller {
             return true; // Campo validado!
         }
     }
-
+    /**
+     * Funcion que guarda las entradas en la base de datos
+     */
     function anadir_entrada() {
         $this->load->model('Articulos_model');
         // if ($this->validar()) {
@@ -90,23 +94,6 @@ class Form extends CI_Controller {
         // }
     }
 
-    /**
-     * --> print_r ---> imprime un array
-     * server() ---> peticiones al servidor
-     * ip_adress()---> nos devuelve la ip del usuario
-     * user_agent()-----> recibe los datos el usuario(navegador,SO...)
-     * get_request_header('Referer'); para saber desde donde viene (url)
-     */
-    function recibir_datos() {
-        echo $this->input->post('titulo', TRUE);
-        //print_r($this->input->post(null,TRUE)); //@param nombre del campo, @param TRUE APLICA FILTRO XSS 
-        //print_r($this->input->server()); 
-        //echo $this->input->get_request_header('Referer');
-        /* if($this->input->is_ajax_request()){
-          echo 'Es ajax';
-          }else{
-          echo 'No es ajax';
-          } */
-    }
+    
 
 

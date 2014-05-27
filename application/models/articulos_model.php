@@ -31,7 +31,11 @@ class Articulos_model extends CI_Model {
         // $consulta = $this->db->where('id_art', '3'); 
         return $consulta->result();
     }
-
+    /**
+     * Funcion que guarda en la bd las entradas
+     * @return insert 
+     * @author Victor Arnau
+     */
     function guardar_entradas_bd() {
         $this->load->helper('url');
         $url = url_title($this->input->post('titulo'), TRUE);
@@ -45,7 +49,12 @@ class Articulos_model extends CI_Model {
 
         return $this->db->insert('articulo', $data);
     }
-
+    /**
+     * Funcion que actualiza las entradas segun la entrada seleccionada
+     * @param type $url_art
+     * @return update
+     * @author Victor Arnau
+     */
     function actualizar_entrada($url_art) {
         //$this->output->enable_profiler(TRUE);
         $this->load->helper('url');
@@ -62,12 +71,22 @@ class Articulos_model extends CI_Model {
         $this->db->where('url_art', $url_art);
         return $this->db->update('articulo', $data);
     }
-
+    /**
+     * Funcion utilizada para borrar entradas segun la seleccionada
+     * @param type $url_art
+     * @return delete
+     * @author Victor Arnau
+     */
     function borrar_entrada($url_art) {
         $this->db->where('url_art', $url_art);
         return $this->db->delete('articulo');
     }
-
+    /**
+     * Funcion que retorna un articulo segun la url recibida
+     * @param type $url_art
+     * @return select
+     * @author Victor Arnau
+     */
     function detalle_articulo($url_art) {
         $this->db->where('url_art', $url_art);
         $consulta = $this->db->get('articulo');
