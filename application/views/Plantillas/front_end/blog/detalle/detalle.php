@@ -4,7 +4,7 @@
 
 
         <center><div class="contenido_det">
-                <div class="imagen_det"><img width="630" height="450"  style="border-radius: 5%; "src="<?php echo $detalle->imagen_art ?>"></div>
+                <div class="imagen_det"><img class="foto_img" src="<?php echo $detalle->imagen_art ?>"></div>
                 <p><?php echo $detalle->contenido_art; ?> </p> <br>
                 <hr>
                 <strong>Fecha publicación: <?php echo $detalle->fecha_art; ?></strong>
